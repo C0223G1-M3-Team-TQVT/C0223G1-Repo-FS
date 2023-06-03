@@ -135,7 +135,7 @@
 <section>
     <div class="circle"></div>
     <header>
-        <a href="#" ><img style="width: 100px" class="logo" src="hightech-html/image_720.png" alt=""></a>
+        <a href="#" ><img style="width: 100px" class="logo" src="hihtech-html/image_720.png" alt=""></a>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Đặt Hàng</a></li>

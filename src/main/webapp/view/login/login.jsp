@@ -52,11 +52,15 @@
                                          style="width: 185px;border-radius: 50%" alt="logo">
                                     <h4 class="mt-1 mb-5 pb-1">We are TQTV Team</h4>
                                 </div>
-                                <form method="post" action="/bakery?action=dangnhap">
-                                    <c:forEach items="${listUser}" var="user">
+                                <div >
+                                    <c:if test='${message != null}'>
+                                        <span style="color: #790000" class="message">${message}</span>
+                                    </c:if>
+                                </div>
+                                <form method="post" action="/bakery?action=login">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form2Example11">Tài Khoản</label>
-                                        <input type="email" id="form2Example11" class="form-control"
+                                        <input type="text" id="form2Example11" class="form-control"
                                                placeholder="Số điện thoại" name="taikhoan"/>
                                     </div>
 
@@ -65,14 +69,12 @@
                                         <input type="password" id="form2Example22" class="form-control" name="matkhau"/>
 
                                     </div>
-
                                     <div class="text-center pt-1 mb-5 pb-1 ">
                                         <button
                                                 class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 container"
-                                                type="submit"   >
+                                                type="submit">
                                             Đăng nhập
                                         </button>
-                                        </c:forEach>
                                         <div style="text-align: left">
                                             <input type="checkbox" id="luu">
                                             <label for="luu" class="text-muted">Lưu tài khoản</label>
@@ -82,7 +84,6 @@
                                         <p class="mb-0 me-2">Bạn chưa có tài khoản?</p>
                                         <button type="button" class="btn btn-outline-danger">Tạo mới</button>
                                     </div>
-
                                 </form>
 
                             </div>

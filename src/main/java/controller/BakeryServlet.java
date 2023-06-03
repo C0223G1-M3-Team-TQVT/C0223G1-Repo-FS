@@ -13,22 +13,23 @@ import java.util.List;
 
 @WebServlet(name = "BakeryServlet", value = "/bakery")
 public class BakeryServlet extends HttpServlet {
-    private IUserService iUserService=new UserService();
+    private IUserService iUserService = new UserService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         String action=request.getParameter("action");
-         if (action==null){
-             action="";
-         }
-         switch (action){
-             case "create":
-                 break;
-             case "login":
-                 loginFormEmployee(request, response);
-                 break;
-             default:
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create":
+                break;
+            case "login":
+                loginFormEmployee(request, response);
+                break;
+            default:
 
-         }
+        }
     }
 
     private void loginFormEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,22 +39,32 @@ public class BakeryServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action=request.getParameter("action");
-        if (action==null){
-            action="";
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
         }
-        switch (action){
+        switch (action) {
             case "create":
                 break;
             case "login":
-                List<User> userList=iUserService.getUser();
-
-         String taiKhoan=request.getParameter("taikhoan");
-         String matKhau=request.getParameter("matkhau");
+                login(request, response);
+                break;
+            case "register":
 
                 break;
-            default:
 
+        }
+    }
+
+    private void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String taiKhoan = request.getParameter("taikhoan");
+        String matKhau = request.getParameter("matkhau");
+        boolean check= iUserService.findUser(new User(taiKhoan,matKhau));
+        if (check){
+            response.sendRedirect("index.jsp");
+        }else {
+//            String message
+            response.sendRedirect("view/login/login.jsp");
         }
     }
 }

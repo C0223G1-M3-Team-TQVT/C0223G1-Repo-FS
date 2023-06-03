@@ -7,6 +7,7 @@ public class Employee {
     private String phoneNumber;
     private String address;
     private int positionId;
+
     private User user;
 
     public Employee(int id, String name, String citizenId, String phoneNumber, String address, int positionId, User user) {

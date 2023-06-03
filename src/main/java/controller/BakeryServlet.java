@@ -9,7 +9,16 @@ import java.io.IOException;
 public class BakeryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+         String action=request.getParameter("action");
+         if (action==null){
+             action="";
+         }
+         switch (action){
+             case "create":
+                 break;
+             default:
 
+         }
     }
 
     @Override

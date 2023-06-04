@@ -28,6 +28,10 @@ public class Employee {
         this.position = position;
     }
 
+    public Employee(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

@@ -11,6 +11,11 @@ public class DetailReceipt {
         this.amount = amount;
     }
 
+    public DetailReceipt(int cakeId, int amount) {
+        this.cakeId = cakeId;
+        this.amount = amount;
+    }
+
     public DetailReceipt() {
     }
 

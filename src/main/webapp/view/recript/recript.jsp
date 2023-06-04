@@ -16,28 +16,34 @@
     <table>
         <tr>
             <th>Hóa đơn</th>
+            <th>Delete</th>
         </tr>
         <c:forEach items="${user}" var="user">
             <tr>
-            <table>
-                <tr>
-                    <th>STT</th>
-                    <th>Tên loại bánh</th>
-                    <th>Số lượng</th>
-                    <th>Tổng tiền</th>
-                    <th>Delete</th>
-                </tr>
-            </table>
-            <c:forEach items="" var="" varStatus="loop">
-                <tr>
-                    <td><c:out value="${loop.count}"/></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a type="submit" href="/bakery?action=delete"></a></td>
-                </tr>
-            </c:forEach>
+                <td>
+                    <table>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên khách hàng</th>
+                            <th>Tên loại bánh</th>
+                            <th>Số lượng</th>
+                            <th>Tổng tiền</th>
+
+                        </tr>
+                        <c:forEach items="" var="" varStatus="loop">
+                            <tr>
+                                <td><c:out value="${loop.count}"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </td>
+                <td><a type="submit" href="/bakery?action=delete"></a></td>
             </tr>
+
         </c:forEach>
     </table>
 </table>

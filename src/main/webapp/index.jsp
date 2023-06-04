@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        @import url('https://th.bing.com/th?id=OIP.faUG1lf2gcBIH2F3soOTdgHaIR&w=236&h=264&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
         *{
             margin: 0;
             padding: 0;
@@ -141,7 +142,7 @@
             <li><a href="#">Đặt Hàng</a></li>
             <li><a href="#">Sản Phẩm</a></li>
             <li><a href="/bakery?action=login">Đăng nhập</a></li>
-            <li><a href="#">Đăng kí</a></li>
+            <li><a href="/employee?action=list">Nhân viên</a></li>
             <li><a href="#">Search</a></li>
         </ul>
     </header>

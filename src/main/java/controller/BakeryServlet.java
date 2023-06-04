@@ -29,11 +29,18 @@ public class BakeryServlet extends HttpServlet {
                 break;
             default:
 
+                giDo(request, response);
+                break;
         }
     }
 
-    private void loginFormEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void giDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<User> userList=iUserService.getUser();
+        request.setAttribute("user",userList);
+        request.getRequestDispatcher("view/login/list.jsp").forward(request, response);
+    }
 
+    private void loginFormEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
     }
 
@@ -50,21 +57,46 @@ public class BakeryServlet extends HttpServlet {
                 login(request, response);
                 break;
             case "register":
-
+                register(request, response);
                 break;
 
+        }
+    }
+
+    private void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String taiKhoan = request.getParameter("taikhoan1");
+        String matKhau = request.getParameter("matkhau1");
+        boolean check = iUserService.checkUser(new User(taiKhoan, matKhau));
+        if (check) {
+            request.setAttribute("message", "Thêm tài khoản thành công");
+
+            request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
+            iUserService.addUser(new User(taiKhoan, matKhau));
+            request.getRequestDispatcher("/index.jsp").forward(request,response);
+//            response.sendRedirect("/bakery");
+        } else {
+            request.setAttribute("message", "Tài khoản này đã có hoặc chưa đăng kí số điện thoại này");
+            request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
         }
     }
 
     private void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String taiKhoan = request.getParameter("taikhoan");
         String matKhau = request.getParameter("matkhau");
-        boolean check= iUserService.findUser(new User(taiKhoan,matKhau));
-        if (check){
+        if (matKhau == null) {
+            matKhau = "";
+        }
+        boolean check = iUserService.findUser(new User(taiKhoan, matKhau));
+        if (check) {
             response.sendRedirect("index.jsp");
-        }else {
-//            String message
-            response.sendRedirect("view/login/login.jsp");
+        } else {
+            request.setAttribute("message", "Tài khoản hoặc mật khẩu sai,vui lòng nhập lại");
+            try {
+                request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

@@ -177,14 +177,11 @@
             color: #fff;
             border: none;
         }
-
-
     </style>
 </head>
 <body>
-<a href="/bakery?action=list">a</a>
 <section class="wrapper" style="box-shadow: 6px 6px 6px 6px #171515">
-    <div>
+    <div class="form signup">
         <header>Đăng nhập</header>
         <div style="position: relative;margin-top: 30px;">
         <c:if test='${message != null}'>
@@ -200,9 +197,8 @@
             </div>
             <input type="submit" value="Login" />
         </form>
-    </div>
-
-    <div >
+    </div >
+    <div class="form login">
         <header>Đăng kí</header>
         <form action="/bakery?action=register" method="post">
             <input type="text" placeholder="Số điện thoại" name="taikhoan1"/>
@@ -224,5 +220,6 @@
         });
     </script>
 </section>
+
 </body>
 </html>

@@ -139,7 +139,7 @@
         <a href="#" ><img style="width: 100px" class="logo" src="hihtech-html/image_720.png" alt=""></a>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Đặt Hàng</a></li>
+            <li><a href="/receipt-servlet">Đặt Hàng</a></li>
             <li><a href="#">Sản Phẩm</a></li>
             <li><a href="/bakery?action=login">Đăng nhập</a></li>
             <li><a href="/employee?action=list">Nhân viên</a></li>

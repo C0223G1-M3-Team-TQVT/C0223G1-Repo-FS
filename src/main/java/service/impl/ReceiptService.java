@@ -10,10 +10,17 @@ import service.IReceiptService;
 import java.util.List;
 
 public class ReceiptService implements IReceiptService {
-IReceiptRepository receiptRepository = new ReceiptRepository();
+
+private IReceiptRepository receiptRepository = new ReceiptRepository();
+
     @Override
     public List<Cake> showListCakeOrder() {
         return receiptRepository.showListCakeOrder();
+    }
+
+    @Override
+    public List<Receipt> showListReceipt() {
+        return receiptRepository.showListReceipt();
     }
 
     @Override

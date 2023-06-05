@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface IReceiptRepository {
     List<Cake> showListCakeOrder();
-
+    List<Receipt> showListReceipt();
     void addReceipt(List<DetailReceipt> list, Receipt receipt);
 }

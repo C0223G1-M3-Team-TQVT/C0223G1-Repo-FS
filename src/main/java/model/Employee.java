@@ -9,6 +9,11 @@ public class Employee {
     private Position position;
     private User user;
 
+    public Employee( String name,int id) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Employee(int id, String name, String citizenId, String phoneNumber, String address, Position position, User user) {
         this.id = id;
         this.name = name;

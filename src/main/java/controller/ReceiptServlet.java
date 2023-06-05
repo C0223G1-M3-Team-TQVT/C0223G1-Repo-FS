@@ -13,7 +13,7 @@ import java.util.List;
 
 @WebServlet(name = "ReceiptServlet", value = "/receipt-servlet")
 public class ReceiptServlet extends HttpServlet {
-    IReceiptService receiptService = new ReceiptService();
+   private IReceiptService receiptService = new ReceiptService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

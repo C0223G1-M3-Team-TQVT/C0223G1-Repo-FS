@@ -27,16 +27,13 @@ private final String SELECT_ALL_DETAIL="select hd.ma_hoa_don,kh.ten_khach_hang,b
         "on lb.ma_loai_banh=b.ma_loai_banh\n" +
         "join khach_hang kh\n" +
         "on kh.ma_khach_hang=hd.ma_khach_hang\n;" ;
+
 private final String GET_PRICE_ALL="select hd.ma_hoa_don,sum(b.gia*hdct.so_luong) as tong_tien\n" +
         "         from hoa_don hd\n" +
         "        join hoa_don_chi_tiet hdct \n" +
         "        on hd.ma_hoa_don=hdct.ma_hoa_don\n" +
         "        join banh b\n" +
         "        on b.ma_banh=hdct.ma_banh\n" +
-        "        join loai_banh lb\n" +
-        "        on lb.ma_loai_banh=b.ma_loai_banh\n" +
-        "        join khach_hang kh\n" +
-        "        on kh.ma_khach_hang=hd.ma_khach_hang\n" +
         "        group by  hd.ma_hoa_don;";
     @Override
     public List<DetailReceipt> getAll() {

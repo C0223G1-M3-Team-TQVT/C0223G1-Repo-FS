@@ -29,14 +29,14 @@ public class ReceiptServlet extends HttpServlet {
         for (int i = 1; i <= receiptService.showListCakeOrder().size(); i++) {
             if (request.getParameter(String.valueOf(i)) != null) {
                 int amount = Integer.parseInt(request.getParameter(String.valueOf(i)));
-                detailReceiptList.add(new DetailReceipt(i, amount));
+                detailReceiptList.add(new DetailReceipt(amount, new Cake(i)));
 
             }
         }
         String name = request.getParameter("name");
         String phoneNumber = request.getParameter("phoneNumber");
         String address = request.getParameter("address");
-        Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(1),address);
+        Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(1), address);
         receiptService.addReceipt(detailReceiptList, receipt);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }

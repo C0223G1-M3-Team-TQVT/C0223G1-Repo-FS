@@ -42,6 +42,10 @@ public class Cake {
     public Cake() {
     }
 
+    public Cake(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
@@ -76,6 +80,14 @@ public class Cake {
 
     public int getAmount() {
         return amount;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public void setAmount(int amount) {

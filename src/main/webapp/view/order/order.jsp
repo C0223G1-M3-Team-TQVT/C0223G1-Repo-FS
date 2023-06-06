@@ -24,7 +24,7 @@
     <c:forEach items="${list}" var="cake">
 
         <div class="card" style="width: 18rem; float: left">
-            <img src="..." class="card-img-top" alt="${cake.name}<br>${cake.price}">
+            <img src="${cake.picture}" class="card-img-top">
             <div class="card-body">
                 <button type="button" onClick="tru(${cake.id})" style="float: left">-</button>
                 <input value='0' id="${cake.id}" readonly>

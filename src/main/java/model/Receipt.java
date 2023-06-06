@@ -18,6 +18,10 @@ public class Receipt {
         this.address = address;
     }
 
+    public Receipt(int id) {
+        this.id = id;
+    }
+
     public Receipt(Customer customer, Employee employee, LocalDateTime date, String address) {
         this.customer = customer;
         this.employee = employee;

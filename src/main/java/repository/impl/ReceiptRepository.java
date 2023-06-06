@@ -32,6 +32,9 @@ public class ReceiptRepository implements IReceiptRepository {
                 double price = resultSet.getDouble("gia");
                 int amount = resultSet.getInt("so_luong_hien_co");
                 String picture = resultSet.getString("anh_banh");
+                if (picture == null) {
+                    picture = "";
+                }
                 list.add(new Cake(id, name, typeOfCake, price, amount, picture));
             }
         } catch (SQLException e) {
@@ -49,17 +52,69 @@ public class ReceiptRepository implements IReceiptRepository {
     @Override
     public void addReceipt(List<DetailReceipt> list, Receipt receipt) {
         Connection connection = BaseRepository.getConnection();
+        LocalDateTime localDateTime = LocalDateTime.now();
+        String time = String.valueOf(localDateTime);
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(ADD);
             int id = checkCustomer(receipt.getCustomer());
-            System.out.println(id);
             preparedStatement.setInt(1, id);
             preparedStatement.setInt(2, receipt.getEmployee().getId());
-            preparedStatement.setString(3, String.valueOf(LocalDateTime.now()));
+            preparedStatement.setString(3, time);
             preparedStatement.setString(4, receipt.getAddress());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        Receipt receipt1 = new Receipt(getIdReceipt(time));
+        for (int i = 0; i < list.size(); i++) {
+            addDetailReceipt(new DetailReceipt(receipt1, list.get(i).getCake(), list.get(i).getAmount()));
+        }
+    }
+
+    public int getIdReceipt(String date) {
+        String string = date.substring(0, 10) + " " + date.substring(11, 19);
+        Connection connection = BaseRepository.getConnection();
+        int id = 0;
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select ma_hoa_don from hoa_don where ngay_dat_hang='" + string + "'");
+            resultSet.next();
+            id = resultSet.getInt("ma_hoa_don");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return id;
+    }
+
+    private void addDetailReceipt(DetailReceipt detailReceipt) {
+        String addDetailReceipt = "insert into hoa_don_chi_tiet(ma_banh, ma_hoa_don, so_luong) value (?,?,?);";
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(addDetailReceipt);
+            preparedStatement.setInt(1, detailReceipt.getCake().getId());
+            preparedStatement.setInt(2, detailReceipt.getReceipt().getId());
+            preparedStatement.setInt(3, detailReceipt.getAmount());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -69,7 +124,7 @@ public class ReceiptRepository implements IReceiptRepository {
         boolean flag = true;
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select * form khach_hang");
+            ResultSet resultSet = statement.executeQuery("Select * from khach_hang");
             while (resultSet.next()) {
                 if (resultSet.getString("sdt").equals(customer.getPhoneNumber())) {
                     id = resultSet.getInt("ma_khach_hang");

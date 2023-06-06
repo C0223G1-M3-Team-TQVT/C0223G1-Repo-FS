@@ -18,6 +18,11 @@ public class Receipt {
         this.address = address;
     }
 
+    public Receipt(int id,Customer customer) {
+        this.id=id;
+        this.customer = customer;
+    }
+
     public Receipt(int id) {
         this.id = id;
     }

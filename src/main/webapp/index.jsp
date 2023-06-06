@@ -143,7 +143,7 @@
             <li><a href="#">Sản Phẩm</a></li>
             <li><a href="/bakery?action=login">Đăng nhập</a></li>
             <li><a href="/employee?action=list">Nhân viên</a></li>
-            <li><a href="#">Search</a></li>
+            <li><a href="/detailreceipt?action=a">Hóa đơn</a></li>
         </ul>
     </header>
     <div class="content">

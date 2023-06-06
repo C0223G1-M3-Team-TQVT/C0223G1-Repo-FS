@@ -13,17 +13,16 @@ import java.util.List;
 public class UserService implements IUserService {
     private IUserRepository iUserRepository = new UserRepository();
     private IEmployeeRepository iEmployeeRepository = new EmployeeRepository();
-    private List<User> userList = iUserRepository.getUser();
     private List<Employee> employeeList = iEmployeeRepository.getList();
 
     @Override
     public List<User> getUser() {
-        return userList;
+        return iUserRepository.getUser();
     }
 
     @Override
     public boolean findUser(User user) {
-        for (User value : userList) {
+        for (User value : iUserRepository.getUser()) {
             if (user.getPhoneNumber().equals(value.getPhoneNumber()) && user.getPassword().equals(value.getPassword())) {
                 return true;
             }
@@ -37,7 +36,7 @@ public class UserService implements IUserService {
         for (Employee e : employeeList) {
             if (e.getPhoneNumber().equals(user.getPhoneNumber())) {
                 count++;
-                for (User u: userList) {
+                for (User u: iUserRepository.getUser()) {
                     if (u.getPhoneNumber().equals(user.getPhoneNumber())){
                         return false;
                     }

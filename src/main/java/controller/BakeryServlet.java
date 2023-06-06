@@ -8,7 +8,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "BakeryServlet", value = "/bakery")
@@ -28,16 +27,14 @@ public class BakeryServlet extends HttpServlet {
                 loginFormEmployee(request, response);
                 break;
             default:
-
-                giDo(request, response);
-                break;
+                listUser(request, response);
         }
     }
 
-    private void giDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> userList=iUserService.getUser();
         request.setAttribute("user",userList);
-        request.getRequestDispatcher("view/login/list.jsp").forward(request, response);
+
     }
 
     private void loginFormEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,22 +56,18 @@ public class BakeryServlet extends HttpServlet {
             case "register":
                 register(request, response);
                 break;
-
         }
     }
 
     private void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String taiKhoan = request.getParameter("taikhoan1");
         String matKhau = request.getParameter("matkhau1");
         boolean check = iUserService.checkUser(new User(taiKhoan, matKhau));
         if (check) {
             request.setAttribute("message", "Thêm tài khoản thành công");
-
             request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
             iUserService.addUser(new User(taiKhoan, matKhau));
-            request.getRequestDispatcher("/index.jsp").forward(request,response);
-//            response.sendRedirect("/bakery");
+            response.sendRedirect("/bakery");
         } else {
             request.setAttribute("message", "Tài khoản này đã có hoặc chưa đăng kí số điện thoại này");
             request.getRequestDispatcher("view/login/login.jsp").forward(request, response);

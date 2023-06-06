@@ -9,6 +9,12 @@ public class Cake {
     private String picture;
 
 
+    public Cake(int id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
     public Cake(int id, String name, int typeOfCake, double price, int amount, String picture) {
         this.id = id;
         this.name = name;
@@ -16,6 +22,10 @@ public class Cake {
         this.price = price;
         this.amount = amount;
         this.picture = picture;
+    }
+
+    public Cake(String name) {
+        this.name = name;
     }
 
     public Cake(int id, String name, int typeOfCake, double price) {
@@ -80,14 +90,6 @@ public class Cake {
 
     public int getAmount() {
         return amount;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
     }
 
     public void setAmount(int amount) {

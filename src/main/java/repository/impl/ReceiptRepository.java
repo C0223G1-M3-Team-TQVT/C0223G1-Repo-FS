@@ -14,8 +14,8 @@ import java.util.List;
 
 public class ReceiptRepository implements IReceiptRepository {
     private static String DISPLAY = "select * from banh";
-    private static String ADD = "insert into hoa_don(ma_khach_hang,ma_nhan_vien,ngay_dat_hang,dia_chi_giao_hang) value(?,?,?,?)";
-    private final String RECEIPT_SELECT="select * from hoa_don hd " +
+    private static String ADD = "insert into hoa_don(ma_khach_hang,ma_nhan_vien,ngay_dat_hang,dia_chi_giao_hang,trang_thai,mo_ta) value(?,?,?,?,?,?)";
+    private final String RECEIPT_SELECT = "select * from hoa_don hd " +
             "join khach_hang kh " +
             "on hd.ma_khach_hang=kh.ma_khach_hang " +
             "join nhan_vien nv " +
@@ -55,27 +55,27 @@ public class ReceiptRepository implements IReceiptRepository {
 
     @Override
     public List<Receipt> showListReceipt() {
-        List<Receipt> receiptList=new ArrayList<>();
-        Connection connection=BaseRepository.getConnection();
-        Statement statement= null;
+        List<Receipt> receiptList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        Statement statement = null;
         try {
             statement = connection.createStatement();
-            ResultSet resultSet=statement.executeQuery(RECEIPT_SELECT);
-            while (resultSet.next()){
-                int id=resultSet.getInt("hd.ma_hoa_don");
-                int maKhach=resultSet.getInt("kh.ma_khach_hang");
-                String tenKhachHang=resultSet.getString("kh.ten_khach_hang");
-                int maNhanVien=resultSet.getInt("nv.ma_nhan_vien");
-                String tenNhanVien=resultSet.getString("nv.ten_nhan_vien");
-                String check=resultSet.getString("hd.ngay_dat_hang");
-                String sdt=resultSet.getString("kh.sdt");
-                LocalDate check1= LocalDate.parse(check.substring(0,10));
-                LocalTime check2= LocalTime.parse(check.substring(11,19));
-                LocalDateTime ngayDatHang= LocalDateTime.of(check1,check2);
-                String diaChi=resultSet.getString("dia_chi_giao_hang");
-                Employee employee=new Employee(tenNhanVien,maNhanVien);
-                Customer customer=new Customer(tenKhachHang,maKhach,sdt);
-                receiptList.add(new Receipt(id,customer,employee,ngayDatHang,diaChi));
+            ResultSet resultSet = statement.executeQuery(RECEIPT_SELECT);
+            while (resultSet.next()) {
+                int id = resultSet.getInt("hd.ma_hoa_don");
+                int maKhach = resultSet.getInt("kh.ma_khach_hang");
+                String tenKhachHang = resultSet.getString("kh.ten_khach_hang");
+                int maNhanVien = resultSet.getInt("nv.ma_nhan_vien");
+                String tenNhanVien = resultSet.getString("nv.ten_nhan_vien");
+                String check = resultSet.getString("hd.ngay_dat_hang");
+                String sdt = resultSet.getString("kh.sdt");
+                LocalDate check1 = LocalDate.parse(check.substring(0, 10));
+                LocalTime check2 = LocalTime.parse(check.substring(11, 19));
+                LocalDateTime ngayDatHang = LocalDateTime.of(check1, check2);
+                String diaChi = resultSet.getString("dia_chi_giao_hang");
+                Employee employee = new Employee(tenNhanVien, maNhanVien);
+                Customer customer = new Customer(tenKhachHang, maKhach, sdt);
+                receiptList.add(new Receipt(id, customer, employee, ngayDatHang, diaChi));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -99,6 +99,8 @@ public class ReceiptRepository implements IReceiptRepository {
             preparedStatement.setInt(2, receipt.getEmployee().getId());
             preparedStatement.setString(3, time);
             preparedStatement.setString(4, receipt.getAddress());
+            preparedStatement.setBoolean(5, false);
+            preparedStatement.setString(6, receipt.getDescribe());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -134,7 +136,7 @@ public class ReceiptRepository implements IReceiptRepository {
                 e.printStackTrace();
             }
         }
-        System.out.println("id hoa don la: "+id);
+        System.out.println("id hoa don la: " + id);
         return id;
     }
 

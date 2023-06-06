@@ -36,7 +36,8 @@ public class ReceiptServlet extends HttpServlet {
         String name = request.getParameter("name");
         String phoneNumber = request.getParameter("phoneNumber");
         String address = request.getParameter("address");
-        Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(1), address);
+        String describe = request.getParameter("describe");
+        Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(1), address, describe);
         receiptService.addReceipt(detailReceiptList, receipt);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }

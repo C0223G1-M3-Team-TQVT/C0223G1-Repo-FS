@@ -19,4 +19,14 @@ public class DetailReceiptService implements IDetailReceiptService {
     public Map<Integer, Integer> getPriceAll() {
         return iDetailReceiptRepository.getPriceAll();
     }
+
+    @Override
+    public List<DetailReceipt> getDetail(int id) {
+        return iDetailReceiptRepository.getDetail(id);
+    }
+
+    @Override
+    public void UpdateCondition(int id) {
+       iDetailReceiptRepository.UpdateCondition(id);
+    }
 }

@@ -69,10 +69,11 @@ public class ReceiptRepository implements IReceiptRepository {
                 LocalDate check1= LocalDate.parse(check.substring(0,10));
                 LocalTime check2= LocalTime.parse(check.substring(11,19));
                 LocalDateTime ngayDatHang= LocalDateTime.of(check1,check2);
+                boolean trangThai=resultSet.getBoolean("hd.trang_thai");
                 String diaChi=resultSet.getString("dia_chi_giao_hang");
                 Employee employee=new Employee(tenNhanVien,maNhanVien);
                 Customer customer=new Customer(tenKhachHang,maKhach,sdt);
-                receiptList.add(new Receipt(id,customer,employee,ngayDatHang,diaChi));
+                receiptList.add(new Receipt(id,customer,employee,ngayDatHang,diaChi,trangThai));
             }
         } catch (SQLException e) {
             e.printStackTrace();

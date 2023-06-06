@@ -8,18 +8,14 @@ public class Receipt {
     private Customer customer;
     private Employee employee;
     private LocalDateTime date;
+    private boolean condition;
     private String address;
 
-    public Receipt(int id, Customer customer, Employee employee, LocalDateTime date, String address) {
+    public Receipt(int id) {
         this.id = id;
-        this.customer = customer;
-        this.employee = employee;
-        this.date = date;
-        this.address = address;
     }
-
-    public Receipt(int id,Customer customer) {
-        this.id=id;
+    public Receipt(int id, Customer customer) {
+        this.id = id;
         this.customer = customer;
     }
 
@@ -42,6 +38,15 @@ public class Receipt {
     }
 
     public Receipt() {
+    }
+
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime ngayDatHang, String diaChi, boolean condition) {
+        this.id=id;
+        this.customer = customer;
+        this.employee = employee;
+        this.date = ngayDatHang;
+        this.address = diaChi;
+        this.condition=condition;
     }
 
     public int getId() {
@@ -82,5 +87,13 @@ public class Receipt {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public boolean isCondition() {
+        return condition;
+    }
+
+    public void setCondition(boolean condition) {
+        this.condition = condition;
     }
 }

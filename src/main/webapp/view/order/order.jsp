@@ -31,6 +31,8 @@
             data-bs-target="#staticBackdrop">
         Giỏ Hàng
     </button>
+
+<%--    GIỎ HÀNG--%>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
          aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -52,12 +54,12 @@
         </div>
     </div>
 
-    <!-- Button trigger modal -->
+    <!-- NÚT ĐẶT HÀNG -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#datHang">
-        đặt hàng
+        Đặt hàng
     </button>
 
-    <!-- Modal -->
+    <!-- MODAL ĐẶT HÀNG -->
     <div class="modal fade" id="datHang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

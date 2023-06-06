@@ -88,7 +88,10 @@ public class ReceiptRepository implements IReceiptRepository {
     public void addReceipt(List<DetailReceipt> list, Receipt receipt) {
         Connection connection = BaseRepository.getConnection();
         LocalDateTime localDateTime = LocalDateTime.now();
-        String time = String.valueOf(localDateTime);
+        String time1 = String.valueOf(localDateTime);
+        String time = time1.substring(0, 10) + " " + time1.substring(11, 19);
+        System.out.println(time1);
+        System.out.println(time);
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(ADD);
             int id = checkCustomer(receipt.getCustomer());
@@ -106,6 +109,7 @@ public class ReceiptRepository implements IReceiptRepository {
                 e.printStackTrace();
             }
         }
+
         Receipt receipt1 = new Receipt(getIdReceipt(time));
         for (int i = 0; i < list.size(); i++) {
             addDetailReceipt(new DetailReceipt(receipt1, list.get(i).getCake(), list.get(i).getAmount()));
@@ -130,6 +134,7 @@ public class ReceiptRepository implements IReceiptRepository {
                 e.printStackTrace();
             }
         }
+        System.out.println("id hoa don la: "+id);
         return id;
     }
 

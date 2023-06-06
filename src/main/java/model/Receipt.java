@@ -14,7 +14,13 @@ public class Receipt {
     private String describe;
 
 
+    public String getDescribe() {
+        return describe;
+    }
 
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
 
     public Receipt(Customer customer, Employee employee, String address, String describe) {
         this.customer = customer;
@@ -69,6 +75,9 @@ public class Receipt {
         this.date = ngayDatHang;
         this.address = diaChi;
         this.condition=condition;
+    }
+
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime ngayDatHang, String diaChi) {
     }
 
     public int getId() {

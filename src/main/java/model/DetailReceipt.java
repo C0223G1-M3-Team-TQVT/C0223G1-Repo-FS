@@ -5,8 +5,13 @@ public class DetailReceipt {
     private Receipt receipt;
     private Cake cake;
 
+    public DetailReceipt(int amount, Cake cake,Receipt receipt ) {
+        this.amount = amount;
+        this.receipt = receipt;
+        this.cake = cake;
+    }
 
-    public DetailReceipt(Receipt receipt, Cake cake,int amount) {
+    public DetailReceipt(Receipt receipt, Cake cake, int amount) {
         this.amount = amount;
         this.receipt = receipt;
         this.cake = cake;

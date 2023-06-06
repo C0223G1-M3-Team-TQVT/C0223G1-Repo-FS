@@ -29,13 +29,25 @@ public class DetailReceiptServlet extends HttpServlet {
             case "detail":
                 detailForm(request, response);
                 break;
+            case "delivery":
+                delivery(request, response);
+                break;
             default:
                 showList(request, response);
                 break;
         }
     }
 
+    private void delivery(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id= Integer.parseInt((request.getParameter("id")));
+        request.setAttribute("id",id);
+        request.getRequestDispatcher("view/recript/detail.jsp").forward(request, response);
+
+    }
+
     private void detailForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      boolean check= Boolean.parseBoolean(request.getParameter("delivery"));
+      request.setAttribute("check",check);
         int id = Integer.parseInt(request.getParameter("id"));
         request.setAttribute("id", id);
         List<DetailReceipt> receiptList = iDetailReceiptService.getAll();
@@ -66,6 +78,19 @@ public class DetailReceiptServlet extends HttpServlet {
         switch (action) {
             case "delete":
                 break;
+            case "delivery":
+                deliveryPost(request,response);
+                break;
+        }
+    }
+
+    private void deliveryPost(HttpServletRequest request, HttpServletResponse response) {
+        int id= Integer.parseInt(request.getParameter("id"));
+        iDetailReceiptService.UpdateCondition(id);
+        try {
+            response.sendRedirect("/detailreceipt");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

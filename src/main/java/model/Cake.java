@@ -56,6 +56,14 @@ public class Cake {
     public Cake() {
     }
 
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     public int getId() {
         return id;
     }
@@ -94,13 +102,5 @@ public class Cake {
 
     public void setAmount(int amount) {
         this.amount = amount;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
     }
 }

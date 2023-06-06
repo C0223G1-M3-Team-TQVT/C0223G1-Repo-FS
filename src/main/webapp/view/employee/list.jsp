@@ -45,7 +45,7 @@
                 <c:out value="${employee.position.name}"/>
             </td>
             <td>
-                <a href="/employee?action=update&id=${employee.id}"/>
+                <a href="/employee?action=update&id=${employee.id}" />
                 <button type="submit">Sua</button>
             </td>
             <td>

@@ -8,29 +8,33 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <form method="post" action="/receipt-servlet">
     <c:forEach items="${list}" var="cake">
 
-        <div class="card" style="width: 18rem; float: left">
-            <img src="..." class="card-img-top" alt="${cake.name}<br>${cake.price}">
+        <div class="card" style="width: 14rem; float: left; margin: 80px; border: none">
+            <p>${cake.name}</p>
+            <img src="${cake.picture}" class="card-img-top">
             <div class="card-body">
-                <button type="button" onClick="tru(${cake.id})" style="float: left">-</button>
-                <input value='0' id="${cake.id}" readonly>
+
+                <button type="button" onClick="tru(${cake.id})" style="float: left; width: 30px">-</button>
+                <input value='0' id="${cake.id}" readonly style="width: 130px;float: left; text-align: center">
                 <input id="Price${cake.id}" value="${cake.price}" hidden>
                 <input id="Name${cake.id}" value="${cake.name}" hidden>
-                <button type="button" onClick="cong(${cake.id})" style="float: right">+</button>
+                <button type="button" onClick="cong(${cake.id})" style="float: left; width: 30px">+</button>
             </div>
         </div>
     </c:forEach>
     <button onclick="gioHang()" type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop">
+            data-bs-target="#staticBackdrop" style="position: fixed; right: 10px; bottom: 10px">
         Giỏ Hàng
     </button>
+
+    <%--    GIỎ HÀNG--%>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
          aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -52,12 +56,12 @@
         </div>
     </div>
 
-    <!-- Button trigger modal -->
+    <!-- NÚT ĐẶT HÀNG -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#datHang">
-        đặt hàng
+        Đặt hàng
     </button>
 
-    <!-- Modal -->
+    <!-- MODAL ĐẶT HÀNG -->
     <div class="modal fade" id="datHang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -68,7 +72,8 @@
                 <div class="modal-body">
                     Nhập tên <input name="name" value=""><br>
                     Nhập địa chỉ <input name="address" value=""><br>
-                    Nhập sđt <input name="phoneNumber" value="">
+                    Nhập sđt <input name="phoneNumber" value=""><br>
+                    Nhập ghi chú thêm <input name="describe" value="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">quay lại</button>

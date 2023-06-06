@@ -13,7 +13,7 @@ import java.util.List;
 
 @WebServlet(name = "ReceiptServlet", value = "/receipt-servlet")
 public class ReceiptServlet extends HttpServlet {
-   private IReceiptService receiptService = new ReceiptService();
+    IReceiptService receiptService = new ReceiptService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,19 +25,20 @@ public class ReceiptServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        List<DetailReceipt> detailReceiptList = new ArrayList<>();
-//        for (int i = 1; i <= receiptService.showListCakeOrder().size(); i++) {
-////            if (request.getParameter(String.valueOf(i)) != null) {
-////                int amount = Integer.parseInt(request.getParameter(String.valueOf(i)));
-////                detailReceiptList.add(new DetailReceipt(i, amount));
-//
-//            }
-//        }
-//        String name = request.getParameter("name");
-//        String phoneNumber = request.getParameter("phoneNumber");
-//        String address = request.getParameter("address");
-//        Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(1),address);
-//        receiptService.addReceipt(detailReceiptList, receipt);
-//        request.getRequestDispatcher("index.jsp").forward(request, response);
+        List<DetailReceipt> detailReceiptList = new ArrayList<>();
+        for (int i = 1; i <= receiptService.showListCakeOrder().size(); i++) {
+            if (request.getParameter(String.valueOf(i)) != null) {
+                int amount = Integer.parseInt(request.getParameter(String.valueOf(i)));
+                detailReceiptList.add(new DetailReceipt(amount, new Cake(i)));
+
+            }
+        }
+        String name = request.getParameter("name");
+        String phoneNumber = request.getParameter("phoneNumber");
+        String address = request.getParameter("address");
+        String describe = request.getParameter("describe");
+        Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(1), address, describe);
+        receiptService.addReceipt(detailReceiptList, receipt);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

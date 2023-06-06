@@ -1,12 +1,20 @@
 package model;
 
 public class DetailReceipt {
-
     private int amount;
-    private Cake cake;
     private Receipt receipt;
+    private Cake cake;
 
-    public DetailReceipt() {
+    public DetailReceipt(int amount, Cake cake,Receipt receipt ) {
+        this.amount = amount;
+        this.receipt = receipt;
+        this.cake = cake;
+    }
+
+    public DetailReceipt(Receipt receipt, Cake cake, int amount) {
+        this.amount = amount;
+        this.receipt = receipt;
+        this.cake = cake;
     }
 
     public DetailReceipt(int amount, Cake cake) {
@@ -14,16 +22,9 @@ public class DetailReceipt {
         this.cake = cake;
     }
 
-    public DetailReceipt(int amount, Receipt receipt) {
-        this.amount = amount;
-        this.receipt = receipt;
+    public DetailReceipt() {
     }
 
-    public DetailReceipt(int amount, Cake cake, Receipt receipt) {
-        this.amount = amount;
-        this.cake = cake;
-        this.receipt = receipt;
-    }
 
     public int getAmount() {
         return amount;
@@ -33,19 +34,19 @@ public class DetailReceipt {
         this.amount = amount;
     }
 
-    public Cake getCake() {
-        return cake;
-    }
-
-    public void setCake(Cake cake) {
-        this.cake = cake;
-    }
-
     public Receipt getReceipt() {
         return receipt;
     }
 
     public void setReceipt(Receipt receipt) {
         this.receipt = receipt;
+    }
+
+    public Cake getCake() {
+        return cake;
+    }
+
+    public void setCake(Cake cake) {
+        this.cake = cake;
     }
 }

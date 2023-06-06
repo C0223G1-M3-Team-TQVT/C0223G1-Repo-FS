@@ -3,6 +3,7 @@ package model;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+
 public class Receipt {
     private int id;
     private Customer customer;
@@ -10,6 +11,27 @@ public class Receipt {
     private LocalDateTime date;
     private boolean condition;
     private String address;
+    private String describe;
+
+
+
+
+    public Receipt(Customer customer, Employee employee, String address, String describe) {
+        this.customer = customer;
+        this.employee = employee;
+        this.address = address;
+        this.describe = describe;
+    }
+
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime date, String address, boolean condition, String describe) {
+        this.id = id;
+        this.customer = customer;
+        this.employee = employee;
+        this.date = date;
+        this.address = address;
+        this.condition = condition;
+        this.describe = describe;
+    }
 
     public Receipt(int id) {
         this.id = id;
@@ -96,4 +118,5 @@ public class Receipt {
     public void setCondition(boolean condition) {
         this.condition = condition;
     }
+
 }

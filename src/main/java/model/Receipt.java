@@ -9,6 +9,25 @@ public class Receipt {
     private Employee employee;
     private LocalDateTime date;
     private String address;
+    private boolean done;
+    private String describe;
+
+    public Receipt(Customer customer, Employee employee, String address, String describe) {
+        this.customer = customer;
+        this.employee = employee;
+        this.address = address;
+        this.describe = describe;
+    }
+
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime date, String address, boolean done, String describe) {
+        this.id = id;
+        this.customer = customer;
+        this.employee = employee;
+        this.date = date;
+        this.address = address;
+        this.done = done;
+        this.describe = describe;
+    }
 
     public Receipt(int id, Customer customer, Employee employee, LocalDateTime date, String address) {
         this.id = id;
@@ -18,9 +37,13 @@ public class Receipt {
         this.address = address;
     }
 
-    public Receipt(int id,Customer customer) {
-        this.id=id;
+    public Receipt(int id, Customer customer) {
+        this.id = id;
         this.customer = customer;
+    }
+
+    public Receipt(int id) {
+        this.id = id;
     }
 
     public Receipt(Customer customer, Employee employee, LocalDateTime date, String address) {
@@ -82,5 +105,21 @@ public class Receipt {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 }

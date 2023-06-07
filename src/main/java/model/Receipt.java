@@ -75,7 +75,13 @@ public class Receipt {
     public Receipt() {
     }
 
-    public Receipt(int id, Customer customer, Employee employee, LocalDateTime ngayDatHang, String diaChi, boolean trangThai) {
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime date, String address, boolean status) {
+        this.id = id;
+        this.customer = customer;
+        this.employee = employee;
+        this.date = date;
+        this.address = address;
+        this.status = status;
     }
 
     public int getId() {

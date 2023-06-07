@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.Receipt" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 6/4/2023
@@ -7,10 +7,14 @@
 --%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <html>
 <head>
     <title>Title</title>
+
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -22,7 +26,7 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <div class="col-12 col-md-4">
-                    <a> <i class="fa-regular fa-user"></i>admin</a>
+                    <a> <i class="fa-regular fa-user"></i>Quản lý</a>
                 </div>
                 <div class="col-12 col-md-4">
                     <a class="navbar-brand" href="#">
@@ -41,36 +45,20 @@
     <div class="row content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> ADMIN</a>
+                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Tìm kiếm theo
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">ID</a></li>
-                                <li><a class="dropdown-item" href="#">Số lượng</a></li>
-                                <li><a class="dropdown-item" href="#">Giá(tăng dần)</a></li>
-                                <li><a class="dropdown-item" href="#">Giá(giảm dần)</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Ngẫu nhiên</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"
-                                                                                 style="color: #2bac1b;"></i> Tìm
-                        </button>
+                <div>
+                    <form action="/detailreceipt?action=search" name="tinhTrang"  method="post">
+                      <select name="tinhTrang" id="tinhTrang">
+                          <option value="">Tìm kiếm</option>
+                          <option value="1">Đã giao</option>
+                          <option value="0">Chưa giao</option>
+                      </select>
+                    <button  type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #2bac1b;"></i> Tìm</button>
                     </form>
                 </div>
             </div>
@@ -81,12 +69,10 @@
         </div>
         <div class="col-0 col-md-2 col-2">
         </div>
+        <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
             <table class="table table-striped table-bordered" id="tableStudent" style="width:100% ; float: right;">
                 <thead>
-                <tr>
-                    <th colspan="8"><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></th>
-                </tr>
                 <tr>
                     <th>STT</th>
                     <th>Tên khách hàng</th>
@@ -101,26 +87,54 @@
                 <tbody>
                 <c:forEach items="${receipts}" var="receipts" varStatus="loop">
                     <tr>
-                        <td><c:out value="${loop.count}"/></td>
+                        <td><c:out value="${loop.count}"/> </td>
                         <td><c:out value="${receipts.customer.name}"/></td>
                         <td><c:out value="${receipts.customer.phoneNumber}"/></td>
-                        <td><c:out value="${receipts.date}"/></td>
+                        <td>
 
+                            <c:out value="${receipts.date.getDayOfMonth()}"/>/<c:out value="${receipts.date.getMonthValue()}"/>/<c:out value="${receipts.date.getYear()}"/> <c:out value="${receipts.date.toLocalTime()}"/>
+                        </td>
                         <td><c:if test="${receipts.condition=='false'}"><c:out value="Chưa giao"/></c:if>
                             <c:if test="${receipts.condition=='true'}"><c:out value="Đã giao"/></c:if>
                         </td>
-                        <td><c:out value="${integerMap.get(receipts.id)} VNĐ"/></td>
                         <td>
-                            <button type="submit" class="btn">
-                                <a style="color: #283edc" href="/detailreceipt?action=detail&id=${receipts.id}">Chi
+                            <c:set var="accountBalance" value="${integerMap.get(receipts.id)}" />
+                            <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}" />
+                        <td>
+                            <button class="btn btn-primary" type="submit">
+                                <a style="color: #ffffff" href="/detailreceipt?action=detail&id=${receipts.id}">Chi
                                     tiết</a>
                             </button>
                         </td>
-                        <td><a type="submit" href="/detailreceipt?action=delete&id=${receipts.id}">delete</a></td>
+                        <td>
+                            <button onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                               Delete
+                            </button>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Bạn có muốn xóa khách hàng<h3 id="name" > </h3>có số điện thoại là <h3 id="sdt"></h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <form action="/detailreceipt?action=delete" method="post">
+                    <input type="text" name="deleteReceipt" id="deleteReceipt" hidden>
+                    <button type="submit" class="btn btn-primary"><p style="color: white" >Xóa</p></button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -135,23 +149,6 @@
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 <script>
     $(document).ready(function () {
         $('#tableStudent').dataTable({
@@ -162,6 +159,11 @@
     })
 </script>
 <script>
+    function deleteReceipt(id,name,sdt){
+        document.getElementById("deleteReceipt").value=id;
+        document.getElementById("name").innerText=name;
+        document.getElementById("sdt").innerText=sdt;
+    }
     function remove(id, name) {
         document.getElementById("idDelete").value = id;
         document.getElementById("nameDelete").innerText = name;

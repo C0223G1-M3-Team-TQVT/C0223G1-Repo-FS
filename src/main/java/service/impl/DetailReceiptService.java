@@ -11,6 +11,11 @@ public class DetailReceiptService implements IDetailReceiptService {
 
 
     @Override
+    public Map<Integer, Integer> getMoney() {
+        return iDetailReceiptRepository.getMoney();
+    }
+
+    @Override
     public List<DetailReceipt> getAll() {
         return iDetailReceiptRepository.getAll();
     }
@@ -29,4 +34,5 @@ public class DetailReceiptService implements IDetailReceiptService {
     public void UpdateCondition(int id) {
        iDetailReceiptRepository.UpdateCondition(id);
     }
+
 }

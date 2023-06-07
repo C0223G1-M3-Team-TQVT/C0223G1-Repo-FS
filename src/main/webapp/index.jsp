@@ -127,8 +127,10 @@
             background: #b97f9c;
             clip-path: circle(600px at right 850px);
         }
-
-
+        li:hover a{
+            box-shadow: 0 0 2px #c539d5;
+            color: #c539d5;
+        }
     </style>
 </head>
 <body>
@@ -140,7 +142,7 @@
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="/receipt-servlet">Đặt Hàng</a></li>
-            <li><a href="#">Sản Phẩm</a></li>
+            <li><a href="/cake">Sản Phẩm</a></li>
             <li><a href="/bakery?action=login">Đăng nhập</a></li>
             <li><a href="/employee?action=list">Nhân viên</a></li>
             <li><a href="#">Search</a></li>

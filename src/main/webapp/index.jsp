@@ -9,6 +9,7 @@
     <title>Title</title>
     <style>
         @import url('https://th.bing.com/th?id=OIP.faUG1lf2gcBIH2F3soOTdgHaIR&w=236&h=264&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
+
         * {
             margin: 0;
             padding: 0;
@@ -16,12 +17,29 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .card-text{
+        .col-2 {
+            text-align: center;
+            border-color: white;
+            height: 60px;
+            padding-top: 15px;
+        }
+
+        .card-img-top {
+            height: 200px;
+        }
+
+        .card {
+            text-align: center;
 
         }
 
+        a.card-text {
+            color: deeppink;
+            font-family: "Lucida Console"
+        }
+
         section {
-            position: relative;
+            position: static;
             width: 100%;
             min-height: 100vh;
             padding: 100px;
@@ -41,6 +59,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
         }
 
         header.logo {
@@ -154,95 +173,90 @@
             clip-path: circle(600px at right 850px);
         }
 
-
     </style>
 </head>
 <body>
 
+<jsp:include page="/header.jsp"></jsp:include>
+
 <section>
+
     <div class="circle"></div>
-    <header>
-        <a href="#"><img style="width: 100px" class="logo" src="hihtech-html/image_720.png" alt=""></a>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="/receipt-servlet">Đặt Hàng</a></li>
-            <li><a href="#">Sản Phẩm</a></li>
-            <li><a href="/bakery?action=login">Đăng nhập</a></li>
-            <li><a href="/employee?action=list">Nhân viên</a></li>
-            <li><a href="/detailreceipt?action=a">Hóa đơn</a></li>
-        </ul>
-    </header>
     <div class="content">
         <div class="textBox">
-            <h2>Hãy yêu con trai <br>bà bán <span class="banhmi">bánh mì</span></h2>
-            <p>lo lo lo cho em <br> lo lo lo lo gì <br> ngoài lo lo lo lo ve</p>
-            <a href="#">Xem tiếp</a>
+            <p style="color: #b97f9c;font-family: 'Felix Titling';font-size: 70px;">SWEETER THAN YOUR EX</p>
+
+            <img  style="height: 300px;width: 300px"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb6GzpJw_El-Bkq38BNf5MYoYertUNa_OUWQ&usqp=CAU">
         </div>
         <div class="imgBox">
-            <img src="img/120502-and-cake-the-masha-bear.png" class="starbucks">
+            <img src="" class="starbucks">
         </div>
     </div>
-    <ul class="thumb">
-        <li>
-            <img src="img/66-red-apple-png-image.png" alt=""
-                 onclick="imgSilder('img/66-red-apple-png-image.png');changeCircleColor('#850606')">
-            <img src="img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png" alt=""
-                 onclick="imgSilder('img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png');changeCircleColor('#231a1a')">
-            <img src="img/146915-cake-creamy-piece-free-hq-image.png" alt=""
-                 onclick="imgSilder('img/146915-cake-creamy-piece-free-hq-image.png');changeCircleColor('#e8b84b')">
-        </li>
-    </ul>
+<%--    <ul class="thumb">--%>
+<%--        <li>--%>
+<%--            <img src="img/66-red-apple-png-image.png" alt=""--%>
+<%--                 onclick="imgSilder('img/66-red-apple-png-image.png');changeCircleColor('#850606')">--%>
+<%--            <img src="img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png" alt=""--%>
+<%--                 onclick="imgSilder('img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png');changeCircleColor('#231a1a')">--%>
+<%--            <img src="img/146915-cake-creamy-piece-free-hq-image.png" alt=""--%>
+<%--                 onclick="imgSilder('img/146915-cake-creamy-piece-free-hq-image.png');changeCircleColor('#e8b84b')">--%>
+<%--        </li>--%>
+<%--    </ul>--%>
 </section>
 
 <div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://images.pexels.com/photos/1629998/pexels-photo-1629998.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    <img src="https://th.bing.com/th/id/R.cbac73649f11f534c4091fa05ac322fd?rik=11EKSS9JbcBLJg&riu=http%3a%2f%2fmedia.vietq.vn%2ffiles%2fctvhanh%2fbanh_ngot.jpg&ehk=hUEIhZtXqSKpHKZOFQg2Tknn5mRT0fpCcd030cWdS1g%3d&risl=&pid=ImgRaw&r=0"
          class="card-img-top" alt="...">
     <div class="card-body">
-        <a class="card-text" href="">BÁNH NGỌT</a>
+        <p><a class="card-text" href="">BÁNH NGỌT</a></p>
     </div>
 </div>
 
 <div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://images.pexels.com/photos/1629998/pexels-photo-1629998.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    <img src="https://th.bing.com/th/id/R.2b441c3085718166d5b0bde44862dd09?rik=puuilu1SfOQjQQ&riu=http%3a%2f%2fanphutan
+    .com%2fwp-content%2fuploads%2f2018%2f08%2fbanh-mousse-viet-quat.jpg&ehk=sdNZ7RveTlYO0Ba7Jk1IDfD%2f5%2bTT6mKCn6zp%2fBI%2b9NE%3d&risl=&pid=ImgRaw&r=0"
          class="card-img-top" alt="...">
     <div class="card-body">
-        <a class="card-text" href="">BÁNH NGỌT</a>
+        <a class="card-text" href="">BÁNH LẠNH</a>
     </div>
 </div>
 
 <div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://images.pexels.com/photos/1629998/pexels-photo-1629998.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    <img src="https://th.bing.com/th/id/R.b78eeff1d8318e10b5b856987b87128c?rik=5a1xRA5Ps0YXXA&riu=http%3a%2f%2ffoodisa
+    fourletterword.com%2fwp-content%2fuploads%2f2020%2f11%2fVietnamese_Chicken_Banh_Mi_Recipe_Banh_Mi_Ga_Roti_new2.
+    jpg&ehk=57vR67zsj1QYi95KKPIdFUstdMy2CVRIGiK0U8sUVbk%3d&risl=&pid=ImgRaw&r=0"
          class="card-img-top" alt="...">
     <div class="card-body">
-        <a class="card-text" href="">BÁNH NGỌT</a>
+        <a class="card-text" href="">BÁNH MÌ</a>
     </div>
 </div>
 
 <div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://images.pexels.com/photos/1629998/pexels-photo-1629998.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    <img src="https://th.bing.com/th/id/R.ead6bd00a32a6be90b45b6be7ddc8f18?rik=rmD93FVVmSo5iA&pid=ImgRaw&r=0"
          class="card-img-top" alt="...">
     <div class="card-body">
-        <a class="card-text" href="">BÁNH NGỌT</a>
+        <a class="card-text" href="">PIZZA & HAMBURGER</a>
     </div>
 </div>
 
 <div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://images.pexels.com/photos/1629998/pexels-photo-1629998.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    <img src="https://tranthinhlam.com/wp-content/uploads/2020/07/ma-bs0017_82.png"
          class="card-img-top" alt="...">
     <div class="card-body">
-        <a class="card-text" href="">BÁNH NGỌT</a>
+        <a class="card-text" href="">BÁNH KEM</a>
     </div>
 </div>
 
 <div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://images.pexels.com/photos/1629998/pexels-photo-1629998.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    <img src="https://th.bing.com/th/id/R.f6b0d6f6999a2b50ad299961f70e3833?rik=wA%2bFov8zEwzn9g&riu=http%3a%2f%2f
+    banggiabanhtrungthu.com%2fkcfinder%2fupload%2fimages%2fbanh-trung-thu-kinh-do-3.jpg&ehk=HttpY6c2zfffYZGnga2ouBmxHS0hh3CDmeQ3Ndn5G%2bg%3d&risl=&pid=ImgRaw&r=0"
          class="card-img-top" alt="...">
     <div class="card-body">
-        <a class="card-text" href="">BÁNH NGỌT</a>
+        <a class="card-text" href="">KHÁC</a>
     </div>
 </div>
 
-<div style="text-align: center">
+<div style="text-align: center; background-color: #b97f9c">
     <p>BAKERY & CAFE</p>
     <p> Địa chỉ: gì đó, quận Hải Châu, Đà Nẵng</p>
     <p> Điện thoại: 0236 3 888 348</p>

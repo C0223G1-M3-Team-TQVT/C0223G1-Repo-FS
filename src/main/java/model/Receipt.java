@@ -1,7 +1,6 @@
 package model;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Receipt {
     private int id;
@@ -9,7 +8,7 @@ public class Receipt {
     private Employee employee;
     private LocalDateTime date;
     private String address;
-    private boolean done;
+    private boolean status;
     private String describe;
 
     public Receipt(Customer customer, Employee employee, String address, String describe) {
@@ -25,7 +24,16 @@ public class Receipt {
         this.employee = employee;
         this.date = date;
         this.address = address;
-        this.done = done;
+        this.status = done;
+        this.describe = describe;
+    }
+
+    public Receipt(Customer customer, Employee employee, LocalDateTime date, String address, boolean status, String describe) {
+        this.customer = customer;
+        this.employee = employee;
+        this.date = date;
+        this.address = address;
+        this.status = status;
         this.describe = describe;
     }
 
@@ -107,12 +115,12 @@ public class Receipt {
         this.address = address;
     }
 
-    public boolean isDone() {
-        return done;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public String getDescribe() {

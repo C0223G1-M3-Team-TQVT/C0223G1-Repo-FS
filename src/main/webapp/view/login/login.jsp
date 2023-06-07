@@ -159,35 +159,32 @@
             text-decoration: none;
         }
         form
-        a:hover {
-            text-decoration: underline;
-        }
-        form
-        input[type="submit"] {
-            margin-top: 15px;
-            padding: 0px;
-            font-size: 18px;
-            font-weight: 500;
-            cursor: pointer;
-        }
-        .form.login
-        input[type="submit"] {
-            background: #306279;
-            color: #fff;
-            border: none;
-        }
+
     </style>
 </head>
+<div class="toast">
+    <div class="toast-content">
+        <i class="uil uil-check toast-check"></i>
+        <div class="message">
+            <span class="message-text text-1">Success</span>
+            <span class="message-text text-2">Your changes has been saved</span>
+        </div>
+    </div>
+    <i class="uil uil-multiply toast-close"></i>
+    <div class="progress"></div>
+</div>
+
 <body>
-<section class="wrapper" style="box-shadow: 6px 6px 6px 6px #171515">
+<%--<c:if test='${message != null}'>--%>
+<%--    <center>--%>
+<%--    <ul class="notifications"></ul>--%>
+<%--    <div class="buttons" style="position:relative;padding-bottom: 700px">--%>
+<%--        <button class="btn" id="success">  ${message}</button>--%>
+<%--    </div></center>--%>
+<%--</c:if>--%>
+<section class="wrapper" style="box-shadow: 6px 6px 6px 6px #171515;position: absolute">
     <div class="form signup">
         <header>Đăng nhập</header>
-        <c:if test='${message != null}'>
-            <div class="alert alert-info alert-dismissible" style="position: relative;margin-top: 30px;">
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                <strong>  <span style="color: #8f2e2e" class="message">${message}</span></strong>
-            </div>
-        </c:if>
         <form action="/bakery?action=login" method="post">
             <input type="text" placeholder="Số điện thoại" name="taikhoan" pattern="[0-9]{1,}" title="Vui lòng nhập đúng tài khoản"/>
             <input type="password" placeholder="Mật khẩu" name="matkhau" pattern="[a-zA-Z0-9]{6,}[a-zA-Z]{1,}" title="Mật khẩu cần nhiều hơn 6 kí tự và phải có chữ ở cuối"/>
@@ -195,7 +192,9 @@
                 <input type="checkbox" id="signupCheck" />
                 <label for="signupCheck">Lưu mật khẩu</label>
             </div>
-            <input type="submit" value="Login" />
+
+            <button class="toast-btn">Login</button>
+<%--            <input type="submit" value="Login" />--%>
         </form>
     </div >
     <div class="form login">
@@ -206,21 +205,56 @@
             <input type="submit" value="Đăng kí" />
         </form>
     </div>
+    <script>
+        const buttons = document.querySelectorAll(".buttons .btn");
+        const notifications = document.querySelector(".notifications");
+
+        const removeToast = (toast) => {
+            toast.classList.add("remove");
+            setTimeout(() => toast.remove(), 5000);
+        };
+        const toastDetails = {
+            success: {
+                icon: "fa-check-circle",
+                message: "Success : this is a success toast",
+            },
+            error: {
+                icon: "fa-times-circle",
+                message: "Error : this is a error toast",
+            },
+            warning: {
+                icon: "fa-exclamation-circle",
+                message: "Warning : this is a warning toast",
+            },
+            info: {
+                icon: "fa-info-circle",
+                message: "Warning : this is a info toast",
+            },
+        };
+        const handleCreateToast = (id) => {
+            const { icon, message } = toastDetails[id];
+
+            const toast = document.createElement("li");
+            toast.className = `toast ${id}`;
+            toast.innerHTML = `
+  <div class="column">
+          <i class="fa ${icon}"></i>
+          <span>${message}</span>
+        </div>
+        <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>
+  `;
+            notifications.appendChild(toast);
+            setTimeout(() => removeToast(toast), 5000);
+        };
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                handleCreateToast(button.id);
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
-    <script>
-        const wrapper = document.querySelector(".wrapper"),
-            signupHeader = document.querySelector(".signup header"),
-            loginHeader = document.querySelector(".login header");
-
-        loginHeader.addEventListener("click", () => {
-            wrapper.classList.add("active");
-        });
-        signupHeader.addEventListener("click", () => {
-            wrapper.classList.remove("active");
-        });
-    </script>
 </section>
 
 </body>

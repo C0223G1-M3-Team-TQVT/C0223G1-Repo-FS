@@ -8,6 +8,7 @@ public class Cake {
     private int amount;
     private String picture;
 
+
     public Cake(int id, String name, double price) {
         this.id = id;
         this.name = name;
@@ -50,6 +51,10 @@ public class Cake {
         this.amount = amount;
     }
 
+    public Cake(int id) {
+        this.id = id;
+    }
+
     public Cake(String name, int typeOfCake, double price) {
         this.name = name;
         this.typeOfCake = typeOfCake;
@@ -59,7 +64,13 @@ public class Cake {
     public Cake() {
     }
 
+    public String getPicture() {
+        return picture;
+    }
 
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     public int getId() {
         return id;

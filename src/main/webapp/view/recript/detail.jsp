@@ -7,8 +7,10 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
-<head>   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>Title</title>
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -16,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 <body>
-<div class="container-fluid">
+<div>
     <div class="row header bg-info">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
@@ -40,38 +42,7 @@
     <div class="row content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> ADMIN</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Tìm kiếm theo
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">ID</a></li>
-                                <li><a class="dropdown-item" href="#">Số lượng</a></li>
-                                <li><a class="dropdown-item" href="#">Giá(tăng dần)</a></li>
-                                <li><a class="dropdown-item" href="#">Giá(giảm dần)</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Ngẫu nhiên</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"
-                                                                                 style="color: #2bac1b;"></i> Tìm
-                        </button>
-                    </form>
-                </div>
+                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
             </div>
         </nav>
     </div>
@@ -80,11 +51,9 @@
         </div>
         <div class="col-0 col-md-2 col-2">
         </div>
+        <div><h2 style="text-align: center">CHI TIẾT HÓA ĐƠN</h2></div>
         <table class="table table-striped table-bordered" id="tableStudent" style="width:100%">
             <thead>
-            <tr>
-                <th colspan="4"><h2 style="text-align: center">QUẢN LÝ CHI TIẾT </h2></th>
-            </tr>
             <tr>
                 <th>Tên khách hàng</th>
                 <th>Tên loại bánh</th>
@@ -94,18 +63,28 @@
             </thead>
             <tbody>
             <c:forEach items="${receiptList}" var="detailReceipts" varStatus="loop">
-                <c:if test="${id==detailReceipts.receipt.id}">
-                    <tr>
-                        <td><c:out value="${detailReceipts.receipt.customer.name}"/></td>
-                        <td><c:out value="${detailReceipts.cake.name}"/></td>
-                        <td><c:out value="${detailReceipts.amount}"/></td>
-                        <td><c:out value="${detailReceipts.cake.price*detailReceipts.amount}"/></td>
-                    </tr>
-                </c:if>
+            <c:if test="${id==detailReceipts.receipt.id}">
+            <tr>
+                <td><c:out value="${detailReceipts.receipt.customer.name}"/></td>
+                <td><c:out value="${detailReceipts.cake.name}"/></td>
+                <td><c:out value="${detailReceipts.amount}"/></td>
+                <td>
+                    <c:set var="accountBalance" value="${integerMap.get(detailReceipts.cake.id)}"/>
+                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
+                </td>
+            </tr>
+            </c:if>
             </c:forEach>
         </table>
     </div>
 </div>
+<center>
+    <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Xác nhận thanh toán
+        </button>
+    </div>
+</center>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
@@ -134,15 +113,13 @@
 </script>
 </body>
 </html>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Xác nhận thanh toán
-</button>
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" >Bảng xác nhận</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Bảng xác nhận</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -151,9 +128,9 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 <form action="/detailreceipt?action=delivery&id=${id}" method="post">
-                <button type="submit" class="btn btn-primary">
-                    <a style="color: white" >Giao hàng</a>
-                </button>
+                    <button type="submit" class="btn btn-primary">
+                        <a style="color: white">Giao hàng</a>
+                    </button>
                 </form>
             </div>
         </div>

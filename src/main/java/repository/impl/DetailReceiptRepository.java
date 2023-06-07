@@ -35,6 +35,16 @@ private final String GET_PRICE_ALL="select hd.ma_hoa_don,sum(b.gia*hdct.so_luong
 
 private final String UPDATE_CONDITION="update hoa_don set trang_thai = 1 where ma_hoa_don = ?";
 
+private final String GET_PRICE_CAKE=" select hd.ma_hoa_don,kh.ten_khach_hang,b.ten_banh,hdct.so_luong,b.ma_banh,b.gia,hdct.ma_hoa_don,hdct.so_luong*b.gia as tien" +
+        " from hoa_don hd\n" +
+        "join hoa_don_chi_tiet hdct\n" +
+        "on hd.ma_hoa_don=hdct.ma_hoa_don\n" +
+        "join banh b\n" +
+        "on b.ma_banh=hdct.ma_banh\n" +
+        "join loai_banh lb\n" +
+        "on lb.ma_loai_banh=b.ma_loai_banh\n" +
+        "join khach_hang kh\n" +
+        "on kh.ma_khach_hang=hd.ma_khach_hang group by hd.ma_hoa_don,kh.ten_khach_hang,b.ten_banh,hdct.so_luong,b.ma_banh,b.gia,hdct.ma_hoa_don;";
 
     @Override
     public void UpdateCondition(int id) {
@@ -47,6 +57,8 @@ private final String UPDATE_CONDITION="update hoa_don set trang_thai = 1 where m
             e.printStackTrace();
         }
     }
+
+
     @Override
     public List<DetailReceipt> getDetail(int id) {
  List<DetailReceipt> detailReceipts=new ArrayList<>();
@@ -71,6 +83,23 @@ private final String UPDATE_CONDITION="update hoa_don set trang_thai = 1 where m
     }
 
 
+    @Override
+    public Map<Integer, Integer> getMoney() {
+        Map<Integer,Integer> integerMap=new LinkedHashMap<>();
+        Connection connection=BaseRepository.getConnection();
+        try {
+            Statement statement=connection.createStatement();
+            ResultSet resultSet=statement.executeQuery(GET_PRICE_CAKE);
+            while (resultSet.next()){
+                int maHoaDon= resultSet.getInt("b.ma_banh");
+                int tien=resultSet.getInt("tien");
+                integerMap.put(maHoaDon,tien);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return integerMap;
+    }
 
     @Override
     public List<DetailReceipt> getAll() {

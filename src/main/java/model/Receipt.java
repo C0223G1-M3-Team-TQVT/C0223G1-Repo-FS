@@ -13,6 +13,9 @@ public class Receipt {
     private String address;
     private String describe;
 
+    public Receipt(LocalDateTime date) {
+        this.date = date;
+    }
 
     public String getDescribe() {
         return describe;

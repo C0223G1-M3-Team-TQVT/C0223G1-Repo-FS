@@ -14,6 +14,10 @@ public class Cake {
         this.price = price;
     }
 
+    public Cake(int amount) {
+        this.amount = amount;
+    }
+
     public Cake(String name, int typeOfCake, double price, int amount, String picture) {
         this.name = name;
         this.typeOfCake = typeOfCake;

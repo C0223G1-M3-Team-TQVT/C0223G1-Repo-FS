@@ -192,16 +192,16 @@
             <img src="" class="starbucks">
         </div>
     </div>
-<%--    <ul class="thumb">--%>
-<%--        <li>--%>
-<%--            <img src="img/66-red-apple-png-image.png" alt=""--%>
-<%--                 onclick="imgSilder('img/66-red-apple-png-image.png');changeCircleColor('#850606')">--%>
-<%--            <img src="img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png" alt=""--%>
-<%--                 onclick="imgSilder('img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png');changeCircleColor('#231a1a')">--%>
-<%--            <img src="img/146915-cake-creamy-piece-free-hq-image.png" alt=""--%>
-<%--                 onclick="imgSilder('img/146915-cake-creamy-piece-free-hq-image.png');changeCircleColor('#e8b84b')">--%>
-<%--        </li>--%>
-<%--    </ul>--%>
+    <%--    <ul class="thumb">--%>
+    <%--        <li>--%>
+    <%--            <img src="img/66-red-apple-png-image.png" alt=""--%>
+    <%--                 onclick="imgSilder('img/66-red-apple-png-image.png');changeCircleColor('#850606')">--%>
+    <%--            <img src="img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png" alt=""--%>
+    <%--                 onclick="imgSilder('img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png');changeCircleColor('#231a1a')">--%>
+    <%--            <img src="img/146915-cake-creamy-piece-free-hq-image.png" alt=""--%>
+    <%--                 onclick="imgSilder('img/146915-cake-creamy-piece-free-hq-image.png');changeCircleColor('#e8b84b')">--%>
+    <%--        </li>--%>
+    <%--    </ul>--%>
 </section>
 
 <div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">

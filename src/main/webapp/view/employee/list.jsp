@@ -24,32 +24,32 @@
         <th>Sua</th>
         <th>Xoa</th>
     </tr>
-    <c:forEach items="${employeeList}" var="employee">
+    <c:forEach items="${employeeList}" var="cake">
         <tr>
             <td>
-                <c:out value="${employee.id}"/>
+                <c:out value="${cake.id}"/>
             </td>
             <td>
-                <c:out value="${employee.name}"/>
+                <c:out value="${cake.name}"/>
             </td>
             <td>
-                <c:out value="${employee.citizenId}"/>
+                <c:out value="${cake.citizenId}"/>
             </td>
             <td>
-                <c:out value="${employee.phoneNumber}"/>
+                <c:out value="${cake.phoneNumber}"/>
             </td>
             <td>
-                <c:out value="${employee.address}"/>
+                <c:out value="${cake.address}"/>
             </td>
             <td>
-                <c:out value="${employee.position.name}"/>
+                <c:out value="${cake.position.name}"/>
             </td>
             <td>
-                <a href="/employee?action=update&id=${employee.id}" />
+                <a href="/employee?action=update&id=${cake.id}"/>
                 <button type="submit">Sua</button>
             </td>
             <td>
-                <a href="/employee?action=delete&id=${employee.id}"/>
+                <a href="/employee?action=delete&id=${cake.id}"/>
                 <button type="submit">Xoa</button>
             </td>
         </tr>

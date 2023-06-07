@@ -94,8 +94,8 @@
 
                             <c:out value="${receipts.date.getDayOfMonth()}"/>/<c:out value="${receipts.date.getMonthValue()}"/>/<c:out value="${receipts.date.getYear()}"/> <c:out value="${receipts.date.toLocalTime()}"/>
                         </td>
-                        <td><c:if test="${receipts.condition=='false'}"><c:out value="Chưa giao"/></c:if>
-                            <c:if test="${receipts.condition=='true'}"><c:out value="Đã giao"/></c:if>
+                        <td><c:if test="${receipts.status=='false'}"><c:out value="Chưa giao"/></c:if>
+                            <c:if test="${receipts.status=='true'}"><c:out value="Đã giao"/></c:if>
                         </td>
                         <td>
                             <c:set var="accountBalance" value="${integerMap.get(receipts.id)}" />

@@ -1,29 +1,15 @@
 package model;
 
 import java.time.LocalDateTime;
-import java.util.Date;
-
 
 public class Receipt {
     private int id;
     private Customer customer;
     private Employee employee;
     private LocalDateTime date;
-    private boolean condition;
     private String address;
+    private boolean status;
     private String describe;
-
-    public Receipt(LocalDateTime date) {
-        this.date = date;
-    }
-
-    public String getDescribe() {
-        return describe;
-    }
-
-    public void setDescribe(String describe) {
-        this.describe = describe;
-    }
 
     public Receipt(Customer customer, Employee employee, String address, String describe) {
         this.customer = customer;
@@ -32,22 +18,40 @@ public class Receipt {
         this.describe = describe;
     }
 
-    public Receipt(int id, Customer customer, Employee employee, LocalDateTime date, String address, boolean condition, String describe) {
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime date, String address, boolean done, String describe) {
         this.id = id;
         this.customer = customer;
         this.employee = employee;
         this.date = date;
         this.address = address;
-        this.condition = condition;
+        this.status = done;
         this.describe = describe;
+    }
+
+    public Receipt(Customer customer, Employee employee, LocalDateTime date, String address, boolean status, String describe) {
+        this.customer = customer;
+        this.employee = employee;
+        this.date = date;
+        this.address = address;
+        this.status = status;
+        this.describe = describe;
+    }
+
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime date, String address) {
+        this.id = id;
+        this.customer = customer;
+        this.employee = employee;
+        this.date = date;
+        this.address = address;
+    }
+
+    public Receipt(int id, Customer customer) {
+        this.id = id;
+        this.customer = customer;
     }
 
     public Receipt(int id) {
         this.id = id;
-    }
-    public Receipt(int id, Customer customer) {
-        this.id = id;
-        this.customer = customer;
     }
 
     public Receipt(Customer customer, Employee employee, LocalDateTime date, String address) {
@@ -71,16 +75,7 @@ public class Receipt {
     public Receipt() {
     }
 
-    public Receipt(int id, Customer customer, Employee employee, LocalDateTime ngayDatHang, String diaChi, boolean condition) {
-        this.id=id;
-        this.customer = customer;
-        this.employee = employee;
-        this.date = ngayDatHang;
-        this.address = diaChi;
-        this.condition=condition;
-    }
-
-    public Receipt(int id, Customer customer, Employee employee, LocalDateTime ngayDatHang, String diaChi) {
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime ngayDatHang, String diaChi, boolean trangThai) {
     }
 
     public int getId() {
@@ -123,12 +118,19 @@ public class Receipt {
         this.address = address;
     }
 
-    public boolean isCondition() {
-        return condition;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setCondition(boolean condition) {
-        this.condition = condition;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
 }

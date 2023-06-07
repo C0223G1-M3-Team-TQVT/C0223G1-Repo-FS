@@ -13,7 +13,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<form method="post" action="/receipt-servlet">
+
+<jsp:include page="/header.jsp"></jsp:include>
+
+<form method="post" action="/receipt-servlet?action=order">
     <c:forEach items="${list}" var="cake">
 
         <div class="card" style="width: 14rem; float: left; margin: 80px; border: none">

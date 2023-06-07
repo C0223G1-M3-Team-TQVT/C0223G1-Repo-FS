@@ -75,6 +75,9 @@ public class Receipt {
     public Receipt() {
     }
 
+    public Receipt(int id, Customer customer, Employee employee, LocalDateTime ngayDatHang, String diaChi, boolean trangThai) {
+    }
+
     public int getId() {
         return id;
     }

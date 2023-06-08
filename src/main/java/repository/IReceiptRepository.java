@@ -15,5 +15,5 @@ public interface IReceiptRepository {
 
     void addReceipt(List<DetailReceipt> list, Receipt receipt);
 
-    void deleteRecript(int id);
+    boolean deleteRecript(int id);
 }

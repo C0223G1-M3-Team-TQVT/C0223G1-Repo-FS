@@ -32,6 +32,20 @@ public class DetailReceiptServlet extends HttpServlet {
             case "delivery":
                 delivery(request, response);
                 break;
+            case "delete":
+                int id = Integer.parseInt(request.getParameter("deleteReceipt"));
+                boolean check = receiptService.deleteRecript(id);
+                if (check) {
+                    request.setAttribute("message", "Xóa thành công");
+//                    request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
+
+
+                } else {
+                    request.setAttribute("message", "Xóa thất bại");
+//                    request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
+                }
+                showList(request, response);
+                break;
             default:
                 showList(request, response);
                 break;
@@ -78,11 +92,7 @@ public class DetailReceiptServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "delete":
-                int id = Integer.parseInt(request.getParameter("deleteReceipt"));
-                receiptService.deleteRecript(id);
-                response.sendRedirect("/detailreceipt");
-                break;
+
             case "delivery":
                 deliveryPost(request, response);
                 break;

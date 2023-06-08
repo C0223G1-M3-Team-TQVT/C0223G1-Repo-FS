@@ -23,15 +23,16 @@ public class ReceiptRepository implements IReceiptRepository {
     private final String DELETE_DETAIL = "delete from hoa_don where ma_hoa_don = ?";
 
     @Override
-    public void deleteRecript(int id) {
+    public boolean deleteRecript(int id) {
         Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_DETAIL);
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            return false;
         }
+        return true;
     }
 
     @Override
@@ -162,7 +163,6 @@ public class ReceiptRepository implements IReceiptRepository {
         return receiptList;
     }
 
-    @Override
     public void addReceipt(List<DetailReceipt> list, Receipt receipt) {
         Connection connection = BaseRepository.getConnection();
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -198,6 +198,7 @@ public class ReceiptRepository implements IReceiptRepository {
 
     public int getIdReceipt(String date) {
         String string = date.substring(0, 10) + " " + date.substring(11, 19);
+        System.out.println(string);
         Connection connection = BaseRepository.getConnection();
         int id = 0;
         try {

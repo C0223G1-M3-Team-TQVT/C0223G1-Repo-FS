@@ -16,4 +16,5 @@ public interface IEmployeeRepository {
 
     void updateEmployee(Employee employee);
 
+    List<Employee> findByName(String name);
 }

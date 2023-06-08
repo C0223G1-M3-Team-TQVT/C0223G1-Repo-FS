@@ -36,22 +36,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<%--                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">--%>
-<%--                        <li class="nav-item dropdown">--%>
-<%--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--%>
-<%--                               data-bs-toggle="dropdown" aria-expanded="false">--%>
-<%--                                Sắp xếp theo--%>
-<%--                            </a>--%>
-<%--                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--%>
-<%--                                <li><a class="dropdown-item" href="#">Giá(tăng dần)</a></li>--%>
-<%--                                <li><a class="dropdown-item" href="#">Giá(giảm dần)</a></li>--%>
-<%--                                <li>--%>
-<%--                                    <hr class="dropdown-divider">--%>
-<%--                                </li>--%>
-<%--                                <li><a class="dropdown-item" href="#">Số lượng</a></li>--%>
-<%--                            </ul>--%>
-<%--                        </li>--%>
-<%--                    </ul>--%>
                     <form class="d-flex" method="get" action="/cake">
                         <input name="action" value="find" hidden>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"

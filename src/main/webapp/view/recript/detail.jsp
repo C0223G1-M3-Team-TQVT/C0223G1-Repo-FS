@@ -22,24 +22,11 @@ To change this template use File | Settings | File Templates.
     <div class="row header bg-info">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <div class="col-12 col-md-4">
-                    <a> <i class="fa-regular fa-user"></i> Quản lý</a>
-                </div>
-                <div class="col-12 col-md-4">
-                    <a class="navbar-brand" href="#">
-                        <img src="../../Screenshot 2023-05-29 093831.png" height="5px" width="100p  x" alt="Logo"
-                             width="30" height="30" class="d-inline-block align-text-top">
-                    </a>
-                </div>
-                <div class="col-12 col-md-4" style="text-align: right">
-                    <div class="btn-group" role="group">
-                        <a href="/index.jsp" style="color: #171515"> Trở lại trang chủ</a>
-                    </div>
-                </div>
+                <jsp:include page="/header.jsp"></jsp:include>
             </div>
         </nav>
     </div>
-    <div class="row content">
+    <div class="row content" style="padding-top: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
@@ -69,8 +56,8 @@ To change this template use File | Settings | File Templates.
                 <td><c:out value="${detailReceipts.cake.name}"/></td>
                 <td><c:out value="${detailReceipts.amount}"/></td>
                 <td>
-                    <c:set var="accountBalance" value="${integerMap.get(detailReceipts.cake.id)*1000 }"/>
-                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
+                    <c:set var="accountBalance" value="${integerMap.get(detailReceipts.cake.id)*1000}"/>
+                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/> <c:out value="VNĐ"/>
                 </td>
             </tr>
             </c:if>
@@ -80,8 +67,8 @@ To change this template use File | Settings | File Templates.
 </div>
 <center>
     <div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Xác nhận thanh toán
+        <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" style="background: #bb8496;color: white">
+            Giao Hàng
         </button>
     </div>
 </center>

@@ -14,7 +14,6 @@
 <html>
 <head>
     <title>Title</title>
-
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -89,17 +88,17 @@
                         </td>
                         <td>
                                 <c:set var="accountBalance" value="${integerMap.get(receipts.id)*1000}"/>
-                                <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
+                                <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/> <c:out value="VNĐ"/>
                         <td>
-                            <button class="btn btn-primary" type="submit">
+                            <button class="btn " type="submit" style="background: #bb8496;color: white">
                                 <a style="color: #ffffff" href="/detailreceipt?action=detail&id=${receipts.id}">Chi
                                     tiết</a>
                             </button>
                         </td>
                         <td>
                             <button onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})"
-                                    type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal1">
+                                    type="button" class="btn " data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1" style="background: #bb8496;color: white">
                                 Delete
                             </button>
                         </td>
@@ -114,17 +113,17 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">Thông tin khách hàng</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Bạn có muốn xóa khách hàng<h3 id="name"></h3>có số điện thoại là <h3 id="sdt"></h3>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn " data-bs-dismiss="modal" >Đóng</button>
                 <form action="/detailreceipt?action=delete" method="post">
                     <input type="text" name="deleteReceipt" id="deleteReceipt" hidden>
-                    <button type="submit" class="btn btn-primary"><p style="color: white">Xóa</p></button>
+                    <button type="submit" class="btn "><p style="color: white;background: #bb8496;">Xóa</p></button>
                 </form>
             </div>
         </div>

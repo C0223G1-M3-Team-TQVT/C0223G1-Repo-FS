@@ -9,11 +9,6 @@ public class Employee {
     private Position position;
     private User user;
 
-    public Employee(String name, int id) {
-        this.id = id;
-        this.name = name;
-    }
-
     public Employee(int id, String name, String citizenId, String phoneNumber, String address, Position position, User user) {
         this.id = id;
         this.name = name;
@@ -33,9 +28,39 @@ public class Employee {
         this.position = position;
     }
 
-    public Employee(int id) {
-        this.id = id;
+    public Employee(String name, String citizenId, String phoneNumber, String address, Position position) {
+        this.name = name;
+        this.citizenId = citizenId;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.position = position;
     }
+
+    public Employee(String name, String citizenId, String phoneNumber, String address) {
+        this.name = name;
+        this.citizenId = citizenId;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+    public Employee(int id, String name, String citizenId, String phoneNumber, String address) {
+        this.id = id;
+        this.name = name;
+        this.citizenId = citizenId;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+    public Employee(){
+
+    }
+
+    public Employee(int i) {
+    }
+
+    public Employee(String tenNhanVien, int maNhanVien) {
+    }
+
 
     public int getId() {
         return id;
@@ -81,7 +106,7 @@ public class Employee {
         return position;
     }
 
-    public void setPosition(Position position) {
+    public void setPositionId(int positionId) {
         this.position = position;
     }
 

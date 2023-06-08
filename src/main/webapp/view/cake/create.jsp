@@ -176,7 +176,8 @@
                 transform: translateY(5px);
             }
         }
-        #out{
+
+        #out {
             color: #E3FDF5;
         }
     </style>
@@ -198,11 +199,12 @@
             <div class="field-set">
                 <div class="mb-2 form-group">
                     <label for="name" class="form-label">Tên bánh</label>
-                    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp"  required>
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-4 form-group">
                     <label for="typeOfCake" class="form-label">Mã loại bánh</label>
-                    <select class="form-select" aria-label="Default select example" id="typeOfCake" name="typeOfCake" pattern="^([A-Z]([a-z])+)(\s[A-Z]([a-z])+)+$" title="Vui lòng nhập tên có thực" required>
+                    <select class="form-select" aria-label="Default select example" id="typeOfCake" name="typeOfCake"
+                            pattern="^([A-Z]([a-z])+)(\s[A-Z]([a-z])+)+$" title="Vui lòng nhập tên có thực" required>
                         <option selected></option>
                         <c:forEach items="${typeOfCakeList}" var="typeOfCake">
                             <option value="${typeOfCake.id}">${typeOfCake.name}</option>
@@ -211,17 +213,17 @@
                 </div>
                 <div class="mb-2 form-group">
                     <label for="price" class="form-label">Giá bánh</label>
-                    <input type="number" class="form-control" id="price" name="price"  required>
+                    <input type="number" class="form-control" id="price" name="price" required>
                 </div>
                 <div class="mb-2 form-group">
                     <label for="amount" class="form-label">Số lượng bánh hiện tại</label>
-                    <input type="number" class="form-control" id="amount" name="amount"  required>
+                    <input type="number" class="form-control" id="amount" name="amount" required>
                 </div>
                 <div class="mb-2 form-group">
                     <label for="picture" class="form-label">Ảnh minh họa</label>
                     <input type="text" class="form-control" id="picture" name="picture">
                 </div>
-                <button class="log-in"  type="submit">Thêm mới</button>
+                <button class="log-in" type="submit">Thêm mới</button>
             </div>
         </div>
     </form>

@@ -9,7 +9,7 @@ public class Employee {
     private Position position;
     private User user;
 
-    public Employee( String name,int id) {
+    public Employee(String name, int id) {
         this.id = id;
         this.name = name;
     }
@@ -20,7 +20,7 @@ public class Employee {
         this.citizenId = citizenId;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.position=position;
+        this.position = position;
         this.user = user;
     }
 

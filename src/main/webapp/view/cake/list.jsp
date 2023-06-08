@@ -66,7 +66,8 @@
                     </ul>
                     <form class="d-flex" method="get" action="/cake">
                         <input name="action" value="find" hidden>
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                               name="name">
                         <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"
                                                                                  style="color: #2bac1b;"></i> Tìm
                         </button>
@@ -76,7 +77,7 @@
         </nav>
     </div>
     <tr>
-        <th colspan="8"> <h4 style="text-align: center">QUẢN LÝ SẢN PHẨM </h4></th>
+        <th colspan="8"><h4 style="text-align: center">QUẢN LÝ SẢN PHẨM </h4></th>
         <span>${result}</span>
     </tr>
     <div class="row  addProduct">
@@ -112,8 +113,8 @@
                     </td>
                     <td>
                         <p>
-                                <img src="${cake.picture}" width="100px" height="100px">
-                                <c:out value="${cake.name}"/>
+                            <img src="${cake.picture}" width="100px" height="100px">
+                            <c:out value="${cake.name}"/>
                         </p>
                     </td>
                     <td>
@@ -187,7 +188,7 @@
         $('#tableStudent').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
-            "pageLength": 2
+            "pageLength": 5
         })
     })
 </script>

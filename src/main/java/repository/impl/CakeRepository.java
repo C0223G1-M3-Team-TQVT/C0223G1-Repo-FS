@@ -40,13 +40,13 @@ public class CakeRepository implements ICakeRepository {
 
     @Override
     public List<Cake> findByName(String name) {
-        Connection connection =BaseRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         List<Cake> cakeList = new ArrayList<>();
-        String findByName = "select * from banh where ten_banh like '%"+ name + "%';";
+        String findByName = "select * from banh where ten_banh like '%" + name + "%';";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(findByName);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int id = resultSet.getInt("ma_banh");
                 String name2 = resultSet.getString("ten_banh");
                 int typeOfCake = resultSet.getInt("ma_loai_banh");
@@ -67,14 +67,14 @@ public class CakeRepository implements ICakeRepository {
         Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(CREATE);
-            preparedStatement.setString(1,cake.getName());
-            preparedStatement.setInt(2,cake.getTypeOfCake());
-            preparedStatement.setDouble(3,cake.getPrice());
-            preparedStatement.setInt(4,cake.getAmount());
-            if (cake.getPicture()==""){
-                preparedStatement.setString(5,"https://antimatter.vn/wp-content/uploads/2022/11/anh-avatar-trang-fb-mac-dinh.jpg");
+            preparedStatement.setString(1, cake.getName());
+            preparedStatement.setInt(2, cake.getTypeOfCake());
+            preparedStatement.setDouble(3, cake.getPrice());
+            preparedStatement.setInt(4, cake.getAmount());
+            if (cake.getPicture() == "") {
+                preparedStatement.setString(5, "https://antimatter.vn/wp-content/uploads/2022/11/anh-avatar-trang-fb-mac-dinh.jpg");
             } else {
-                preparedStatement.setString(5,cake.getPicture());
+                preparedStatement.setString(5, cake.getPicture());
             }
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -94,12 +94,12 @@ public class CakeRepository implements ICakeRepository {
         Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(EDIT);
-            preparedStatement.setString(1,cake.getName());
-            preparedStatement.setInt(2,cake.getTypeOfCake());
-            preparedStatement.setDouble(3,cake.getPrice());
-            preparedStatement.setInt(4,cake.getAmount());
-            preparedStatement.setString(5,cake.getPicture());
-            preparedStatement.setInt(6,id);
+            preparedStatement.setString(1, cake.getName());
+            preparedStatement.setInt(2, cake.getTypeOfCake());
+            preparedStatement.setDouble(3, cake.getPrice());
+            preparedStatement.setInt(4, cake.getAmount());
+            preparedStatement.setString(5, cake.getPicture());
+            preparedStatement.setInt(6, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             return false;

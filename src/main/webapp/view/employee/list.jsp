@@ -12,6 +12,7 @@
     <title>Title</title>
 </head>
 <body>
+<jsp:include page="/header.jsp"></jsp:include>
 <table border="1" cellspacing="0">
     <%--    int id, String name, String citizenId, String phoneNumber, String address, Position position--%>
     <tr>

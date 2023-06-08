@@ -175,6 +175,7 @@
 </div>
 
 <body>
+<jsp:include page="/header.jsp"></jsp:include>
 <%--<c:if test='${message != null}'>--%>
 <%--    <center>--%>
 <%--    <ul class="notifications"></ul>--%>

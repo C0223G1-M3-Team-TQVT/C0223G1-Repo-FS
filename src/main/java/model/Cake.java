@@ -14,8 +14,8 @@ public class Cake {
         this.price = price;
     }
 
-    public Cake(int amount) {
-        this.amount = amount;
+    public Cake(int id) {
+        this.id = id;
     }
 
     public Cake(String name, int typeOfCake, double price, int amount, String picture) {

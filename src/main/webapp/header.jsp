@@ -66,7 +66,7 @@
 <body>
 <nav id="fixNav">
     <ul>
-        <li><a href="...">Trang chủ</a></li>
+        <li><a href="/index.jsp">Trang chủ</a></li>
         <li><a href="/cake">Sản phẩm</a></li>
         <li><a href="/receipt-servlet?action=order">Đặt hàng</a></li>
         <li><a href="/employee?action=list">Nhân viên</a></li>

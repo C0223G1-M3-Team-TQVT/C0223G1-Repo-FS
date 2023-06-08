@@ -14,14 +14,48 @@
 <html>
 <head>
     <title>Title</title>
-
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 <body>
-<jsp:include page="/header.jsp"></jsp:include>
+<div>
+    <div class="row header bg-info">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <jsp:include page="/header.jsp"></jsp:include>
+            </div>
+        </nav>
+    </div>
+    <div class="row content" style="padding-top: 50px">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div>
+                    <form action="/detailreceipt?action=search" name="tinhTrang" method="post">
+                        <select name="tinhTrang" id="tinhTrang">
+                            <option value="">Tìm kiếm</option>
+                            <option value="1">Đã giao</option>
+                            <option value="0">Chưa giao</option>
+                        </select>
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #2bac1b;"></i> Tìm
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row  addProduct">
+        <div class="col-0 col-md-8 col-lg-8">
+        </div>
+        <div class="col-0 col-md-2 col-2">
+        </div>
         <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
             <table class="table table-striped table-bordered" id="tableStudent" style="width:100% ; float: right;">
@@ -54,17 +88,17 @@
                         </td>
                         <td>
                                 <c:set var="accountBalance" value="${integerMap.get(receipts.id)*1000}"/>
-                                <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
+                                <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/> <c:out value="VNĐ"/>
                         <td>
-                            <button class="btn btn-primary" type="submit">
+                            <button class="btn " type="submit" style="background: #bb8496;color: white">
                                 <a style="color: #ffffff" href="/detailreceipt?action=detail&id=${receipts.id}">Chi
                                     tiết</a>
                             </button>
                         </td>
                         <td>
                             <button onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})"
-                                    type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal1">
+                                    type="button" class="btn " data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1" style="background: #bb8496;color: white">
                                 Delete
                             </button>
                         </td>
@@ -79,17 +113,17 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">Thông tin khách hàng</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Bạn có muốn xóa khách hàng<h3 id="name"></h3>có số điện thoại là <h3 id="sdt"></h3>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn " data-bs-dismiss="modal" >Đóng</button>
                 <form action="/detailreceipt?action=delete" method="post">
                     <input type="text" name="deleteReceipt" id="deleteReceipt" hidden>
-                    <button type="submit" class="btn btn-primary"><p style="color: white">Xóa</p></button>
+                    <button type="submit" class="btn "><p style="color: white;background: #bb8496;">Xóa</p></button>
                 </form>
             </div>
         </div>

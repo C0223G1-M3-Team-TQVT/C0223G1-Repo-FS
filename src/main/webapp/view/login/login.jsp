@@ -162,8 +162,6 @@
             text-decoration: none;
         }
 
-        form
-
     </style>
 </head>
 <div class="toast">
@@ -177,15 +175,16 @@
     <i class="uil uil-multiply toast-close"></i>
     <div class="progress"></div>
 </div>
-
 <body>
-<%--<c:if test='${message != null}'>--%>
-<%--    <center>--%>
-<%--    <ul class="notifications"></ul>--%>
-<%--    <div class="buttons" style="position:relative;padding-bottom: 700px">--%>
-<%--        <button class="btn" id="success">  ${message}</button>--%>
-<%--    </div></center>--%>
-<%--</c:if>--%>
+<div >
+<c:if test='${message != null}'>
+    <center>
+    <ul class="notifications"></ul>
+    <div class="buttons" style="position:relative;padding-bottom: 700px;background:#306279; color: white">
+        <button class="btn" id="success">  ${message}</button>
+    </div></center>
+</c:if>
+</div>
 <section class="wrapper" style="box-shadow: 6px 6px 6px 6px #171515;position: absolute">
     <div class="form signup">
         <header>Đăng nhập</header>
@@ -198,9 +197,7 @@
                 <input type="checkbox" id="signupCheck"/>
                 <label for="signupCheck">Lưu mật khẩu</label>
             </div>
-
-            <button class="toast-btn">Login</button>
-            <%--            <input type="submit" value="Login" />--%>
+                        <input type="submit" value="Login" />
         </form>
     </div>
     <div class="form login">
@@ -214,50 +211,14 @@
         </form>
     </div>
     <script>
-        const buttons = document.querySelectorAll(".buttons .btn");
-        const notifications = document.querySelector(".notifications");
-
-        const removeToast = (toast) => {
-            toast.classList.add("remove");
-            setTimeout(() => toast.remove(), 5000);
-        };
-        const toastDetails = {
-            success: {
-                icon: "fa-check-circle",
-                message: "Success : this is a success toast",
-            },
-            error: {
-                icon: "fa-times-circle",
-                message: "Error : this is a error toast",
-            },
-            warning: {
-                icon: "fa-exclamation-circle",
-                message: "Warning : this is a warning toast",
-            },
-            info: {
-                icon: "fa-info-circle",
-                message: "Warning : this is a info toast",
-            },
-        };
-        const handleCreateToast = (id) => {
-            const {icon, message} = toastDetails[id];
-
-            const toast = document.createElement("li");
-            toast.className = `toast ${id}`;
-            toast.innerHTML = `
-  <div class="column">
-          <i class="fa ${icon}"></i>
-          <span>${message}</span>
-        </div>
-        <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>
-  `;
-            notifications.appendChild(toast);
-            setTimeout(() => removeToast(toast), 5000);
-        };
-        buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-                handleCreateToast(button.id);
-            });
+        const wrapper = document.querySelector(".wrapper"),
+            signupHeader = document.querySelector(".signup header"),
+            loginHeader = document.querySelector(".login header");
+        loginHeader.addEventListener("click", () => {
+            wrapper.classList.add("active");
+        });
+        signupHeader.addEventListener("click", () => {
+            wrapper.classList.remove("active");
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

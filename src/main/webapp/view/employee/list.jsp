@@ -15,13 +15,13 @@
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
 
 </head>
-<body style="background: #bb8496">
+<body style="background: white">
 <jsp:include page="/header.jsp"></jsp:include>
-<div class="container-fluid" style="background: #bb8496; padding-top: 50px" >
+<div class="container-fluid" style="background: white; padding-top: 50px" >
     <a href="/employee?action=create">
-        <button type="submit" style="color: black" class="btn btn-primary btn-outline-success">Thêm</button>
+        <button type="submit" class="btn" style="background-color: #bb8496">Thêm</button>
     </a>
-    <table id="tableEmployee" style="color: whitesmoke" class="table table-striped table-bordered col-lg-12">
+    <table id="tableEmployee" class="table table-striped table-bordered col-lg-12" style="width:100%">
         <thead>
         <tr>
             <th>STT</th>
@@ -57,11 +57,11 @@
                 </td>
                 <td>
                     <a href="/employee?action=update&id=${employee.id}">
-                        <button type="submit" style="color: black" class="btn btn-warning ">Sửa</button>
+                        <button type="submit" class="btn" style="background-color: #bb8496">Sửa</button>
                     </a>
                 </td>
                 <td>
-                    <button type="button" style="color: black" class="btn btn-danger"
+                    <button type="button" class="btn btn-outline-danger"
                             data-bs-toggle="modal" data-bs-target="#exampleModal"
                             onclick="remove(${employee.id},'${employee.name}')">
                         Xóa

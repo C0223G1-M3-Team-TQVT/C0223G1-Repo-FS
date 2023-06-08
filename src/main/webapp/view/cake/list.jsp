@@ -154,7 +154,7 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 <form method="post" action="/cake?action=delete&id=${cake.id}">
                     <input id="idDelete" name="idDelete" type="hidden">
-                    <button type="submit" class="btn btn-primary">Xoa</button>
+                    <button type="submit" class="btn btn-primary">Xóa</button>
                 </form>
             </div>
         </div>

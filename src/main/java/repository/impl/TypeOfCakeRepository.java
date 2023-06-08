@@ -23,7 +23,7 @@ public class TypeOfCakeRepository implements ITypeOfCakeRepository {
             while (resultSet.next()) {
                 int id = resultSet.getInt("ma_loai_banh");
                 String name = resultSet.getString("ten_loai_banh");
-                typeOfCakeList.add(new TypeOfCake(id,name));
+                typeOfCakeList.add(new TypeOfCake(id, name));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

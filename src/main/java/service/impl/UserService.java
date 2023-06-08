@@ -36,8 +36,8 @@ public class UserService implements IUserService {
         for (Employee e : employeeList) {
             if (e.getPhoneNumber().equals(user.getPhoneNumber())) {
                 count++;
-                for (User u: iUserRepository.getUser()) {
-                    if (u.getPhoneNumber().equals(user.getPhoneNumber())){
+                for (User u : iUserRepository.getUser()) {
+                    if (u.getPhoneNumber().equals(user.getPhoneNumber())) {
                         return false;
                     }
                 }

@@ -1,9 +1,9 @@
-    <%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 6/5/2023
-  Time: 2:17 AM
-  To change this template use File | Settings | File Templates.
+<%--
+Created by IntelliJ IDEA.
+User: Admin
+Date: 6/5/2023
+Time: 2:17 AM
+To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -18,39 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 <body>
-<div>
-    <div class="row header bg-info">
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <div class="col-12 col-md-4">
-                    <a> <i class="fa-regular fa-user"></i> Quản lý</a>
-                </div>
-                <div class="col-12 col-md-4">
-                    <a class="navbar-brand" href="#">
-                        <img src="../../Screenshot 2023-05-29 093831.png" height="5px" width="100p  x" alt="Logo"
-                             width="30" height="30" class="d-inline-block align-text-top">
-                    </a>
-                </div>
-                <div class="col-12 col-md-4" style="text-align: right">
-                    <div class="btn-group" role="group">
-                        <a href="/index.jsp" style="color: #171515"> Trở lại trang chủ</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="row content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
-            </div>
-        </nav>
-    </div>
-    <div class="row  addProduct">
-        <div class="col-0 col-md-8 col-lg-8">
-        </div>
-        <div class="col-0 col-md-2 col-2">
-        </div>
+<jsp:include page="/header.jsp"></jsp:include>
         <div><h2 style="text-align: center">CHI TIẾT HÓA ĐƠN</h2></div>
         <table class="table table-striped table-bordered" id="tableStudent" style="width:100%">
             <thead>
@@ -69,7 +37,7 @@
                 <td><c:out value="${detailReceipts.cake.name}"/></td>
                 <td><c:out value="${detailReceipts.amount}"/></td>
                 <td>
-                    <c:set var="accountBalance" value="${integerMap.get(detailReceipts.cake.id)}"/>
+                    <c:set var="accountBalance" value="${integerMap.get(detailReceipts.cake.id)*1000 }"/>
                     <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
                 </td>
             </tr>

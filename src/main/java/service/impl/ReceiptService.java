@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ReceiptService implements IReceiptService {
 
-private IReceiptRepository receiptRepository = new ReceiptRepository();
+    private IReceiptRepository receiptRepository = new ReceiptRepository();
 
     @Override
     public List<Receipt> searchReceipt(String tinhTrang) {

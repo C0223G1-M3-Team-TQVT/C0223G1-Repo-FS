@@ -9,6 +9,7 @@ import java.util.List;
 
 public class TypeOfCakeService implements ITypeOfCakeService {
     ITypeOfCakeRepository typeOfCakeRepository = new TypeOfCakeRepository();
+
     @Override
     public List<TypeOfCake> display() {
         return typeOfCakeRepository.display();

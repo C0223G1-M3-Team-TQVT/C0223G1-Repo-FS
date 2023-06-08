@@ -83,6 +83,7 @@ public class BakeryServlet extends HttpServlet {
         }
         boolean check = iUserService.findUser(new User(taiKhoan, matKhau));
         if (check) {
+
             response.sendRedirect("index.jsp");
         } else {
             request.setAttribute("message", "Tài khoản hoặc mật khẩu sai,vui lòng nhập lại");

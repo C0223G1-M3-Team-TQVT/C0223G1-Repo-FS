@@ -5,10 +5,20 @@ public class Customer {
     private String name;
     private String phoneNumber;
 
+    public Customer(String name, int id, String phoneNumber) {
+        this.name = name;
+        this.id = id;
+        this.phoneNumber = phoneNumber;
+    }
+
     public Customer(int id, String name, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
+    }
+
+    public Customer(String name) {
+        this.name = name;
     }
 
     public Customer(String name, String phoneNumber) {

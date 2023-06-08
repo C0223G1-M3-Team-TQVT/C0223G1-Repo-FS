@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81faf305-a572-4eb8-b71a-80f79bade8a8" name="Changes" comment="quoc commit lan 4">
+    <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="tai comit lan 4">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_8_2023_10_47_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_8_2023_10_47_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/BakeryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/BakeryServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/impl/ReceiptRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/impl/ReceiptRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/login/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,34 +31,27 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="C0223G1-Repo-FS" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -53,22 +60,26 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="2QgZoi3958Hx0a8yWvFAK80TXLf" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2QtzU3qla4RuInliu3mjB7D0FMB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../C0223G1-Repo-FS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Code_Gym\Module3\case_study\C0223G1-Repo-FS\src\main\webapp" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\codegym_module3\casestudy_module3_nhanh_khac\C0223G1-Repo-FS\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager">
@@ -82,7 +93,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="e32d5f1f-c28a-4e54-9cd7-c19663aa62e4" />
+        <option name="BASE_DIRECTORY_NAME" value="b5ef9aea-0ffd-42e7-a2d4-09aee527e89a" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -90,7 +101,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="58364" />
+        <option name="DEBUG_PORT" value="57165" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -108,21 +119,6 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -163,37 +159,49 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="81faf305-a572-4eb8-b71a-80f79bade8a8" name="Changes" comment="" />
-      <created>1685777364201</created>
+      <changelist id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="" />
+      <created>1686187680056</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1685777364201</updated>
-      <workItem from="1685777367110" duration="5117000" />
-      <workItem from="1685783054001" duration="1515000" />
-      <workItem from="1685875384323" duration="18603000" />
-      <workItem from="1685928550499" duration="1538000" />
-      <workItem from="1685930113821" duration="15431000" />
-      <workItem from="1685970400423" duration="647000" />
-      <workItem from="1686014284448" duration="17990000" />
-      <workItem from="1686100647453" duration="19792000" />
-      <workItem from="1686195853243" duration="34000" />
-      <workItem from="1686195931754" duration="876000" />
+      <updated>1686187680056</updated>
+      <workItem from="1686187681986" duration="11222000" />
     </task>
-    <task id="LOCAL-00001" summary="quoc commit lan 4">
-      <created>1686196014686</created>
+    <task id="LOCAL-00001" summary="tai comit lan 1">
+      <created>1686190061272</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1686196014686</updated>
+      <updated>1686190061272</updated>
     </task>
-    <task id="LOCAL-00002" summary="quoc commit lan 4">
-      <created>1686198046468</created>
+    <task id="LOCAL-00002" summary="tai comit lan 2">
+      <created>1686190268758</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1686198046468</updated>
+      <updated>1686190268758</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tai comit lan 2">
+      <created>1686190341437</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686190341437</updated>
+    </task>
+    <task id="LOCAL-00004" summary="tai comit lan 3">
+      <created>1686194708879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686194708879</updated>
+    </task>
+    <task id="LOCAL-00005" summary="tai comit lan 4">
+      <created>1686197062687</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686197062687</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,28 +219,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="quoc commit lan 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="quoc commit lan 4" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repository/impl/EmployeeRepository.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repository/impl/EmployeeRepository.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/EmployeeServlet.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="tai comit lan 1" />
+    <MESSAGE value="tai comit lan 2" />
+    <MESSAGE value="tai comit lan 3" />
+    <MESSAGE value="tai comit lan 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="tai comit lan 4" />
   </component>
 </project>

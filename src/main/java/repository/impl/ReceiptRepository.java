@@ -38,33 +38,63 @@ public class ReceiptRepository implements IReceiptRepository {
     public List<Receipt> searchReceipt(String tinhTrang) {
         List<Receipt> receipts = new ArrayList<>();
         Connection connection = BaseRepository.getConnection();
-        try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from hoa_don hd " +
-                    " join khach_hang kh " +
-                    " on hd.ma_khach_hang=kh.ma_khach_hang " +
-                    " join nhan_vien nv " +
-                    " on nv.ma_nhan_vien=hd.ma_nhan_vien" +
-                    " where  hd.trang_thai = '" + tinhTrang + "'");
-            while (resultSet.next()) {
-                int id = resultSet.getInt("hd.ma_hoa_don");
-                int maKhach = resultSet.getInt("kh.ma_khach_hang");
-                String tenKhachHang = resultSet.getString("kh.ten_khach_hang");
-                int maNhanVien = resultSet.getInt("nv.ma_nhan_vien");
-                String tenNhanVien = resultSet.getString("nv.ten_nhan_vien");
-                String check = resultSet.getString("hd.ngay_dat_hang");
-                String sdt = resultSet.getString("kh.sdt");
-                LocalDate check1 = LocalDate.parse(check.substring(0, 10));
-                LocalTime check2 = LocalTime.parse(check.substring(11, 19));
-                LocalDateTime ngayDatHang = LocalDateTime.of(check1, check2);
-                boolean trangThai = resultSet.getBoolean("hd.trang_thai");
-                String diaChi = resultSet.getString("dia_chi_giao_hang");
-                Employee employee = new Employee(tenNhanVien, maNhanVien);
-                Customer customer = new Customer(tenKhachHang, maKhach, sdt);
-                receipts.add(new Receipt(id, customer, employee, ngayDatHang, diaChi, trangThai));
+        if (tinhTrang.equals("1") || tinhTrang.equals("0")) {
+            try {
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("select * from hoa_don hd " +
+                        " join khach_hang kh " +
+                        " on hd.ma_khach_hang=kh.ma_khach_hang " +
+                        " join nhan_vien nv " +
+                        " on nv.ma_nhan_vien=hd.ma_nhan_vien" +
+                        " where  hd.trang_thai = '" + tinhTrang + "'");
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("hd.ma_hoa_don");
+                    int maKhach = resultSet.getInt("kh.ma_khach_hang");
+                    String tenKhachHang = resultSet.getString("kh.ten_khach_hang");
+                    int maNhanVien = resultSet.getInt("nv.ma_nhan_vien");
+                    String tenNhanVien = resultSet.getString("nv.ten_nhan_vien");
+                    String check = resultSet.getString("hd.ngay_dat_hang");
+                    String sdt = resultSet.getString("kh.sdt");
+                    LocalDate check1 = LocalDate.parse(check.substring(0, 10));
+                    LocalTime check2 = LocalTime.parse(check.substring(11, 19));
+                    LocalDateTime ngayDatHang = LocalDateTime.of(check1, check2);
+                    boolean trangThai = resultSet.getBoolean("hd.trang_thai");
+                    String diaChi = resultSet.getString("dia_chi_giao_hang");
+                    Employee employee = new Employee(tenNhanVien, maNhanVien);
+                    Customer customer = new Customer(tenKhachHang, maKhach, sdt);
+                    receipts.add(new Receipt(id, customer, employee, ngayDatHang, diaChi, trangThai));
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        }else {
+            try {
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("select * from hoa_don hd " +
+                        " join khach_hang kh " +
+                        " on hd.ma_khach_hang=kh.ma_khach_hang " +
+                        " join nhan_vien nv " +
+                        " on nv.ma_nhan_vien=hd.ma_nhan_vien");
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("hd.ma_hoa_don");
+                    int maKhach = resultSet.getInt("kh.ma_khach_hang");
+                    String tenKhachHang = resultSet.getString("kh.ten_khach_hang");
+                    int maNhanVien = resultSet.getInt("nv.ma_nhan_vien");
+                    String tenNhanVien = resultSet.getString("nv.ten_nhan_vien");
+                    String check = resultSet.getString("hd.ngay_dat_hang");
+                    String sdt = resultSet.getString("kh.sdt");
+                    LocalDate check1 = LocalDate.parse(check.substring(0, 10));
+                    LocalTime check2 = LocalTime.parse(check.substring(11, 19));
+                    LocalDateTime ngayDatHang = LocalDateTime.of(check1, check2);
+                    boolean trangThai = resultSet.getBoolean("hd.trang_thai");
+                    String diaChi = resultSet.getString("dia_chi_giao_hang");
+                    Employee employee = new Employee(tenNhanVien, maNhanVien);
+                    Customer customer = new Customer(tenKhachHang, maKhach, sdt);
+                    receipts.add(new Receipt(id, customer, employee, ngayDatHang, diaChi, trangThai));
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
         return receipts;
     }

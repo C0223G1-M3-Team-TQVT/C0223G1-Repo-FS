@@ -18,7 +18,26 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 <body>
-<jsp:include page="/header.jsp"></jsp:include>
+<div>
+    <div class="row header bg-info">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <jsp:include page="/header.jsp"></jsp:include>
+            </div>
+        </nav>
+    </div>
+    <div class="row content" style="padding-top: 50px">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
+            </div>
+        </nav>
+    </div>
+    <div class="row  addProduct">
+        <div class="col-0 col-md-8 col-lg-8">
+        </div>
+        <div class="col-0 col-md-2 col-2">
+        </div>
         <div><h2 style="text-align: center">CHI TIẾT HÓA ĐƠN</h2></div>
         <table class="table table-striped table-bordered" id="tableStudent" style="width:100%">
             <thead>
@@ -37,8 +56,8 @@ To change this template use File | Settings | File Templates.
                 <td><c:out value="${detailReceipts.cake.name}"/></td>
                 <td><c:out value="${detailReceipts.amount}"/></td>
                 <td>
-                    <c:set var="accountBalance" value="${integerMap.get(detailReceipts.cake.id)*1000 }"/>
-                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
+                    <c:set var="accountBalance" value="${integerMap.get(detailReceipts.cake.id)*1000}"/>
+                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/> <c:out value="VNĐ"/>
                 </td>
             </tr>
             </c:if>
@@ -48,8 +67,8 @@ To change this template use File | Settings | File Templates.
 </div>
 <center>
     <div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Xác nhận thanh toán
+        <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" style="background: #bb8496;color: white">
+            Giao Hàng
         </button>
     </div>
 </center>

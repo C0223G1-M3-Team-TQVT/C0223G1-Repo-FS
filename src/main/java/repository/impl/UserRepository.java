@@ -26,7 +26,7 @@ public class UserRepository implements IUserRepository {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 connection.close();
             } catch (SQLException e) {

@@ -22,54 +22,6 @@
 </head>
 <body>
 <jsp:include page="/header.jsp"></jsp:include>
-<div >
-    <div class="row header bg-info">
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <div class="col-12 col-md-4">
-                    <a> <i class="fa-regular fa-user"></i>Quản lý</a>
-                </div>
-                <div class="col-12 col-md-4">
-                    <a class="navbar-brand" href="#">
-                        <img src="../../Screenshot 2023-05-29 093831.png" height="5px" width="100p  x" alt="Logo"
-                             width="30" height="30" class="d-inline-block align-text-top">
-                    </a>
-                </div>
-                <div class="col-12 col-md-4" style="text-align: right">
-                    <div class="btn-group" role="group">
-                        <a href="/index.jsp" style="color: #171515"> Trở lại trang chủ</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="row content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div>
-                    <form action="/detailreceipt?action=search" name="tinhTrang"  method="post">
-                      <select name="tinhTrang" id="tinhTrang">
-                          <option value="">Tìm kiếm</option>
-                          <option value="1">Đã giao</option>
-                          <option value="0">Chưa giao</option>
-                      </select>
-                    <button  type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #2bac1b;"></i> Tìm</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="row  addProduct">
-        <div class="col-0 col-md-8 col-lg-8">
-        </div>
-        <div class="col-0 col-md-2 col-2">
-        </div>
         <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
             <table class="table table-striped table-bordered" id="tableStudent" style="width:100% ; float: right;">
@@ -88,19 +40,21 @@
                 <tbody>
                 <c:forEach items="${receipts}" var="receipts" varStatus="loop">
                     <tr>
-                        <td><c:out value="${loop.count}"/> </td>
+                        <td><c:out value="${loop.count}"/></td>
                         <td><c:out value="${receipts.customer.name}"/></td>
                         <td><c:out value="${receipts.customer.phoneNumber}"/></td>
                         <td>
 
-                            <c:out value="${receipts.date.getDayOfMonth()}"/>/<c:out value="${receipts.date.getMonthValue()}"/>/<c:out value="${receipts.date.getYear()}"/> <c:out value="${receipts.date.toLocalTime()}"/>
+                            <c:out value="${receipts.date.getDayOfMonth()}"/>/<c:out
+                                value="${receipts.date.getMonthValue()}"/>/<c:out value="${receipts.date.getYear()}"/>
+                            <c:out value="${receipts.date.toLocalTime()}"/>
                         </td>
                         <td><c:if test="${receipts.status=='false'}"><c:out value="Chưa giao"/></c:if>
                             <c:if test="${receipts.status=='true'}"><c:out value="Đã giao"/></c:if>
                         </td>
                         <td>
-                            <c:set var="accountBalance" value="${integerMap.get(receipts.id)}" />
-                            <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}" />
+                                <c:set var="accountBalance" value="${integerMap.get(receipts.id)*1000}"/>
+                                <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
                         <td>
                             <button class="btn btn-primary" type="submit">
                                 <a style="color: #ffffff" href="/detailreceipt?action=detail&id=${receipts.id}">Chi
@@ -108,8 +62,10 @@
                             </button>
                         </td>
                         <td>
-                            <button onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                               Delete
+                            <button onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})"
+                                    type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1">
+                                Delete
                             </button>
                         </td>
                     </tr>
@@ -127,13 +83,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Bạn có muốn xóa khách hàng<h3 id="name" > </h3>có số điện thoại là <h3 id="sdt"></h3>
+                Bạn có muốn xóa khách hàng<h3 id="name"></h3>có số điện thoại là <h3 id="sdt"></h3>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 <form action="/detailreceipt?action=delete" method="post">
                     <input type="text" name="deleteReceipt" id="deleteReceipt" hidden>
-                    <button type="submit" class="btn btn-primary"><p style="color: white" >Xóa</p></button>
+                    <button type="submit" class="btn btn-primary"><p style="color: white">Xóa</p></button>
                 </form>
             </div>
         </div>
@@ -160,11 +116,12 @@
     })
 </script>
 <script>
-    function deleteReceipt(id,name,sdt){
-        document.getElementById("deleteReceipt").value=id;
-        document.getElementById("name").innerText=name;
-        document.getElementById("sdt").innerText=sdt;
+    function deleteReceipt(id, name, sdt) {
+        document.getElementById("deleteReceipt").value = id;
+        document.getElementById("name").innerText = name;
+        document.getElementById("sdt").innerText = sdt;
     }
+
     function remove(id, name) {
         document.getElementById("idDelete").value = id;
         document.getElementById("nameDelete").innerText = name;

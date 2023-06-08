@@ -11,6 +11,7 @@
 <head>
     <title>Title</title>
 </head>
+<jsp:include page="/header.jsp"></jsp:include>
 <body>
 <jsp:include page="/header.jsp"></jsp:include>
 <table border="1" cellspacing="0">

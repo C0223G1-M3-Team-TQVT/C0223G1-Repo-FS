@@ -32,8 +32,8 @@ public class BakeryServlet extends HttpServlet {
     }
 
     private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> userList=iUserService.getUser();
-        request.setAttribute("user",userList);
+        List<User> userList = iUserService.getUser();
+        request.setAttribute("user", userList);
 
     }
 

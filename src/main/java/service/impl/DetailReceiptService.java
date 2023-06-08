@@ -1,13 +1,15 @@
 package service.impl;
+
 import model.DetailReceipt;
 import repository.IDetailReceiptRepository;
 import repository.impl.DetailReceiptRepository;
 import service.IDetailReceiptService;
+
 import java.util.List;
 import java.util.Map;
 
 public class DetailReceiptService implements IDetailReceiptService {
-    private IDetailReceiptRepository iDetailReceiptRepository=new DetailReceiptRepository();
+    private IDetailReceiptRepository iDetailReceiptRepository = new DetailReceiptRepository();
 
 
     @Override
@@ -32,7 +34,7 @@ public class DetailReceiptService implements IDetailReceiptService {
 
     @Override
     public void UpdateCondition(int id) {
-       iDetailReceiptRepository.UpdateCondition(id);
+        iDetailReceiptRepository.UpdateCondition(id);
     }
 
 }

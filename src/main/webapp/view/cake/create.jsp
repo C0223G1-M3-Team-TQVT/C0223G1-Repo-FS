@@ -205,7 +205,7 @@
                 <div class="mb-4 form-group">
                     <label for="typeOfCake" class="form-label">Mã loại bánh</label>
                     <select class="form-select" aria-label="Default select example" id="typeOfCake" name="typeOfCake"
-                            pattern="^([A-Z]([a-z])+)(\s[A-Z]([a-z])+)+$" title="Vui lòng nhập tên có thực" required>
+                            required>
                         <option selected></option>
                         <c:forEach items="${typeOfCakeList}" var="typeOfCake">
                             <option value="${typeOfCake.id}">${typeOfCake.name}</option>
@@ -241,5 +241,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
+<%--pattern="^([A-Z]([a-z])+)(\s[A-Z]([a-z])+)+$" title="Vui lòng nhập tên có thực"--%>
 </body>
 </html>

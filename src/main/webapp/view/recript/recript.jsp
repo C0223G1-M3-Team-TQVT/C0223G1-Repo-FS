@@ -21,7 +21,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 <body>
-<jsp:include page="/header.jsp"></jsp:include>
+<div>
+    <div class="row header bg-info">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <jsp:include page="/header.jsp"></jsp:include>
+            </div>
+        </nav>
+    </div>
+    <div class="row content" style="padding-top: 50px">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div>
+                    <form action="/detailreceipt?action=search" name="tinhTrang" method="post">
+                        <select name="tinhTrang" id="tinhTrang">
+                            <option value="">Tìm kiếm</option>
+                            <option value="1">Đã giao</option>
+                            <option value="0">Chưa giao</option>
+                        </select>
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #2bac1b;"></i> Tìm
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row  addProduct">
+        <div class="col-0 col-md-8 col-lg-8">
+        </div>
+        <div class="col-0 col-md-2 col-2">
+        </div>
         <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
             <table class="table table-striped table-bordered" id="tableStudent" style="width:100% ; float: right;">

@@ -137,8 +137,6 @@ public class ReceiptRepository implements IReceiptRepository {
         LocalDateTime localDateTime = LocalDateTime.now();
         String time1 = String.valueOf(localDateTime);
         String time = time1.substring(0, 10) + " " + time1.substring(11, 19);
-        System.out.println(time1);
-        System.out.println(time);
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(ADD);
             int id = checkCustomer(receipt.getCustomer());
@@ -198,6 +196,9 @@ public class ReceiptRepository implements IReceiptRepository {
             preparedStatement.setInt(1, detailReceipt.getCake().getId());
             preparedStatement.setInt(2, detailReceipt.getReceipt().getId());
             preparedStatement.setInt(3, detailReceipt.getAmount());
+            System.out.println(detailReceipt.getCake().getId());
+            System.out.println(detailReceipt.getReceipt().getId());
+            System.out.println(detailReceipt.getAmount());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

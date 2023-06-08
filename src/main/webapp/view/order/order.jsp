@@ -21,7 +21,7 @@
 
         <div class="card" style="width: 14rem; float: left; margin: 80px; border: none">
             <p>${cake.name}</p>
-            <img src="${cake.picture}" class="card-img-top">
+            <img src="${cake.picture}" class="card-img-top" style="height: 220px; width: 220px">
             <div class="card-body">
 
                 <button type="button" onClick="tru(${cake.id})" style="float: left; width: 30px">-</button>
@@ -60,7 +60,7 @@
     </div>
 
     <!-- NÚT ĐẶT HÀNG -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#datHang">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#datHang" style="position: fixed; right: 120px; bottom: 10px">
         Đặt hàng
     </button>
 
@@ -129,10 +129,10 @@
                 tableString += '<tr>';
                 tableString += '<th>' + layTen(a) + '</th>';
                 tableString += '<th>' + (document.getElementById(a).value * 1) + '</th>';
-                tableString += '<th>' + (document.getElementById(a).value * 1 * layGia(a)) + '</th>';
+                tableString += '<th>' + (document.getElementById(a).value * 1000 * layGia(a)) + '</th>';
                 tableString += '<input name="' + a + '" value="' + document.getElementById(a).value + '" hidden>'
                 tableString += '</tr>';
-                gia += (document.getElementById(a).value * 1 * layGia(a));
+                gia += (document.getElementById(a).value * 1000 * layGia(a));
             }
             a = Number(a) + 1;
             a = String(a);

@@ -6,22 +6,55 @@ public class Employee {
     private String citizenId;
     private String phoneNumber;
     private String address;
-    private int positionId;
-
+    private Position position;
     private User user;
 
-    public Employee(int id, String name, String citizenId, String phoneNumber, String address, int positionId, User user) {
+    public Employee(int id, String name, String citizenId, String phoneNumber, String address, Position position, User user) {
         this.id = id;
         this.name = name;
         this.citizenId = citizenId;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.positionId = positionId;
+        this.position = position;
         this.user = user;
     }
 
-    public Employee() {
+    public Employee(int id, String name, String citizenId, String phoneNumber, String address, Position position) {
+        this.id = id;
+        this.name = name;
+        this.citizenId = citizenId;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.position = position;
     }
+
+    public Employee(String name, String citizenId, String phoneNumber, String address, Position position) {
+        this.name = name;
+        this.citizenId = citizenId;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.position = position;
+    }
+
+    public Employee(String name, String citizenId, String phoneNumber, String address) {
+        this.name = name;
+        this.citizenId = citizenId;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+    public Employee(int id, String name, String citizenId, String phoneNumber, String address) {
+        this.id = id;
+        this.name = name;
+        this.citizenId = citizenId;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+    public Employee(){
+
+    }
+
 
     public int getId() {
         return id;
@@ -63,12 +96,12 @@ public class Employee {
         this.address = address;
     }
 
-    public int getPositionId() {
-        return positionId;
+    public Position getPosition() {
+        return position;
     }
 
     public void setPositionId(int positionId) {
-        this.positionId = positionId;
+        this.position = position;
     }
 
     public User getUser() {

@@ -52,7 +52,7 @@
                                          style="width: 185px;border-radius: 50%" alt="logo">
                                     <h4 class="mt-1 mb-5 pb-1">We are TQTV Team</h4>
                                 </div>
-                                <div >
+                                <div>
                                     <c:if test='${message != null}'>
                                         <span style="color: #790000" class="message">${message}</span>
                                     </c:if>

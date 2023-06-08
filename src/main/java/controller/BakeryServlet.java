@@ -59,10 +59,10 @@ public class BakeryServlet extends HttpServlet {
     private void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String taiKhoan = request.getParameter("taikhoan");
         String matKhau = request.getParameter("matkhau");
-        boolean check= iUserService.findUser(new User(taiKhoan,matKhau));
-        if (check){
+        boolean check = iUserService.findUser(new User(taiKhoan, matKhau));
+        if (check) {
             response.sendRedirect("index.jsp");
-        }else {
+        } else {
 //            String message
             response.sendRedirect("view/login/login.jsp");
         }

@@ -8,8 +8,9 @@ import service.IUserService;
 import java.util.List;
 
 public class UserService implements IUserService {
-private IUserRepository iUserRepository=new UserRepository();
-private List<User> userList=iUserRepository.getUser();
+    private IUserRepository iUserRepository = new UserRepository();
+    private List<User> userList = iUserRepository.getUser();
+
     @Override
     public List<User> getUser() {
         return userList;
@@ -18,7 +19,7 @@ private List<User> userList=iUserRepository.getUser();
     @Override
     public boolean findUser(User user) {
         for (int i = 0; i < userList.size(); i++) {
-            if (user.getPhoneNumber().equals(userList.get(i).getPhoneNumber())&&user.getPassword().equals(userList.get(i).getPassword())){
+            if (user.getPhoneNumber().equals(userList.get(i).getPhoneNumber()) && user.getPassword().equals(userList.get(i).getPassword())) {
                 return true;
             }
         }

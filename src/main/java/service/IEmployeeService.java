@@ -14,4 +14,6 @@ public interface IEmployeeService {
     Employee selectById(int id);
 
     void updateEmployee(Employee employee);
+
+    List<Employee> findByName(String name);
 }

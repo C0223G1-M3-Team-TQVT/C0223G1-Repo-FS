@@ -11,6 +11,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    button {
+        background-color: #b97f9c;
+    }
+</style>
 </head>
 <body>
 
@@ -25,7 +30,7 @@
             <div class="card-body">
 
                 <button type="button" onClick="tru(${cake.id})" style="float: left; width: 30px">-</button>
-                <input value='0' id="${cake.id}" readonly style="width: 130px;float: left; text-align: center">
+                <input id="${cake.id}" value='0' readonly style="width: 130px;float: left; text-align: center">
                 <input id="Price${cake.id}" value="${cake.price}" hidden>
                 <input id="Name${cake.id}" value="${cake.name}" hidden>
                 <button type="button" onClick="cong(${cake.id})" style="float: left; width: 30px">+</button>
@@ -33,7 +38,8 @@
         </div>
     </c:forEach>
     <button onclick="gioHang()" type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop" style="position: fixed; right: 10px; bottom: 10px">
+            data-bs-target="#staticBackdrop"
+            style="position: fixed; right: 10px; bottom: 10px;background-color: #b97f9c">
         Giỏ Hàng
     </button>
 
@@ -50,8 +56,11 @@
                     <p id="gioHang"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#datHang">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            style="background-color: #b97f9c">Đóng
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#datHang"
+                            style="background-color: #b97f9c">
                         Đặt hàng
                     </button>
                 </div>
@@ -60,7 +69,8 @@
     </div>
 
     <!-- NÚT ĐẶT HÀNG -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#datHang" style="position: fixed; right: 120px; bottom: 10px">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#datHang"
+            style="position: fixed; right: 120px; bottom: 10px; background-color: #b97f9c">
         Đặt hàng
     </button>
 
@@ -73,14 +83,30 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Nhập tên <input name="name" value=""><br>
-                    Nhập địa chỉ <input name="address" value=""><br>
-                    Nhập sđt <input name="phoneNumber" value=""><br>
-                    Nhập ghi chú thêm <input name="describe" value="">
+                    <table>
+                        <tr>
+                            <td>Nhập tên</td>
+                            <td><input name="name" value=""><br></td>
+                        </tr>
+                        <tr>
+                            <td>Nhập địa chỉ</td>
+                            <td><input name="address" value=""><br></td>
+                        </tr>
+                        <tr>
+                            <td>Nhập sđt</td>
+                            <td><input name="phoneNumber" value="" pattern="[0-9]{10}"><br></td>
+                        </tr>
+                        <tr>
+                            <td>Nhập ghi chú thêm</td>
+                            <td><input name="describe" value=""></td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">quay lại</button>
-                    <button type="submit" class="btn btn-primary">ĐẶT</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            style="background-color: #b97f9c">Quay lại
+                    </button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #b97f9c">Đặt</button>
                 </div>
             </div>
         </div>
@@ -88,6 +114,7 @@
 
 </form>
 <script>
+
     function tru(i) {
         let a = document.getElementById(i).value * 1;
         if (a == 0) {
@@ -129,7 +156,7 @@
                 tableString += '<tr>';
                 tableString += '<th>' + layTen(a) + '</th>';
                 tableString += '<th>' + (document.getElementById(a).value * 1) + '</th>';
-                tableString += '<th>' + (document.getElementById(a).value * 1000 * layGia(a)) + '</th>';
+                tableString += '<th>' + (document.getElementById(a).value * 1000 * layGia(a)) + ' VNĐ</th>';
                 tableString += '<input name="' + a + '" value="' + document.getElementById(a).value + '" hidden>'
                 tableString += '</tr>';
                 gia += (document.getElementById(a).value * 1000 * layGia(a));
@@ -139,7 +166,7 @@
         }
         tableString += '<tr>';
         tableString += '<td>Tổng</td>';
-        tableString += '<td colspan="2">' + gia + '</td>';
+        tableString += '<td colspan="2">' + gia + ' VNĐ</td>';
         tableString += '<tr>';
 
         tableString += '</table>'

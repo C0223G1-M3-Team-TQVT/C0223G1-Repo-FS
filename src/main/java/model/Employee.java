@@ -55,7 +55,8 @@ public class Employee {
 
     }
 
-    public Employee(int i) {
+    public Employee(int id) {
+        this.id = id;
     }
 
     public Employee(String tenNhanVien, int maNhanVien) {

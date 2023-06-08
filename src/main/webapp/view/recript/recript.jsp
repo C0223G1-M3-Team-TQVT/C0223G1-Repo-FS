@@ -18,9 +18,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-
+<style>
+    .toast {
+        background-color: #333;
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1;
+        display: none;
+    }
+</style>
 </head>
 <body>
+
 <div>
     <div class="row header bg-info">
         <nav class="navbar bg-body-tertiary">
@@ -30,6 +43,11 @@
         </nav>
     </div>
     <div class="row content" style="padding-top: 50px">
+        <c:if test='${message != null}'>
+            <center>
+                <div id="toastMessage" class="toast"></div>
+            </center>
+        </c:if>
         <nav class="navbar navbar-expand-lg navbar-light"  style="background: #bb8496">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
@@ -52,7 +70,7 @@
             </div>
         </nav>
     </div>
-    <div class="row  addProduct">
+    <div class="row  addProduct" style="padding-top: 60px">
         <div class="col-0 col-md-8 col-lg-8">
         </div>
         <div class="col-0 col-md-2 col-2">
@@ -128,8 +146,9 @@
               <span >Bạn có muốn xóa khách hàng</span>  <h3 style="color: #b02a37" id="name"></h3>có số điện thoại là <h3 id="sdt"></h3>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn " data-bs-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i></button>
-                <form action="/detailreceipt?action=delete" method="post">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i></button>
+                <form action="/detailreceipt" method="get">
+                    <input name="action" value="delete" hidden>
                     <input type="text" name="deleteReceipt" id="deleteReceipt" hidden>
                     <button type="submit" class="btn " style="background:#bb8496 "><i class="fa-solid fa-trash"></i>
                     </button>
@@ -138,6 +157,19 @@
         </div>
     </div>
 </div>
+<script>
+    function showToast(message) {
+        var toast = document.getElementById("toastMessage");
+        toast.style.display = "block";
+        toast.innerText = message;
+        setTimeout(function() {
+            toast.style.display = "none";
+        }, 3000);
+    }
+    window.addEventListener('load', function() {
+        showToast("${message}");
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
@@ -172,10 +204,6 @@
 </script>
 </body>
 </html>
-
-
-
-
 
 
 

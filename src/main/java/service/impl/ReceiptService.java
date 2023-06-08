@@ -35,7 +35,7 @@ public class ReceiptService implements IReceiptService {
     }
 
     @Override
-    public void deleteRecript(int id) {
-        receiptRepository.deleteRecript(id);
+    public boolean deleteRecript(int id) {
+      return  receiptRepository.deleteRecript(id);
     }
 }

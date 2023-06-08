@@ -42,7 +42,7 @@
             width: 100%;
             border-radius: 12px;
             padding: 20px 30px 120px;
-            background: #306279;
+            background: #bb8496;
             box-shadow: 0 5px 10px rgba(
                     0,
                     0,
@@ -166,18 +166,17 @@
 </head>
 <body>
 <div >
-<c:if test='${message != null}'>
-    <center>
-    <ul class="notifications"></ul>
-    <div class="buttons" style="position:relative;padding-bottom: 700px;background:#306279; color: white">
-        <button class="btn" id="success">  ${message}</button>
-    </div></center>
-</c:if>
+
 </div>
 <section class="wrapper" style="box-shadow: 6px 6px 6px 6px #171515;position: absolute">
     <div class="form signup">
         <header>Đăng nhập</header>
         <form action="/bakery?action=login" method="post">
+            <c:if test='${message != null}'>
+                <center>
+                        <span style="background:#bb8496;color: white ">${message} </span>
+                </center>
+            </c:if>
             <input type="text" placeholder="Số điện thoại" name="taikhoan" pattern="[0-9]{1,}"
                    title="Vui lòng nhập đúng tài khoản"/>
             <input type="password" placeholder="Mật khẩu" name="matkhau" pattern="[a-zA-Z0-9]{6,}[a-zA-Z]{1,}"

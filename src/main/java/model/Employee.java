@@ -55,6 +55,12 @@ public class Employee {
 
     }
 
+    public Employee(int i) {
+    }
+
+    public Employee(String tenNhanVien, int maNhanVien) {
+    }
+
 
     public int getId() {
         return id;

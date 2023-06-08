@@ -32,6 +32,20 @@ public class DetailReceiptServlet extends HttpServlet {
             case "delivery":
                 delivery(request, response);
                 break;
+            case "delete":
+                int id = Integer.parseInt(request.getParameter("deleteReceipt"));
+                boolean check = receiptService.deleteRecript(id);
+                if (check) {
+                    request.setAttribute("message", "Xóa thành công");
+//                    request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
+
+
+                } else {
+                    request.setAttribute("message", "Xóa thất bại");
+//                    request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
+                }
+                showList(request, response);
+                break;
             default:
                 showList(request, response);
                 break;
@@ -46,8 +60,8 @@ public class DetailReceiptServlet extends HttpServlet {
     }
 
     private void detailForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Map<Integer,Integer> integerMap=iDetailReceiptService.getMoney();
-        request.setAttribute("integerMap",integerMap);
+        Map<Integer, Integer> integerMap = iDetailReceiptService.getMoney();
+        request.setAttribute("integerMap", integerMap);
         boolean check = Boolean.parseBoolean(request.getParameter("delivery"));
         request.setAttribute("check", check);
         int id = Integer.parseInt(request.getParameter("id"));
@@ -78,21 +92,17 @@ public class DetailReceiptServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "delete":
-                int id = Integer.parseInt(request.getParameter("deleteReceipt"));
-                receiptService.deleteRecript(id);
-                response.sendRedirect("/detailreceipt");
-                break;
+
             case "delivery":
                 deliveryPost(request, response);
                 break;
             case "search":
-                String tinhTrang=request.getParameter("tinhTrang");
+                String tinhTrang = request.getParameter("tinhTrang");
                 Map<Integer, Integer> integerMap = iDetailReceiptService.getPriceAll();
                 request.setAttribute("integerMap", integerMap);
-                List<Receipt> detailReceipts=   receiptService.searchReceipt(tinhTrang);
-                request.setAttribute("receipts",detailReceipts);
-                request.getRequestDispatcher("view/recript/recript.jsp").forward(request,response);
+                List<Receipt> detailReceipts = receiptService.searchReceipt(tinhTrang);
+                request.setAttribute("receipts", detailReceipts);
+                request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
                 break;
         }
     }

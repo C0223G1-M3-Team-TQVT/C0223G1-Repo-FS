@@ -32,12 +32,13 @@ public class BakeryServlet extends HttpServlet {
     }
 
     private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> userList=iUserService.getUser();
-        request.setAttribute("user",userList);
+        List<User> userList = iUserService.getUser();
+        request.setAttribute("user", userList);
 
     }
 
     private void loginFormEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
     }
 

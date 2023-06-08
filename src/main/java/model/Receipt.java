@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDateTime;
 
+
 public class Receipt {
     private int id;
     private Customer customer;

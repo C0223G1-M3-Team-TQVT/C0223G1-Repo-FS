@@ -27,6 +27,7 @@
     </style>
 </head>
 <body>
+<jsp:include page="/header.jsp"></jsp:include>
 <form method="post" action="/cake?action=update">
     <fieldset>
         <legend>

@@ -20,51 +20,82 @@ public class ReceiptRepository implements IReceiptRepository {
             "on hd.ma_khach_hang=kh.ma_khach_hang " +
             "join nhan_vien nv " +
             "on nv.ma_nhan_vien=hd.ma_nhan_vien;";
-    private final String DELETE_DETAIL="delete from hoa_don where ma_hoa_don = ?";
+    private final String DELETE_DETAIL = "delete from hoa_don where ma_hoa_don = ?";
 
     @Override
-    public void deleteRecript(int id) {
-        Connection connection=BaseRepository.getConnection();
+    public boolean deleteRecript(int id) {
+        Connection connection = BaseRepository.getConnection();
         try {
-            PreparedStatement preparedStatement=connection.prepareStatement(DELETE_DETAIL);
-            preparedStatement.setInt(1,id);
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_DETAIL);
+            preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            return false;
         }
+        return true;
     }
 
     @Override
     public List<Receipt> searchReceipt(String tinhTrang) {
-        List<Receipt> receipts=new ArrayList<>();
-        Connection connection= BaseRepository.getConnection();
-        try {
-            Statement statement=connection.createStatement();
-            ResultSet resultSet=statement.executeQuery("select * from hoa_don hd " +
-                    " join khach_hang kh " +
-                    " on hd.ma_khach_hang=kh.ma_khach_hang " +
-                    " join nhan_vien nv " +
-                    " on nv.ma_nhan_vien=hd.ma_nhan_vien"+
-                    " where  hd.trang_thai = '"+tinhTrang+"'");
-            while (resultSet.next()){
-                int id=resultSet.getInt("hd.ma_hoa_don");
-                int maKhach=resultSet.getInt("kh.ma_khach_hang");
-                String tenKhachHang=resultSet.getString("kh.ten_khach_hang");
-                int maNhanVien=resultSet.getInt("nv.ma_nhan_vien");
-                String tenNhanVien=resultSet.getString("nv.ten_nhan_vien");
-                String check=resultSet.getString("hd.ngay_dat_hang");
-                String sdt=resultSet.getString("kh.sdt");
-                LocalDate check1= LocalDate.parse(check.substring(0,10));
-                LocalTime check2= LocalTime.parse(check.substring(11,19));
-                LocalDateTime ngayDatHang= LocalDateTime.of(check1,check2);
-                boolean trangThai=resultSet.getBoolean("hd.trang_thai");
-                String diaChi=resultSet.getString("dia_chi_giao_hang");
-                Employee employee=new Employee(tenNhanVien,maNhanVien);
-                Customer customer=new Customer(tenKhachHang,maKhach,sdt);
-                receipts.add(new Receipt(id,customer,employee,ngayDatHang,diaChi,trangThai));
+        List<Receipt> receipts = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        if (tinhTrang.equals("1") || tinhTrang.equals("0")) {
+            try {
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("select * from hoa_don hd " +
+                        " join khach_hang kh " +
+                        " on hd.ma_khach_hang=kh.ma_khach_hang " +
+                        " join nhan_vien nv " +
+                        " on nv.ma_nhan_vien=hd.ma_nhan_vien" +
+                        " where  hd.trang_thai = '" + tinhTrang + "'");
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("hd.ma_hoa_don");
+                    int maKhach = resultSet.getInt("kh.ma_khach_hang");
+                    String tenKhachHang = resultSet.getString("kh.ten_khach_hang");
+                    int maNhanVien = resultSet.getInt("nv.ma_nhan_vien");
+                    String tenNhanVien = resultSet.getString("nv.ten_nhan_vien");
+                    String check = resultSet.getString("hd.ngay_dat_hang");
+                    String sdt = resultSet.getString("kh.sdt");
+                    LocalDate check1 = LocalDate.parse(check.substring(0, 10));
+                    LocalTime check2 = LocalTime.parse(check.substring(11, 19));
+                    LocalDateTime ngayDatHang = LocalDateTime.of(check1, check2);
+                    boolean trangThai = resultSet.getBoolean("hd.trang_thai");
+                    String diaChi = resultSet.getString("dia_chi_giao_hang");
+                    Employee employee = new Employee(tenNhanVien, maNhanVien);
+                    Customer customer = new Customer(tenKhachHang, maKhach, sdt);
+                    receipts.add(new Receipt(id, customer, employee, ngayDatHang, diaChi, trangThai));
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        }else {
+            try {
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("select * from hoa_don hd " +
+                        " join khach_hang kh " +
+                        " on hd.ma_khach_hang=kh.ma_khach_hang " +
+                        " join nhan_vien nv " +
+                        " on nv.ma_nhan_vien=hd.ma_nhan_vien");
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("hd.ma_hoa_don");
+                    int maKhach = resultSet.getInt("kh.ma_khach_hang");
+                    String tenKhachHang = resultSet.getString("kh.ten_khach_hang");
+                    int maNhanVien = resultSet.getInt("nv.ma_nhan_vien");
+                    String tenNhanVien = resultSet.getString("nv.ten_nhan_vien");
+                    String check = resultSet.getString("hd.ngay_dat_hang");
+                    String sdt = resultSet.getString("kh.sdt");
+                    LocalDate check1 = LocalDate.parse(check.substring(0, 10));
+                    LocalTime check2 = LocalTime.parse(check.substring(11, 19));
+                    LocalDateTime ngayDatHang = LocalDateTime.of(check1, check2);
+                    boolean trangThai = resultSet.getBoolean("hd.trang_thai");
+                    String diaChi = resultSet.getString("dia_chi_giao_hang");
+                    Employee employee = new Employee(tenNhanVien, maNhanVien);
+                    Customer customer = new Customer(tenKhachHang, maKhach, sdt);
+                    receipts.add(new Receipt(id, customer, employee, ngayDatHang, diaChi, trangThai));
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
         return receipts;
     }
@@ -102,28 +133,28 @@ public class ReceiptRepository implements IReceiptRepository {
 
     @Override
     public List<Receipt> showListReceipt() {
-        List<Receipt> receiptList=new ArrayList<>();
-        Connection connection=BaseRepository.getConnection();
-        Statement statement= null;
+        List<Receipt> receiptList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        Statement statement = null;
         try {
             statement = connection.createStatement();
-            ResultSet resultSet=statement.executeQuery(RECEIPT_SELECT);
-            while (resultSet.next()){
-                int id=resultSet.getInt("hd.ma_hoa_don");
-                int maKhach=resultSet.getInt("kh.ma_khach_hang");
-                String tenKhachHang=resultSet.getString("kh.ten_khach_hang");
-                int maNhanVien=resultSet.getInt("nv.ma_nhan_vien");
-                String tenNhanVien=resultSet.getString("nv.ten_nhan_vien");
-                String check=resultSet.getString("hd.ngay_dat_hang");
-                String sdt=resultSet.getString("kh.sdt");
-                LocalDate check1= LocalDate.parse(check.substring(0,10));
-                LocalTime check2= LocalTime.parse(check.substring(11,19));
-                LocalDateTime ngayDatHang= LocalDateTime.of(check1,check2);
-                boolean trangThai=resultSet.getBoolean("hd.trang_thai");
-                String diaChi=resultSet.getString("dia_chi_giao_hang");
-                Employee employee=new Employee(tenNhanVien,maNhanVien);
-                Customer customer=new Customer(tenKhachHang,maKhach,sdt);
-                receiptList.add(new Receipt(id,customer,employee,ngayDatHang,diaChi,trangThai));
+            ResultSet resultSet = statement.executeQuery(RECEIPT_SELECT);
+            while (resultSet.next()) {
+                int id = resultSet.getInt("hd.ma_hoa_don");
+                int maKhach = resultSet.getInt("kh.ma_khach_hang");
+                String tenKhachHang = resultSet.getString("kh.ten_khach_hang");
+                int maNhanVien = resultSet.getInt("nv.ma_nhan_vien");
+                String tenNhanVien = resultSet.getString("nv.ten_nhan_vien");
+                String check = resultSet.getString("hd.ngay_dat_hang");
+                String sdt = resultSet.getString("kh.sdt");
+                LocalDate check1 = LocalDate.parse(check.substring(0, 10));
+                LocalTime check2 = LocalTime.parse(check.substring(11, 19));
+                LocalDateTime ngayDatHang = LocalDateTime.of(check1, check2);
+                boolean trangThai = resultSet.getBoolean("hd.trang_thai");
+                String diaChi = resultSet.getString("dia_chi_giao_hang");
+                Employee employee = new Employee(tenNhanVien, maNhanVien);
+                Customer customer = new Customer(tenKhachHang, maKhach, sdt);
+                receiptList.add(new Receipt(id, customer, employee, ngayDatHang, diaChi, trangThai));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -131,7 +162,7 @@ public class ReceiptRepository implements IReceiptRepository {
 
         return receiptList;
     }
-    @Override
+
     public void addReceipt(List<DetailReceipt> list, Receipt receipt) {
         Connection connection = BaseRepository.getConnection();
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -165,9 +196,9 @@ public class ReceiptRepository implements IReceiptRepository {
     }
 
 
-
     public int getIdReceipt(String date) {
         String string = date.substring(0, 10) + " " + date.substring(11, 19);
+        System.out.println(string);
         Connection connection = BaseRepository.getConnection();
         int id = 0;
         try {

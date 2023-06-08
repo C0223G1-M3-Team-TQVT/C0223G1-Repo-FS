@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ReceiptService implements IReceiptService {
 
-private IReceiptRepository receiptRepository = new ReceiptRepository();
+    private IReceiptRepository receiptRepository = new ReceiptRepository();
 
     @Override
     public List<Receipt> searchReceipt(String tinhTrang) {
@@ -35,7 +35,7 @@ private IReceiptRepository receiptRepository = new ReceiptRepository();
     }
 
     @Override
-    public void deleteRecript(int id) {
-        receiptRepository.deleteRecript(id);
+    public boolean deleteRecript(int id) {
+      return  receiptRepository.deleteRecript(id);
     }
 }

@@ -186,7 +186,7 @@
         <div class="textBox">
             <p style="color: #b97f9c;font-family: 'Felix Titling';font-size: 70px;">SWEETER THAN YOUR EX</p>
 
-            <img  style="height: 300px;width: 300px"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb6GzpJw_El-Bkq38BNf5MYoYertUNa_OUWQ&usqp=CAU">
+            <img   style="height: 300px;width: 300px;border-radius: 50%" src="img/image (1).png">
         </div>
         <div class="imgBox">
             <img src="" class="starbucks">

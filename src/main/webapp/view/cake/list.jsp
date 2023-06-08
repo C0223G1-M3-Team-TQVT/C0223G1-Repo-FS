@@ -21,54 +21,27 @@
     <div class="row header bg-info">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <div class="col-12 col-md-4">
-                    <a> <i class="fa-regular fa-user"></i>admin</a>
-                </div>
-                <div class="col-12 col-md-4">
-                    <a class="navbar-brand" href="#">
-                        <img src="../../Screenshot 2023-05-29 093831.png" height="5px" width="100p  x" alt="Logo"
-                             width="30" height="30" class="d-inline-block align-text-top">
-                    </a>
-                </div>
-                <div class="col-12 col-md-4" style="text-align: right">
-                    <div class="btn-group" role="group">
-                        <a href="/index.jsp" style="color: #171515"> Trở lại trang chủ</a>
-                    </div>
-                </div>
+                <jsp:include page="/header.jsp"></jsp:include>
             </div>
         </nav>
     </div>
-    <div class="row content">
+
+    <div class="row content" style="padding-top: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/cake"> <i class="fa-regular fa-user"></i>Cake</a>
+                <a class="navbar-brand" href="/cake" style="color: #bb8496"> <i class="fa-regular fa-user"></i>Cake</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Sắp xếp theo
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Giá(tăng dần)</a></li>
-                                <li><a class="dropdown-item" href="#">Giá(giảm dần)</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Số lượng</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                     <form class="d-flex" method="get" action="/cake">
                         <input name="action" value="find" hidden>
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name">
-                        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"
-                                                                                 style="color: #2bac1b;"></i> Tìm
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                               name="name">
+                        <button class="btn" type="submit" style="color: #bb8496"><i class="fa-solid fa-magnifying-glass"
+                                                                                 style="color: #bb8496;"></i> Tìm
                         </button>
                     </form>
                 </div>
@@ -76,15 +49,15 @@
         </nav>
     </div>
     <tr>
-        <th colspan="8"> <h4 style="text-align: center">QUẢN LÝ SẢN PHẨM </h4></th>
-        <span>${result}</span>
+        <th colspan="8"><h4 style="text-align: center">QUẢN LÝ SẢN PHẨM </h4></th>
+        <span id="success">${result}</span>
     </tr>
     <div class="row  addProduct">
         <div class="col-12 col-md-2 col-2 buttonAdd">
             <div class="btn-group" role="group" aria-label="Basic outlined example">
                 <form method="get" action="/cake?action">
                     <input name="action" value="create" hidden>
-                    <button type="submit" class="btn btn-outline-primary">Thêm mới</button>
+                    <button type="submit" class="btn" style="background-color: #bb8496">Thêm mới</button>
                 </form>
             </div>
         </div>
@@ -112,8 +85,8 @@
                     </td>
                     <td>
                         <p>
-                                <img src="${cake.picture}" width="100px" height="100px">
-                                <c:out value="${cake.name}"/>
+                            <img src="${cake.picture}" width="100px" height="100px">
+                            <c:out value="${cake.name}"/>
                         </p>
                     </td>
                     <td>
@@ -129,12 +102,12 @@
                         <form method="get">
                             <input name="action" value="update" hidden>
                             <input name="id" value="${cake.id}" hidden>
-                            <button type="submit" class="btn btn-outline-primary">Sửa</button>
+                            <button type="submit" class="btn" style="background-color: #bb8496">Sửa</button>
                         </form>
                     </td>
                     <td>
                         <form>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"
                                     onclick="remove('${cake.id}','${cake.name}')"
                             >Xóa
@@ -165,7 +138,7 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 <form method="post" action="/cake?action=delete&id=${cake.id}">
                     <input id="idDelete" name="idDelete" type="hidden">
-                    <button type="submit" class="btn btn-primary">Xoa</button>
+                    <button type="submit" class="btn btn-primary">Xóa</button>
                 </form>
             </div>
         </div>
@@ -187,7 +160,7 @@
         $('#tableStudent').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
-            "pageLength": 2
+            "pageLength": 5
         })
     })
 </script>
@@ -196,6 +169,12 @@
         document.getElementById("idDelete").value = id;
         document.getElementById("nameDelete").innerText = name;
     }
+</script>
+
+<script>
+    setTimeout(function () {
+        document.getElementById("success").style.display = "none";
+    },1000)
 </script>
 </body>
 </html>

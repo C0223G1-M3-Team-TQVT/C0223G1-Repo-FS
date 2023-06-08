@@ -18,6 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
 </head>
 <body>
 <div>
@@ -29,7 +30,7 @@
         </nav>
     </div>
     <div class="row content" style="padding-top: 50px">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light"  style="background: #bb8496">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -73,7 +74,7 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${receipts}" var="receipts" varStatus="loop">
-                    <tr>
+                    <tr class="table-secondary">
                         <td><c:out value="${loop.count}"/></td>
                         <td><c:out value="${receipts.customer.name}"/></td>
                         <td><c:out value="${receipts.customer.phoneNumber}"/></td>
@@ -88,19 +89,24 @@
                         </td>
                         <td>
                                 <c:set var="accountBalance" value="${integerMap.get(receipts.id)*1000}"/>
-                                <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/> <c:out value="VNĐ"/>
+                                <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
+                                <c:out value="VNĐ"/>
                         <td>
-                            <button class="btn " type="submit" style="background: #bb8496;color: white">
-                                <a style="color: #ffffff" href="/detailreceipt?action=detail&id=${receipts.id}">Chi
-                                    tiết</a>
-                            </button>
+                            <center>
+                                <button class="btn " type="submit" style="background: #bb8496;color: white">
+                                    <a style="color: #ffffff" href="/detailreceipt?action=detail&id=${receipts.id}">
+                                        <i class="fa-solid fa-circle-info"></i></a>
+                                </button>
+                            </center>
                         </td>
                         <td>
-                            <button onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})"
-                                    type="button" class="btn " data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal1" style="background: #bb8496;color: white">
-                                Delete
-                            </button>
+                            <center>
+                                <button onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})"
+                                        type="button" class="btn " data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1" style="background: #bb8496;color: white">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </center>
                         </td>
                     </tr>
                 </c:forEach>
@@ -111,19 +117,22 @@
 </div>
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
+        <div class="modal-content" >
+            <center>
+            <div class="modal-header" style="background: #bb8496">
                 <h5 class="modal-title" id="exampleModalLabel1">Thông tin khách hàng</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            </center>
             <div class="modal-body">
-                Bạn có muốn xóa khách hàng<h3 id="name"></h3>có số điện thoại là <h3 id="sdt"></h3>
+              <span >Bạn có muốn xóa khách hàng</span>  <h3 style="color: #b02a37" id="name"></h3>có số điện thoại là <h3 id="sdt"></h3>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn " data-bs-dismiss="modal" >Đóng</button>
+                <button type="button" class="btn " data-bs-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i></button>
                 <form action="/detailreceipt?action=delete" method="post">
                     <input type="text" name="deleteReceipt" id="deleteReceipt" hidden>
-                    <button type="submit" class="btn "><p style="color: white;background: #bb8496;">Xóa</p></button>
+                    <button type="submit" class="btn " style="background:#bb8496 "><i class="fa-solid fa-trash"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -153,7 +162,7 @@
     function deleteReceipt(id, name, sdt) {
         document.getElementById("deleteReceipt").value = id;
         document.getElementById("name").innerText = name;
-        document.getElementById("sdt").innerText = sdt;
+       document.getElementById("sdt").innerText = sdt;
     }
 
     function remove(id, name) {

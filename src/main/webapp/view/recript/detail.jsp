@@ -113,10 +113,10 @@ To change this template use File | Settings | File Templates.
                 <h2>Bạn có muốn giao đơn hàng này không?</h2>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i></button>
                 <form action="/detailreceipt?action=delivery&id=${id}" method="post">
-                    <button type="submit" class="btn btn-primary">
-                        <a style="color: white">Giao hàng</a>
+                    <button type="submit" class="btn " style="background: #bb8496">
+                        <a style="color: white;background: #bb8496"><i class="fa-sharp fa-solid fa-truck"></i></a>
                     </button>
                 </form>
             </div>

@@ -164,17 +164,6 @@
 
     </style>
 </head>
-<div class="toast">
-    <div class="toast-content">
-        <i class="uil uil-check toast-check"></i>
-        <div class="message">
-            <span class="message-text text-1">Success</span>
-            <span class="message-text text-2">Your changes has been saved</span>
-        </div>
-    </div>
-    <i class="uil uil-multiply toast-close"></i>
-    <div class="progress"></div>
-</div>
 <body>
 <div >
 <c:if test='${message != null}'>

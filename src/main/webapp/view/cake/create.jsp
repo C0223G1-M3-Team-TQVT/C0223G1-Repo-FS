@@ -190,7 +190,8 @@
     </a>
 </div>
 <div class="overlay">
-    <form action="/cake?action=create" method="post" id="form-1" enctype="multipart/form-data">
+    <form action="/cake?action=create" method="post" id="form-1" >
+<%--        enctype="multipart/form-data"--%>
         <div class="con">
             <header class="head-form">
                 <h2>Thêm Mới</h2>
@@ -220,7 +221,7 @@
                     <label for="amount" class="form-label">Số lượng bánh hiện tại</label>
                     <input type="number" class="form-control" id="amount" name="amount" min="0" required>
                 </div>
-                <div class="mb-2 form-group">
+                <div class="mb-2 form-group" >
 <%--                                        <label for="picture" class="form-label">Ảnh minh họa</label>--%>
                     <%--                    <input type="file" class="form-control" id="picture" name="picture">--%>
                     <input id="file" type="file" onchange="previewFile()" value="picture" name="picture"/> <br/>
@@ -244,7 +245,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
-<%--pattern="^([A-Z]([a-z])+)(\s[A-Z]([a-z])+)+$" title="Vui lòng nhập tên có thực"--%>
 <script>
     setTimeout(function () {
         document.getElementById("success").style.display = "none";

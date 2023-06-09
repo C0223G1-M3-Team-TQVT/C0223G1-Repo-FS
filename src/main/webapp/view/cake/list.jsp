@@ -22,7 +22,7 @@
             position: fixed;
             right: 1em;
         }
-        .son{
+        .thien{
             contain: layout ;
             display: flex;
             align-items: center;
@@ -60,7 +60,7 @@
         }
     </style>
 </head>
-<body style="background-color:#4df8f8">
+<body style="background-color:#f8f8f8">
 <div class="container-fluid">
     <div class="row header bg-info">
         <nav class="navbar bg-body-tertiary">
@@ -71,7 +71,7 @@
     </div>
 
     <div class="row content" style="padding-top: 50px;">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c0ffff">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f8c7d3">
             <div class="container-fluid" >
                 <a class="navbar-brand" href="/cake" style="color: rgba(21,19,19,0.76)"> <i class="fa-regular fa-user"></i>Cake</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -95,7 +95,7 @@
     <tr>
         <th colspan="8"><h4 style="text-align: center">QUẢN LÝ SẢN PHẨM </h4></th>
         <span id="success"
-              class="son"
+              class="thien"
               style="float: left; background-color: #bb8496;font-size: 30px">${result}</span>
     </tr>
     <div class="row  addProduct">
@@ -111,8 +111,8 @@
         </div>
         <div class="col-0 col-md-2 col-2">
         </div>
-        <table class="table table-bordered" id="tableStudent" style="width:100%;background-color: #eeede7" >
-            <thead style="background-color: #eeede7">
+        <table class="table table-bordered" id="tableStudent" style="width:100%;background-color: #b0b0ad" >
+            <thead style="background-color: #bb8496">
             <tr>
                 <th>STT</th>
                 <th>Name</th>
@@ -130,11 +130,12 @@
                         <c:out value="${cake.id}"/>
                     </td>
                     <td>
-                        <p>
-                            <img src="${cake.picture}" width="100px" height="100px">
-<%--                            <img id="img" src="" height="200" alt="Image preview...">--%>
-                            <c:out value="${cake.name}"/>
-                        </p>
+                            <p>
+                                <img src="${cake.picture}" width="100px" height="100px">
+                                    <%--                            <img id="img" src="" height="200" alt="Image preview...">--%>
+
+                                <c:out value="${cake.name}"/>
+                            </p>
                     </td>
                     <td>
                         <c:out value="${cake.typeOfCake}"/>
@@ -151,12 +152,12 @@
                         <form method="get">
                             <input name="action" value="update" hidden>
                             <input name="id" value="${cake.id}" hidden>
-                            <button type="submit" class="btn btn-dark" style="background-color: #f6c925">Sửa</button>
+                            <button type="submit" class="btn btn-outline-light" style="background-color: #f8b3c7">Sửa</button>
                         </form>
                     </td>
                     <td>
                         <form>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"
                                     onclick="remove('${cake.id}','${cake.name}')"
                             >Xóa
@@ -225,20 +226,5 @@
         document.getElementById("success").style.display = "none";
     },3000)
 </script>
-<%--<script>--%>
-<%--    function previewFile() {--%>
-<%--        var preview = document.getElementById("img");--%>
-<%--        var file   =  document.getElementById("file").files[0];--%>
-<%--        var reader  = new FileReader();--%>
-<%--        reader.onloadend = function () {--%>
-<%--            preview.src = reader.result;--%>
-<%--        }--%>
-<%--        if (file) {--%>
-<%--            reader.readAsDataURL(file);--%>
-<%--        } else {--%>
-<%--            preview.src = "";--%>
-<%--        }--%>
-<%--    }--%>
-<%--</script>--%>
 </body>
 </html>

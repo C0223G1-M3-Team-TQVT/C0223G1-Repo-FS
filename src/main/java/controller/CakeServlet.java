@@ -102,7 +102,7 @@ public class CakeServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-                createCake2(request, response);
+//                createCake2(request, response);
                 createCake(request, response);
                 break;
             case "update":
@@ -114,18 +114,18 @@ public class CakeServlet extends HttpServlet {
         }
     }
 
-    private void createCake2(HttpServletRequest request, HttpServletResponse response) {
+    private void createCake2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        int id, String name, int typeOfCake, double price, int amount, String picture
-        String name = request.getParameter("name");
-        int typeOfCake = Integer.parseInt(request.getParameter("typeOfCake"));
-        double price = Double.parseDouble(request.getParameter("price"));
-        int amount = Integer.parseInt(request.getParameter("amount"));
-        String picture = request.getParameter("picture");
-//        String name = null;
-//        int typeOfCake = 0;
-//        int price = 0;
-//        int amount = 0;
-//        String picture = null;
+//        String name = request.getParameter("name");
+//        int typeOfCake = Integer.parseInt(request.getParameter("typeOfCake"));
+//        double price = Double.parseDouble(request.getParameter("price"));
+//        int amount = Integer.parseInt(request.getParameter("amount"));
+//        String picture = request.getParameter("picture");
+        String name = null;
+        int typeOfCake = 0;
+        double price = 0;
+        int amount = 0;
+        String picture = null;
         DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(fileItemFactory);
         try {
@@ -141,7 +141,7 @@ public class CakeServlet extends HttpServlet {
                             typeOfCake = Integer.parseInt(fileItem.getString());
                             break;
                         case "price":
-                            price = Integer.parseInt(fileItem.getString());
+                            price = Double.parseDouble(fileItem.getString());
                             break;
                         case "amount":
                             amount = Integer.parseInt(fileItem.getString());
@@ -179,6 +179,19 @@ public class CakeServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+//        Cake cake = new Cake(name, typeOfCake, price, amount, picture);
+//        boolean flag = cakeService.add(cake);
+//        String result = "";
+//        if (flag) {
+//            result = "Thêm mới thành công";
+//            request.setAttribute("result", result);
+//            List<Cake> cakeList3 = cakeService.display();
+//            showListCake(request, response, cakeList3);
+//        } else {
+//            result = "Thêm mới không thành công";
+//            request.setAttribute("result", result);
+//            showFormCreate(request, response);
+//        }
         System.out.println("-------------------------INFO TO SAVE-- ------------------------------");
         System.out.println("Name: " + name);
         System.out.println("typeOfCake : " + typeOfCake);
@@ -241,8 +254,8 @@ public class CakeServlet extends HttpServlet {
             List<Cake> cakeList3 = cakeService.display();
             showListCake(request, response, cakeList3);
         } else {
-            request.setAttribute("result", result);
             result = "Thêm mới không thành công";
+            request.setAttribute("result", result);
             showFormCreate(request, response);
         }
     }

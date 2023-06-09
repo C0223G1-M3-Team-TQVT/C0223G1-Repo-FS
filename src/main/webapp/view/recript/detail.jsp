@@ -44,8 +44,8 @@ To change this template use File | Settings | File Templates.
             </div>
         </nav>
     </div>
-    <div class="row content" style="padding-top: 50px">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="row content" >
+        <nav class="navbar navbar-expand-lg navbar-light "style="padding-top:30px;background: #bb8496" >
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
             </div>
@@ -63,7 +63,7 @@ To change this template use File | Settings | File Templates.
                 <th>Tên khách hàng</th>
                 <th>Tên loại bánh</th>
                 <th>Số lượng</th>
-                <th >Tổng sản phẩm</th>
+                <th >Tổng giá sản phẩm</th>
             </tr>
             </thead>
             <tbody >

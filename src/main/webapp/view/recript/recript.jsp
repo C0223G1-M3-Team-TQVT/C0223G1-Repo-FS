@@ -41,13 +41,13 @@
             </div>
         </nav>
     </div>
-    <div class="row content" style="padding-top: 50px">
+    <div class="row content" >
         <c:if test='${message != null}'>
             <center>
                 <div id="toastMessage" class="toast"></div>
             </center>
         </c:if>
-        <nav class="navbar navbar-expand-lg navbar-light"  style="background: #bb8496">
+        <nav class="navbar navbar-expand-lg navbar-light"  style="margin-top:10px;background: #bb8496">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -55,7 +55,7 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div>
+                <div style="padding-top: 15px">
                     <form action="/detailreceipt?action=search" name="tinhTrang" method="post">
                         <select style="border-radius: 30px" name="tinhTrang" id="tinhTrang">
                             <option value="">Tìm kiếm</option>
@@ -76,7 +76,7 @@
         </div>
         <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
-            <table class="table table-striped table-bordered col-lg-12" id="tableStudent" style="width:100% ; float: right;">
+            <table class="table table-striped table-bordered col-lg-12" id="tableStudent" style="width:100%">
                 <thead >
                 <tr >
                     <th >STT</th>
@@ -136,12 +136,12 @@
         <div class="modal-content" >
             <center>
             <div class="modal-header" style="background: #bb8496">
-                <h5 class="modal-title" id="exampleModalLabel1">Thông tin khách hàng</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">Xóa đơn hàng</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             </center>
             <div class="modal-body">
-              <span >Bạn có muốn xóa khách hàng</span>  <h6 style="color: #b02a37" id="name"></h6>có số điện thoại là <h6 id="sdt"></h6>
+             Tên khách hàng : <h6 style="color: #b02a37" id="name"></h6>  Số điện thoại : <span><h6 id="sdt"></h6></span>
             </div>
             <div class="modal-footer">
                 <form action="/detailreceipt" method="get">
@@ -165,7 +165,8 @@
     }
     window.addEventListener('load', function() {
         showToast("${message}");
-    });
+    })
+    ;
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -194,7 +195,7 @@
 <script>
     $(document).ready(function () {
         $('#tableStudent').dataTable({
-            "dom": 'ltip',
+            "dom": 'rtp',
             "lengthChange": false,
             "pageLength": 4
         })

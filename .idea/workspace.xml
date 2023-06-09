@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="vu commit lan 11">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +182,7 @@
       <workItem from="1686187681986" duration="20623000" />
       <workItem from="1686272582189" duration="6430000" />
       <workItem from="1686283953496" duration="2425000" />
-      <workItem from="1686292364586" duration="6131000" />
+      <workItem from="1686292364586" duration="6508000" />
     </task>
     <task id="LOCAL-00001" summary="tai comit lan 1">
       <created>1686190061272</created>
@@ -261,7 +261,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686298530278</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="vu commit lan 11">
+      <created>1686298655423</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686298655423</updated>
+    </task>
+    <task id="LOCAL-00013" summary="vu commit lan 11">
+      <created>1686298862004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686298862004</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -41,6 +41,8 @@ public class CakeServlet extends HttpServlet {
                 break;
             default:
                 List<Cake> cakeList = cakeService.display();
+               String  result = "Chào bạn";
+                request.setAttribute("result", result);
                 showListCake(request, response, cakeList);
                 break;
         }
@@ -116,8 +118,8 @@ public class CakeServlet extends HttpServlet {
             List<Cake> cakeList2 = cakeService.display();
             showListCake(request, response, cakeList2);
         } else {
-            request.setAttribute("result", result);
             result = "Xóa không thành công";
+            request.setAttribute("result", result);
             showFormCreate(request, response);
         }
     }

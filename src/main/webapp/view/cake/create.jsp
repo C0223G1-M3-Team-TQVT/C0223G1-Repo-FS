@@ -214,15 +214,15 @@
                 </div>
                 <div class="mb-2 form-group">
                     <label for="price" class="form-label">Giá bánh</label>
-                    <input type="number" class="form-control" id="price" name="price" required>
+                    <input type="number" class="form-control" id="price" name="price" min="0" required>
                 </div>
                 <div class="mb-2 form-group">
                     <label for="amount" class="form-label">Số lượng bánh hiện tại</label>
-                    <input type="number" class="form-control" id="amount" name="amount" required>
+                    <input type="number" class="form-control" id="amount" name="amount" min="0" required>
                 </div>
                 <div class="mb-2 form-group">
                     <label for="picture" class="form-label">Ảnh minh họa</label>
-                    <input type="text" class="form-control" id="picture" name="picture">
+                    <input type="file" class="form-control" id="picture" name="picture">
                 </div>
                 <button class="log-in" type="submit">Thêm mới</button>
             </div>
@@ -242,5 +242,10 @@
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
 <%--pattern="^([A-Z]([a-z])+)(\s[A-Z]([a-z])+)+$" title="Vui lòng nhập tên có thực"--%>
+<script>
+    setTimeout(function () {
+        document.getElementById("success").style.display = "none";
+    },1000)
+</script>
 </body>
 </html>

@@ -10,18 +10,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .toast {
-            background-color: #bb8496;
-            color: #fff;
-            padding: 15px;
-            border-radius: 20px;
-            position: fixed;
-            bottom:530px;
-            right: 30px;
-            z-index: 1;
-            display: none;
-        }
-        @import url('https://th.bing.com/th?id=OIP.faUG1lf2gcBIH2F3soOTdgHaIR&w=236&h=264&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
         * {
             margin: 0;
@@ -30,280 +19,249 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .col-2 {
-            text-align: center;
-            border-color: white;
+
+        .toggle {
+            position: relative;
+            width: 60px;
             height: 60px;
-            padding-top: 15px;
+            background: url(https://i.ibb.co/HrfVRcx/menu.png);
+            background-repeat: no-repeat;
+            background-size: 30px;
+            background-position: center;
+            cursor: pointer;
         }
 
-        .card-img-top {
-            height: 200px;
+        .toggle.active {
+            background: url(https://i.ibb.co/rt3HybH/close.png);
+            background-repeat: no-repeat;
+            background-size: 25px;
+            background-position: center;
+            cursor: pointer;
         }
 
-        .card {
-            text-align: center;
-
-        }
-
-        a.card-text {
-            color: deeppink;
-            font-family: "Lucida Console"
-        }
-
-        section {
-            position: static;
+        .showcase {
+            position: absolute;
+            right: 0;
             width: 100%;
             min-height: 100vh;
             padding: 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #ffffff;
-
-        }
-
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-
-        header.logo {
-            position: relative;
-            max-width: 80px;
-        }
-
-        header ul {
-            position: relative;
-            display: flex;
-        }
-
-        header ul li {
-            list-style: none;
-        }
-
-        header ul li a {
-            display: inline-block;
-            color: #333;
-            font-weight: 400;
-            margin-left: 40px;
-            text-decoration: none;
-
-        }
-
-        .content {
-            position: relative;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .content .textBox {
-            position: relative;
-            max-width: 600px;
-        }
-
-        .content .textBox h2 {
-            color: #333;
-            font-size: 4em;
-            line-height: 1.4em;
-            font-weight: 500;
-        }
-
-        .content .textBox h2 span {
-            color: #d5a531;
-            font-size: 1.2em;
-            font-weight: 900;
-        }
-
-        .content .textBox p {
-            color: #333;
-        }
-
-        .content .textBox a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 8px 20px;
-            background: #484646;
-            color: #ffffff;
-            border-radius: 40px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-decoration: none;
-        }
-
-        .content .imgBox {
-            width: 600px;
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 50px;
-            margin-top: 50px;
-        }
-
-        .content .imgBox img {
-            max-width: 340px;
-        }
-
-        .thumb {
-            position: absolute;
-            left: 50%;
-            bottom: 20px;
-            transform: translateX(-50%);
-            display: flex;
-        }
-
-        .thumb li {
-            list-style: none;
-            display: inline-block;
-            margin: 0 20px;
-            cursor: pointer;
+            background: #111;
             transition: 0.5s;
+            z-index: 2;
         }
 
-        .thumb li:hover {
-            transform: translateY(-15px);
+        .showcase.active {
+            right: 300px;
         }
 
-        .thumb li img {
-            max-width: 60px;
-        }
-
-        .circle {
+        .showcase video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #b97f9c;
-            clip-path: circle(600px at right 850px);
+            object-fit: cover;
+            opacity: 0.8;
         }
 
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #d3dada;
+            mix-blend-mode: overlay;
+        }
+
+        .text {
+            position: relative;
+            z-index: 10;
+        }
+
+        .text h2 {
+            font-size: 5em;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1em;
+            text-transform: uppercase;
+        }
+
+        .text h3 {
+            font-size: 4em;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1em;
+            text-transform: uppercase;
+        }
+
+        .text p {
+            font-size: 1.1em;
+            color: #fff;
+            margin: 20px 0;
+            font-weight: 400;
+            max-width: 700px;
+        }
+
+        .text a {
+            display: inline-block;
+            font-size: 1em;
+            background: #fff;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            color: #111;
+            letter-spacing: 2px;
+            transition: 0.2s;
+        }
+
+        .text a:hover {
+            letter-spacing: 6px;
+        }
+
+        .social {
+            position: absolute;
+            z-index: 10;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .toast {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1;
+            display: none;
+        }
+
+        .social li {
+            list-style: none;
+        }
+
+        .social li a {
+            display: inline-block;
+            margin-right: 20px;
+            filter: invert(1);
+            transform: scale(0.5);
+            transition: 0.5s;
+        }
+
+        .social li a:hover {
+            transform: scale(0.5) translateY(-15px);
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu ul {
+            position: relative;
+        }
+
+        .menu ul li {
+            list-style: none;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #111;
+        }
+
+        .menu ul li a:hover {
+            color: #03a9f4;
+        }
+
+        @media (max-width: 991px) {
+            .showcase,
+            .showcase header {
+                padding: 40px;
+            }
+
+            .text h2 {
+                font-size: 3em;
+            }
+
+            .text h3 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
 
 <jsp:include page="/header.jsp"></jsp:include>
 
-<section>
-    <c:if test='${message != null}'>
-        <center>
-            <div id="toastMessage" class="toast"></div>
-        </center>
-    </c:if>
-    <div class="circle"></div>
-    <div class="content">
-        <div class="textBox">
-            <p style="color: #b97f9c;font-family: 'Felix Titling';font-size: 70px;">SWEETER THAN YOUR EX</p>
-
-            <img   style="height: 300px;width: 300px;border-radius: 50%" src="img/image (1).png">
-        </div>
-        <div class="imgBox">
-            <img src="" class="starbucks">
-        </div>
+<body>
+<!-- Video Source -->
+<!-- https://www.pexels.com/video/aerial-view-of-beautiful-resort-2169880/ -->
+<section class="showcase">
+    <video src="https://player.vimeo.com/external/479732217.sd.mp4?s=39562d1370d6cc9a5f5db52a302fc57e15361a3e&profile_id=164&oauth2_token_id=57447761"
+           muted loop autoplay></video>
+    <div class="text">
+        <h3 style="color:white ">SÁNG TẠO, KIÊN TRÌ </h3>
+        <h3 style="color:white ">VÀ CHĂM CHỈ </h3>
+        <h4 style="color:white ">là những yếu tố tạo nên sự thành công</h4>
+        <h4 style="color:white ">của người thợ làm bánh</h4>
+        <a href="#">Explore</a>
     </div>
-    <%--    <ul class="thumb">--%>
-    <%--        <li>--%>
-    <%--            <img src="img/66-red-apple-png-image.png" alt=""--%>
-    <%--                 onclick="imgSilder('img/66-red-apple-png-image.png');changeCircleColor('#850606')">--%>
-    <%--            <img src="img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png" alt=""--%>
-    <%--                 onclick="imgSilder('img/159089-dark-cake-chocolate-free-transparent-image-hq_600x600.png');changeCircleColor('#231a1a')">--%>
-    <%--            <img src="img/146915-cake-creamy-piece-free-hq-image.png" alt=""--%>
-    <%--                 onclick="imgSilder('img/146915-cake-creamy-piece-free-hq-image.png');changeCircleColor('#e8b84b')">--%>
-    <%--        </li>--%>
-    <%--    </ul>--%>
+    <ul class="social">
+        <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
 </section>
 
-<div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://th.bing.com/th/id/R.cbac73649f11f534c4091fa05ac322fd?rik=11EKSS9JbcBLJg&riu=http%3a%2f%2fmedia.vietq.vn%2ffiles%2fctvhanh%2fbanh_ngot.jpg&ehk=hUEIhZtXqSKpHKZOFQg2Tknn5mRT0fpCcd030cWdS1g%3d&risl=&pid=ImgRaw&r=0"
-         class="card-img-top" alt="...">
-    <div class="card-body">
-        <p><a class="card-text" href="">BÁNH NGỌT</a></p>
-    </div>
-</div>
-
-<div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://th.bing.com/th/id/R.2b441c3085718166d5b0bde44862dd09?rik=puuilu1SfOQjQQ&riu=http%3a%2f%2fanphutan
-    .com%2fwp-content%2fuploads%2f2018%2f08%2fbanh-mousse-viet-quat.jpg&ehk=sdNZ7RveTlYO0Ba7Jk1IDfD%2f5%2bTT6mKCn6zp%2fBI%2b9NE%3d&risl=&pid=ImgRaw&r=0"
-         class="card-img-top" alt="...">
-    <div class="card-body">
-        <a class="card-text" href="">BÁNH LẠNH</a>
-    </div>
-</div>
-
-<div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://th.bing.com/th/id/R.b78eeff1d8318e10b5b856987b87128c?rik=5a1xRA5Ps0YXXA&riu=http%3a%2f%2ffoodisa
-    fourletterword.com%2fwp-content%2fuploads%2f2020%2f11%2fVietnamese_Chicken_Banh_Mi_Recipe_Banh_Mi_Ga_Roti_new2.
-    jpg&ehk=57vR67zsj1QYi95KKPIdFUstdMy2CVRIGiK0U8sUVbk%3d&risl=&pid=ImgRaw&r=0"
-         class="card-img-top" alt="...">
-    <div class="card-body">
-        <a class="card-text" href="">BÁNH MÌ</a>
-    </div>
-</div>
-
-<div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://th.bing.com/th/id/R.ead6bd00a32a6be90b45b6be7ddc8f18?rik=rmD93FVVmSo5iA&pid=ImgRaw&r=0"
-         class="card-img-top" alt="...">
-    <div class="card-body">
-        <a class="card-text" href="">PIZZA & HAMBURGER</a>
-    </div>
-</div>
-
-<div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://tranthinhlam.com/wp-content/uploads/2020/07/ma-bs0017_82.png"
-         class="card-img-top" alt="...">
-    <div class="card-body">
-        <a class="card-text" href="">BÁNH KEM</a>
-    </div>
-</div>
-
-<div class="card col-4" style="height: 350px; padding: 50px; float: left; border: none">
-    <img src="https://th.bing.com/th/id/R.f6b0d6f6999a2b50ad299961f70e3833?rik=wA%2bFov8zEwzn9g&riu=http%3a%2f%2f
-    banggiabanhtrungthu.com%2fkcfinder%2fupload%2fimages%2fbanh-trung-thu-kinh-do-3.jpg&ehk=HttpY6c2zfffYZGnga2ouBmxHS0hh3CDmeQ3Ndn5G%2bg%3d&risl=&pid=ImgRaw&r=0"
-         class="card-img-top" alt="...">
-    <div class="card-body">
-        <a class="card-text" href="">KHÁC</a>
-    </div>
-</div>
-
-<div style="text-align: center; background-color: #b97f9c">
-    <p>SWEETIE BAKERY</p>
-    <p> Địa chỉ: 280 Trần Hưng Đạo, quận Sơn Trà, Đà Nẵng</p>
-    <p> Điện thoại: 0236 3 888 348</p>
-    <p> Email : sieuem2002@gmail.com</p>
-</div>
-
-
+<div id="toastMessage" class="toast"style="z-index: 100"></div>
 <script>
+<%--    <%--%>
+<%--    String t = (String)request.getAttribute("toast");--%>
+<%--    if(t==null){--%>
+<%--        t="";--%>
+<%--    }--%>
+<%--    if(t.equals("t")){--%>
+<%--        %>--%>
+    // Function to show the toas
     function showToast(message) {
         var toast = document.getElementById("toastMessage");
         toast.style.display = "block";
         toast.innerText = message;
-        setTimeout(function() {
+        setTimeout(function () {
             toast.style.display = "none";
-        }, 3000);
+        }, 3000); // Hide the toast message after 3 seconds
     }
-    window.addEventListener('load', function() {
-        showToast("${message}");
+
+    // Automatically show the toast message when the page is reloaded
+    window.addEventListener('load', function () {
+        showToast("Page reloaded!");
     });
-</script>
-<script type="text/javascript" src="../../bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.bundle.js">
-    function imgSilder(anything) {
-        document.querySelector('.starbucks').src = anything;
-    }
+<%--    <%}--%>
+<%--    %>--%>
 
-    function changeCircleColor(color) {
-        const circle = document.querySelector('.circle');
-        circle.style.background = color;
-    }
+    const menuToggle = document.querySelector('.toggle');
+    const showcase = document.querySelector('.showcase');
 
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        showcase.classList.toggle('active');
+    })
 </script>
 </body>
 </html>

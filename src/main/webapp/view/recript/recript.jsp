@@ -76,7 +76,7 @@
         </div>
         <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
-            <table class="table table-striped table-bordered col-lg-12" id="tableStudent" style="width:100% ; float: right;">
+            <table class="table table-striped table-bordered col-lg-12" id="tableStudent" style="width:100%">
                 <thead >
                 <tr >
                     <th >STT</th>
@@ -194,7 +194,7 @@
 <script>
     $(document).ready(function () {
         $('#tableStudent').dataTable({
-            "dom": 'ltip',
+            "dom": 'ltp',
             "lengthChange": false,
             "pageLength": 4
         })

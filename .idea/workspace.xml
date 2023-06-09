@@ -5,39 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="tai comit lan 6">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index-login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/BakeryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/BakeryServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/DetailReceiptServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/DetailReceiptServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/ReceiptServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/ReceiptServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Cake.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/Cake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/IDetailReceiptRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/IDetailReceiptRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/impl/DetailReceiptRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/impl/DetailReceiptRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/IDetailReceiptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/IDetailReceiptService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/impl/DetailReceiptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/impl/DetailReceiptService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/BakeryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/BakeryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DetailReceiptServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DetailReceiptServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReceiptServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ReceiptServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/IDetailReceiptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/IDetailReceiptRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/DetailReceiptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/DetailReceiptRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/IDetailReceiptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/IDetailReceiptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/DetailReceiptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/DetailReceiptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header-login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header-login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/cake/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/cake/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/employee/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/employee/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,6 +171,7 @@
       <workItem from="1686187681986" duration="26730000" />
       <workItem from="1686222647079" duration="10627000" />
       <workItem from="1686235730682" duration="4685000" />
+      <workItem from="1686272879205" duration="1384000" />
     </task>
     <task id="LOCAL-00001" summary="tai comit lan 1">
       <created>1686190061272</created>
@@ -261,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686210814692</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tai comit lan 6">
+      <created>1686273114631</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686273114631</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

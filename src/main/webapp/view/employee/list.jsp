@@ -24,7 +24,7 @@
     <form method="get" action="/employee">
         <input name="action" value="searchName" hidden>
         <input type="text" name="name" placeholder="Tìm theo tên">
-        <button type="submit"  class="btn" style="background-color: #bb8496" >Tìm</button>
+        <button type="submit" class="btn" style="background-color: #bb8496">Tìm</button>
     </form>
     <table id="tableEmployee" class="table table-striped table-bordered col-lg-12" style="width:100%">
         <thead>
@@ -100,7 +100,33 @@
         </div>
     </div>
 </div>
+<%--toast--%>
+<div class="position-fixed top-0 end-5 p-3" style="z-index:10;margin-left: 500px; margin-top: 50px">
+    <div id="liveToast" style="width: 230px; color: white; background:lightgreen ;border-radius:20%/20%;" class="toast"
+         role="dialog" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px">
+                <g id="surface1_4_">
+                    <path style="fill:#4CAF50;"
+                          d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/>
+                    <path style="fill:#CCFF90;"
+                          d="M34.602,14.602L21,28.199l-5.602-5.598l-2.797,2.797L21,33.801l16.398-16.402L34.602,14.602z"/>
+                </g>
+            </svg>
+            <span id="toastContent">Nội dung hiển thị</span>
+        </div>
+    </div>
+</div>
 
+<script>
+    function displayToast(message, color) {
+        document.getElementById("toastContent").innerText = message;
+        document.getElementById("liveToast").style.background = color;
+        let myAlert = document.getElementById('liveToast');//select id of toast
+        let bsAlert = new bootstrap.Toast(myAlert);//inizialize it
+        bsAlert.show();//show it
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
@@ -121,6 +147,11 @@
         document.getElementById("id").value = id;
     }
 </script>
+<c:if test="${param.mess==1}">
+    <script>
+        displayToast("Thêm mới thành công", "#bb8496")
+    </script>
+</c:if>
 </body>
 </html>
 

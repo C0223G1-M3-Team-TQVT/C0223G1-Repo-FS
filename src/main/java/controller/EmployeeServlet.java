@@ -135,6 +135,7 @@ public class EmployeeServlet extends HttpServlet {
         int idPosition = Integer.parseInt(request.getParameter("idPosition"));
         Employee employee = new Employee(name, citizenId, phoneNumber, address);
         employeeService.addEmployee(employee, idPosition);
-        response.sendRedirect("/employee");
+        response.sendRedirect("/employee?mess=1");
+
     }
 }

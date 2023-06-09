@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        .toast {
+            background-color: #bb8496;
+            color: #fff;
+            padding: 15px;
+            border-radius: 20px;
+            position: fixed;
+            bottom:530px;
+            right: 30px;
+            z-index: 1;
+            display: none;
+        }
         @import url('https://th.bing.com/th?id=OIP.faUG1lf2gcBIH2F3soOTdgHaIR&w=236&h=264&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
 
         * {
@@ -180,7 +193,11 @@
 <jsp:include page="/header.jsp"></jsp:include>
 
 <section>
-
+    <c:if test='${message != null}'>
+        <center>
+            <div id="toastMessage" class="toast"></div>
+        </center>
+    </c:if>
     <div class="circle"></div>
     <div class="content">
         <div class="textBox">
@@ -257,12 +274,26 @@
 </div>
 
 <div style="text-align: center; background-color: #b97f9c">
-    <p>BAKERY & CAFE</p>
-    <p> Địa chỉ: gì đó, quận Hải Châu, Đà Nẵng</p>
+    <p>SWEETIE BAKERY</p>
+    <p> Địa chỉ: 280 Trần Hưng Đạo, quận Sơn Trà, Đà Nẵng</p>
     <p> Điện thoại: 0236 3 888 348</p>
-    <p> email</p>
+    <p> Email : sieuem2002@gmail.com</p>
 </div>
 
+
+<script>
+    function showToast(message) {
+        var toast = document.getElementById("toastMessage");
+        toast.style.display = "block";
+        toast.innerText = message;
+        setTimeout(function() {
+            toast.style.display = "none";
+        }, 3000);
+    }
+    window.addEventListener('load', function() {
+        showToast("${message}");
+    });
+</script>
 <script type="text/javascript" src="../../bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.bundle.js">
     function imgSilder(anything) {
         document.querySelector('.starbucks').src = anything;

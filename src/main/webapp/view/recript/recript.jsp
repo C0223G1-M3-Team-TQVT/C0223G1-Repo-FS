@@ -1,4 +1,4 @@
-<%@ page import="model.Receipt" %><%--
+<%@ page import="model.Receipt" %>
   Created by IntelliJ IDEA.
   User: Admin
   Date: 6/4/2023
@@ -20,12 +20,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 <style>
     .toast {
-        background-color: #333;
+        background-color: #bb8496;
         color: #fff;
         padding: 15px;
-        border-radius: 5px;
+        border-radius: 20px;
         position: fixed;
-        bottom: 30px;
+        bottom:530px;
         right: 30px;
         z-index: 1;
         display: none;
@@ -33,12 +33,11 @@
 </style>
 </head>
 <body>
-
 <div>
     <div class="row header bg-info">
-        <nav class="navbar bg-body-tertiary">
+        <nav    >
             <div class="container-fluid">
-                <jsp:include page="/header.jsp"></jsp:include>
+                <jsp:include page="/header-login.jsp"></jsp:include>
             </div>
         </nav>
     </div>
@@ -58,12 +57,12 @@
                 </button>
                 <div>
                     <form action="/detailreceipt?action=search" name="tinhTrang" method="post">
-                        <select name="tinhTrang" id="tinhTrang">
+                        <select style="border-radius: 30px" name="tinhTrang" id="tinhTrang">
                             <option value="">Tìm kiếm</option>
                             <option value="1">Đã giao</option>
                             <option value="0">Chưa giao</option>
                         </select>
-                        <button type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #2bac1b;"></i> Tìm
+                        <button style="border-radius: 50%" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #2bac1b;"></i>
                         </button>
                     </form>
                 </div>
@@ -77,22 +76,22 @@
         </div>
         <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
-            <table class="table table-striped table-bordered" id="tableStudent" style="width:100% ; float: right;">
-                <thead>
-                <tr>
-                    <th>STT</th>
+            <table class="table table-striped table-bordered col-lg-12" id="tableStudent" style="width:100% ; float: right;">
+                <thead >
+                <tr >
+                    <th >STT</th>
                     <th>Tên khách hàng</th>
                     <th>Số điện thoại</th>
                     <th>Ngày đặt hàng</th>
                     <th>Tình trạng</th>
                     <th>Tổng giá</th>
-                    <th>Chi tiết</th>
-                    <th>Xóa</th>
+                    <th style="text-align: center">Chi tiết</th>
+                    <th style="text-align: center">Xóa</th>
                 </tr>
                 </thead>
                 <tbody>
                 <c:forEach items="${receipts}" var="receipts" varStatus="loop">
-                    <tr class="table-secondary">
+                    <tr >
                         <td><c:out value="${loop.count}"/></td>
                         <td><c:out value="${receipts.customer.name}"/></td>
                         <td><c:out value="${receipts.customer.phoneNumber}"/></td>
@@ -128,13 +127,12 @@
                         </td>
                     </tr>
                 </c:forEach>
-                </tbody>
             </table>
         </div>
     </div>
 </div>
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog " style="padding-top: 220px">
         <div class="modal-content" >
             <center>
             <div class="modal-header" style="background: #bb8496">
@@ -143,14 +141,13 @@
             </div>
             </center>
             <div class="modal-body">
-              <span >Bạn có muốn xóa khách hàng</span>  <h3 style="color: #b02a37" id="name"></h3>có số điện thoại là <h3 id="sdt"></h3>
+              <span >Bạn có muốn xóa khách hàng</span>  <h6 style="color: #b02a37" id="name"></h6>có số điện thoại là <h6 id="sdt"></h6>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i></button>
                 <form action="/detailreceipt" method="get">
                     <input name="action" value="delete" hidden>
                     <input type="text" name="deleteReceipt" id="deleteReceipt" hidden>
-                    <button type="submit" class="btn " style="background:#bb8496 "><i class="fa-solid fa-trash"></i>
+                    <button type="submit" class="btn " style="background:#bb8496 "><i class="fa-solid fa-trash" ></i>
                     </button>
                 </form>
             </div>
@@ -181,15 +178,7 @@
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#tableStudent').dataTable({
-            "dom": 'lrtip',
-            "lengthChange": false,
-            "pageLength": 4
-        })
-    })
-</script>
+
 <script>
     function deleteReceipt(id, name, sdt) {
         document.getElementById("deleteReceipt").value = id;
@@ -201,6 +190,15 @@
         document.getElementById("idDelete").value = id;
         document.getElementById("nameDelete").innerText = name;
     }
+</script>
+<script>
+    $(document).ready(function () {
+        $('#tableStudent').dataTable({
+            "dom": 'ltip',
+            "lengthChange": false,
+            "pageLength": 4
+        })
+    })
 </script>
 </body>
 </html>

@@ -80,7 +80,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex" method="get" action="/cake">
+                    <form class="d-flex" method="get" action="/cake" >
                         <input name="action" value="find" hidden>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                                name="name">

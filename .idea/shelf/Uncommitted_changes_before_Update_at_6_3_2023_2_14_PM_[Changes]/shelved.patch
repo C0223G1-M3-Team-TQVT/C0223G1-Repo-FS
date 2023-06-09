@@ -1,0 +1,147 @@
+Index: src/main/java/model/Cake.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package model;\r\n\r\npublic class Cake {\r\n    private int id;\r\n    private String name;\r\n    private int typeOfCake;\r\n    private double price;\r\n    private int amount;\r\n\r\n    public Cake(int id, String name, int typeOfCake, double price) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.typeOfCake = typeOfCake;\r\n        this.price = price;\r\n    }\r\n\r\n    public Cake(int id, String name, int typeOfCake, double price, int amount) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.typeOfCake = typeOfCake;\r\n        this.price = price;\r\n        this.amount = amount;\r\n    }\r\n\r\n    public Cake(String name, int typeOfCake, double price) {\r\n        this.name = name;\r\n        this.typeOfCake = typeOfCake;\r\n        this.price = price;\r\n    }\r\n\r\n    public Cake() {\r\n    }\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public int getTypeOfCake() {\r\n        return typeOfCake;\r\n    }\r\n\r\n    public void setTypeOfCake(int typeOfCake) {\r\n        this.typeOfCake = typeOfCake;\r\n    }\r\n\r\n    public double getPrice() {\r\n        return price;\r\n    }\r\n\r\n    public void setPrice(double price) {\r\n        this.price = price;\r\n    }\r\n\r\n    public int getAmount() {\r\n        return amount;\r\n    }\r\n\r\n    public void setAmount(int amount) {\r\n        this.amount = amount;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/model/Cake.java b/src/main/java/model/Cake.java
+--- a/src/main/java/model/Cake.java	(revision bf96f9fb590beda6e04c6a6451975f62feca2e37)
++++ b/src/main/java/model/Cake.java	(date 1685775284071)
+@@ -6,6 +6,16 @@
+     private int typeOfCake;
+     private double price;
+     private int amount;
++    private String picture;
++
++    public Cake(int id, String name, int typeOfCake, double price, int amount, String picture) {
++        this.id = id;
++        this.name = name;
++        this.typeOfCake = typeOfCake;
++        this.price = price;
++        this.amount = amount;
++        this.picture = picture;
++    }
+ 
+     public Cake(int id, String name, int typeOfCake, double price) {
+         this.id = id;
+Index: src/main/java/service/impl/ReceiptService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package service.impl;\r\n\r\npublic class ReceiptService {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/service/impl/ReceiptService.java b/src/main/java/service/impl/ReceiptService.java
+--- a/src/main/java/service/impl/ReceiptService.java	(revision bf96f9fb590beda6e04c6a6451975f62feca2e37)
++++ b/src/main/java/service/impl/ReceiptService.java	(date 1685775848509)
+@@ -1,4 +1,14 @@
+ package service.impl;
+ 
+-public class ReceiptService {
++import model.Cake;
++import service.IReceiptService;
++
++import java.util.List;
++
++public class ReceiptService implements IReceiptService {
++
++    @Override
++    public List<Cake> showListCakeOrder() {
++        return null;
++    }
+ }
+Index: src/main/java/service/IReceiptService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package service;\r\n\r\npublic interface IReceiptService {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/service/IReceiptService.java b/src/main/java/service/IReceiptService.java
+--- a/src/main/java/service/IReceiptService.java	(revision bf96f9fb590beda6e04c6a6451975f62feca2e37)
++++ b/src/main/java/service/IReceiptService.java	(date 1685775284076)
+@@ -1,4 +1,9 @@
+ package service;
+ 
++import model.Cake;
++
++import java.util.List;
++
+ public interface IReceiptService {
++    List<Cake> showListCakeOrder();
+ }
+Index: src/main/java/repository/impl/ReceiptRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package repository.impl;\r\n\r\npublic class ReceiptRepository {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/repository/impl/ReceiptRepository.java b/src/main/java/repository/impl/ReceiptRepository.java
+--- a/src/main/java/repository/impl/ReceiptRepository.java	(revision bf96f9fb590beda6e04c6a6451975f62feca2e37)
++++ b/src/main/java/repository/impl/ReceiptRepository.java	(date 1685775848509)
+@@ -1,4 +1,42 @@
+ package repository.impl;
+ 
+-public class ReceiptRepository {
++import model.Cake;
++import repository.BaseRepository;
++import repository.IReceiptRepository;
++
++import java.sql.Connection;
++import java.sql.ResultSet;
++import java.sql.SQLException;
++import java.sql.Statement;
++import java.util.ArrayList;
++import java.util.List;
++
++public class ReceiptRepository implements IReceiptRepository {
++    private static String DISPLAY = "select * from banh";
++
++    @Override
++    public List<Cake> showListCakeOrder() {
++        Connection connection = BaseRepository.getConnection();
++        List<Cake> list = new ArrayList<>();
++        try {
++            Statement statement = connection.createStatement();
++            ResultSet resultSet = statement.executeQuery(DISPLAY);
++            int id = resultSet.getInt("ma_banh");
++            String name = resultSet.getString("ten_banh");
++            int typeOfCake = resultSet.getInt("ma_loai_banh");
++            double price = resultSet.getDouble("gia");
++            int amount = resultSet.getInt("so_luong_hien_co");
++            String picture = resultSet.getString("anh_banh");
++            list.add(new Cake(id, name, typeOfCake, price, amount, picture));
++        } catch (SQLException e) {
++            e.printStackTrace();
++        } finally {
++            try {
++                connection.close();
++            } catch (SQLException e) {
++                e.printStackTrace();
++            }
++        }
++        return list;
++    }
+ }
+Index: src/main/java/repository/IReceiptRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package repository;\r\n\r\npublic interface IReceiptRepository {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/repository/IReceiptRepository.java b/src/main/java/repository/IReceiptRepository.java
+--- a/src/main/java/repository/IReceiptRepository.java	(revision bf96f9fb590beda6e04c6a6451975f62feca2e37)
++++ b/src/main/java/repository/IReceiptRepository.java	(date 1685775284063)
+@@ -1,4 +1,9 @@
+ package repository;
+ 
++import model.Cake;
++
++import java.util.List;
++
+ public interface IReceiptRepository {
++    List<Cake> showListCakeOrder();
+ }

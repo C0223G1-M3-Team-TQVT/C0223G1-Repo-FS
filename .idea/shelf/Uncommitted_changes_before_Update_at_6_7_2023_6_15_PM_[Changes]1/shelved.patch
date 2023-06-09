@@ -1,0 +1,21 @@
+Index: src/main/java/model/Cake.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package model;\r\n\r\npublic class Cake {\r\n    private int id;\r\n    private String name;\r\n    private int typeOfCake;\r\n    private double price;\r\n    private int amount;\r\n    private String picture;\r\n\r\n\r\n    public Cake(int id, String name, double price) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.price = price;\r\n    }\r\n\r\n    public Cake(int id, String name, int typeOfCake, double price, int amount, String picture) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.typeOfCake = typeOfCake;\r\n        this.price = price;\r\n        this.amount = amount;\r\n        this.picture = picture;\r\n    }\r\n\r\n    public Cake(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public Cake(int id, String name, int typeOfCake, double price) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.typeOfCake = typeOfCake;\r\n        this.price = price;\r\n    }\r\n\r\n    public Cake(int id, String name, int typeOfCake, double price, int amount) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.typeOfCake = typeOfCake;\r\n        this.price = price;\r\n        this.amount = amount;\r\n    }\r\n\r\n    public Cake(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public Cake(String name, int typeOfCake, double price) {\r\n        this.name = name;\r\n        this.typeOfCake = typeOfCake;\r\n        this.price = price;\r\n    }\r\n\r\n    public Cake() {\r\n    }\r\n\r\n    public String getPicture() {\r\n        return picture;\r\n    }\r\n\r\n    public void setPicture(String picture) {\r\n        this.picture = picture;\r\n    }\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public int getTypeOfCake() {\r\n        return typeOfCake;\r\n    }\r\n\r\n    public void setTypeOfCake(int typeOfCake) {\r\n        this.typeOfCake = typeOfCake;\r\n    }\r\n\r\n    public double getPrice() {\r\n        return price;\r\n    }\r\n\r\n    public void setPrice(double price) {\r\n        this.price = price;\r\n    }\r\n\r\n    public int getAmount() {\r\n        return amount;\r\n    }\r\n\r\n    public void setAmount(int amount) {\r\n        this.amount = amount;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/model/Cake.java b/src/main/java/model/Cake.java
+--- a/src/main/java/model/Cake.java	
++++ b/src/main/java/model/Cake.java	
+@@ -43,8 +43,8 @@
+         this.amount = amount;
+     }
+ 
+-    public Cake(int id) {
+-        this.id = id;
++    public Cake(int amount) {
++        this.amount = amount;
+     }
+ 
+     public Cake(String name, int typeOfCake, double price) {

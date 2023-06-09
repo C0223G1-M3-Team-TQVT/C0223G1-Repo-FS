@@ -75,7 +75,7 @@ public class BakeryServlet extends HttpServlet {
             request.setAttribute("message", "Thêm tài khoản thành công");
             request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
             iUserService.addUser(new User(taiKhoan, matKhau));
-            response.sendRedirect("/bakery");
+//            response.sendRedirect("/bakery");
         } else {
             request.setAttribute("message", "Tài khoản này đã có hoặc chưa đăng kí số điện thoại này");
             request.getRequestDispatcher("view/login/login.jsp").forward(request, response);

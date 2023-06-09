@@ -45,25 +45,25 @@ To change this template use File | Settings | File Templates.
         </nav>
     </div>
     <div class="row content" style="padding-top: 50px">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light "style="background: #bb8496" >
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
             </div>
         </nav>
     </div>
-    <div class="row  addProduct">
+    <div class="row  addProduct" style="padding-top: 60px">
         <div class="col-0 col-md-8 col-lg-8">
         </div>
         <div class="col-0 col-md-2 col-2">
         </div>
         <div><h2 style="text-align: center">CHI TIẾT HÓA ĐƠN</h2></div>
-        <table class="table table-striped table-bordered" id="tableStudent" style="width:100%">
-            <thead>
+        <table class="table table-striped table-bordered" id="tableStudent" style="width:100%;background-color: #b0b0ad">
+            <thead style="background-color: #bb8496">
             <tr style="text-align: center">
                 <th>Tên khách hàng</th>
                 <th>Tên loại bánh</th>
                 <th>Số lượng</th>
-                <th >Tổng sản phẩm</th>
+                <th >Tổng giá sản phẩm</th>
             </tr>
             </thead>
             <tbody >

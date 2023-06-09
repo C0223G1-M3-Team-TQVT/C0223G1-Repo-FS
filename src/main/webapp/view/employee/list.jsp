@@ -16,7 +16,7 @@
 
 </head>
 <body style="background: white">
-<jsp:include page="/header.jsp"></jsp:include>
+<jsp:include page="/header-login.jsp"></jsp:include>
 <div class="container-fluid" style="background: white; padding-top: 50px">
     <a href="/employee?action=create">
         <button type="submit" class="btn" style="background-color: #bb8496">Thêm</button>
@@ -110,7 +110,7 @@
 <script>
     $(document).ready(function () {
         $('#tableEmployee').dataTable({
-            "dom": 'lrtip',
+            "dom": 'lrtp',
             "lengthChange": false,
             "pageLength": 5
         });

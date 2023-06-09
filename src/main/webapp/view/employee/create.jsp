@@ -220,16 +220,11 @@
                         </c:forEach>
                     </select> <br>
                 </div>
-                <button class="log-in" type="submit" onclick="notify()">Thêm mới</button>
+                <button class="log-in" type="submit">Thêm mới</button>
             </div>
         </div>
     </form>
 </div>
-<script>
-    function notify() {
-        alert('Thêm mới thành công');
-    }
-</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>

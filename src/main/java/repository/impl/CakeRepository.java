@@ -74,7 +74,7 @@ public class CakeRepository implements ICakeRepository {
             if (cake.getPicture() == "") {
                 preparedStatement.setString(5, "https://antimatter.vn/wp-content/uploads/2022/11/anh-avatar-trang-fb-mac-dinh.jpg");
             } else {
-                preparedStatement.setString(5, cake.getPicture());
+                preparedStatement.setString(5,cake.getPicture());
             }
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

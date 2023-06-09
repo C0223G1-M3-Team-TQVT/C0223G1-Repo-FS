@@ -10,8 +10,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CakeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CakeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/CakeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/CakeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/cake/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/cake/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/cake/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/cake/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/cake/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/cake/update.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +78,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2QtzU3qla4RuInliu3mjB7D0FMB" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -83,7 +92,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)"
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Codegym/module3x/module3x/module3/layout_css",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -175,6 +191,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686187680056</updated>
       <workItem from="1686187681986" duration="20623000" />
+      <workItem from="1686228196032" duration="11665000" />
     </task>
     <task id="LOCAL-00001" summary="tai comit lan 1">
       <created>1686190061272</created>
@@ -225,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686199498491</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="thien commit lan 6">
+      <created>1686210749945</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686210749945</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +272,7 @@
     <MESSAGE value="tai comit lan 3" />
     <MESSAGE value="tai comit lan 4" />
     <MESSAGE value="tai comit lan 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="tai comit lan 5" />
+    <MESSAGE value="thien commit lan 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="thien commit lan 6" />
   </component>
 </project>

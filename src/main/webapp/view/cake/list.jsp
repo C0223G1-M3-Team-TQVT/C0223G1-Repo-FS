@@ -60,7 +60,7 @@
         }
     </style>
 </head>
-<body style="background-color:#efbefd">
+<body style="background-color:#4df8f8">
 <div class="container-fluid">
     <div class="row header bg-info">
         <nav class="navbar bg-body-tertiary">
@@ -71,7 +71,7 @@
     </div>
 
     <div class="row content" style="padding-top: 50px;">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eeede7">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c0ffff">
             <div class="container-fluid" >
                 <a class="navbar-brand" href="/cake" style="color: rgba(21,19,19,0.76)"> <i class="fa-regular fa-user"></i>Cake</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -79,7 +79,7 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left:70em;padding-top:20px">
                     <form class="d-flex" method="get" action="/cake" >
                         <input name="action" value="find" hidden>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
@@ -96,7 +96,7 @@
         <th colspan="8"><h4 style="text-align: center">QUẢN LÝ SẢN PHẨM </h4></th>
         <span id="success"
               class="son"
-              style="float: left; background-color: #a0b4ff;font-size: 30px">${result}</span>
+              style="float: left; background-color: #bb8496;font-size: 30px">${result}</span>
     </tr>
     <div class="row  addProduct">
         <div class="col-12 col-md-2 col-2 buttonAdd">
@@ -132,6 +132,7 @@
                     <td>
                         <p>
                             <img src="${cake.picture}" width="100px" height="100px">
+<%--                            <img id="img" src="" height="200" alt="Image preview...">--%>
                             <c:out value="${cake.name}"/>
                         </p>
                     </td>
@@ -224,5 +225,20 @@
         document.getElementById("success").style.display = "none";
     },3000)
 </script>
+<%--<script>--%>
+<%--    function previewFile() {--%>
+<%--        var preview = document.getElementById("img");--%>
+<%--        var file   =  document.getElementById("file").files[0];--%>
+<%--        var reader  = new FileReader();--%>
+<%--        reader.onloadend = function () {--%>
+<%--            preview.src = reader.result;--%>
+<%--        }--%>
+<%--        if (file) {--%>
+<%--            reader.readAsDataURL(file);--%>
+<%--        } else {--%>
+<%--            preview.src = "";--%>
+<%--        }--%>
+<%--    }--%>
+<%--</script>--%>
 </body>
 </html>

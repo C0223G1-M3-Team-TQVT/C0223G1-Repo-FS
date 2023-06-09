@@ -29,13 +29,21 @@
             <img src="${cake.picture}" class="card-img-top" style="height: 220px; width: 220px">
             <div class="card-body">
 
-                <button type="button" onClick="tru(${cake.id})" style="float: left; width: 30px">-</button>
-                <input id="${cake.id}" value='0' readonly style="width: 130px;float: left; text-align: center">
+                <button type="button" onClick="tru1(${cake.id})" style="float: left; width: 30px">-</button>
+                <input id="${cake.id}" value='' readonly style="width: 130px;float: left; text-align: center">
                 <input id="Price${cake.id}" value="${cake.price}" hidden>
                 <input id="Name${cake.id}" value="${cake.name}" hidden>
-                <button type="button" onClick="cong(${cake.id})" style="float: left; width: 30px">+</button>
+                <button type="button" onClick="cong1(${cake.id})" style="float: left; width: 30px">+</button>
             </div>
         </div>
+        <script>
+            if (sessionStorage.getItem(${cake.id}) == null) {
+                sessionStorage.setItem(${cake.id}, 0)
+                document.getElementById(${cake.id}).value = 0;
+            } else {
+                document.getElementById(${cake.id}).value = sessionStorage.getItem(${cake.id}) * 1;
+            }
+        </script>
     </c:forEach>
     <button onclick="gioHang()" type="button" class="btn btn-primary" data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
@@ -106,7 +114,8 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                             style="background-color: #b97f9c">Quay lại
                     </button>
-                    <button type="submit" class="btn btn-primary" style="background-color: #b97f9c">Đặt</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #b97f9c" onclick="clear()">Đặt
+                    </button>
                 </div>
             </div>
         </div>
@@ -114,6 +123,22 @@
 
 </form>
 <script>
+    function clear() {
+        sessionStorage.clear();
+    }
+
+    function cong1(i) {
+        sessionStorage.setItem(i, sessionStorage.getItem(i) * 1 + 1);
+        document.getElementById(i).value = sessionStorage.getItem(i);
+    }
+
+    function tru1(i) {
+        if (document.getElementById(i).value == 0) {
+            return;
+        }
+        sessionStorage.setItem(i, sessionStorage.getItem(i) * 1 - 1);
+        document.getElementById(i).value = sessionStorage.getItem(i);
+    }
 
     function tru(i) {
         let a = document.getElementById(i).value * 1;

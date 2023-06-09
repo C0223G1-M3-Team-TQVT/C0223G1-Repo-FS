@@ -103,7 +103,7 @@
             <div class="btn-group" role="group" aria-label="Basic outlined example">
                 <form method="get" action="/cake?action">
                     <input name="action" value="create" hidden>
-                    <button type="submit" class="btn btn-dark" style="background-color: #5670f5">Thêm mới</button>
+                    <button type="submit" class="btn btn-dark" style="background-color: #f8b3c7">Thêm mới</button>
                 </form>
             </div>
         </div>
@@ -189,7 +189,7 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 <form method="post" action="/cake?action=delete&id=${cake.id}">
                     <input id="idDelete" name="idDelete" type="hidden">
-                    <button type="submit" class="btn btn-primary">Xóa</button>
+                    <button type="submit" class="btn btn-danger">Xóa</button>
                 </form>
             </div>
         </div>

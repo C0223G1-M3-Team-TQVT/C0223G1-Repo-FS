@@ -105,6 +105,7 @@ public class DetailReceiptServlet extends HttpServlet {
                 request.setAttribute("receipts", detailReceipts);
                 request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
                 break;
+
         }
     }
 

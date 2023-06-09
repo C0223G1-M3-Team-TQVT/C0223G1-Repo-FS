@@ -231,13 +231,13 @@
 
 <div id="toastMessage" class="toast"style="z-index: 100"></div>
 <script>
-<%--    <%--%>
-<%--    String t = (String)request.getAttribute("toast");--%>
-<%--    if(t==null){--%>
-<%--        t="";--%>
-<%--    }--%>
-<%--    if(t.equals("t")){--%>
-<%--        %>--%>
+    <%
+    String t = (String)request.getAttribute("toast");
+    if(t==null){
+        t="";
+    }
+    if(t.equals("t")){
+        %>
     // Function to show the toas
     function showToast(message) {
         var toast = document.getElementById("toastMessage");
@@ -252,8 +252,8 @@
     window.addEventListener('load', function () {
         showToast("Page reloaded!");
     });
-<%--    <%}--%>
-<%--    %>--%>
+    <%}
+    %>
 
     const menuToggle = document.querySelector('.toggle');
     const showcase = document.querySelector('.showcase');

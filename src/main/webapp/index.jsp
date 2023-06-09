@@ -238,7 +238,7 @@
 <%--    }--%>
 <%--    if(t.equals("t")){--%>
 <%--        %>--%>
-    // Function to show the toast message
+    // Function to show the toast mes
     function showToast(message) {
         var toast = document.getElementById("toastMessage");
         toast.style.display = "block";

@@ -41,13 +41,13 @@
             </div>
         </nav>
     </div>
-    <div class="row content" >
+    <div class="row content" style="padding-top: 50px">
         <c:if test='${message != null}'>
             <center>
                 <div id="toastMessage" class="toast"></div>
             </center>
         </c:if>
-        <nav class="navbar navbar-expand-lg navbar-light"  style="margin-top:10px;background: #bb8496">
+        <nav class="navbar navbar-expand-lg navbar-light"  style="background: #bb8496">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -55,7 +55,7 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div style="padding-top: 15px">
+                <div >
                     <form action="/detailreceipt?action=search" name="tinhTrang" method="post">
                         <select style="border-radius: 30px" name="tinhTrang" id="tinhTrang">
                             <option value="">Tìm kiếm</option>
@@ -76,8 +76,8 @@
         </div>
         <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
-            <table class="table table-striped table-bordered col-lg-12" id="tableStudent" style="width:100%">
-                <thead >
+            <table class="table table-striped table-bordered col-lg-12" id="tableStudent" style="width:100%;background-color: #b0b0ad">
+                <thead style="background-color: #bb8496">
                 <tr >
                     <th >STT</th>
                     <th>Tên khách hàng</th>

@@ -55,7 +55,7 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div>
+                <div style="padding-top: 15px">
                     <form action="/detailreceipt?action=search" name="tinhTrang" method="post">
                         <select style="border-radius: 30px" name="tinhTrang" id="tinhTrang">
                             <option value="">Tìm kiếm</option>

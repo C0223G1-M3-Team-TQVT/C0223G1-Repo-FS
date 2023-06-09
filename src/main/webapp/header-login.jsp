@@ -66,11 +66,11 @@
 <body>
 <nav id="fixNav">
     <ul>
-        <li><a href="/index.jsp">Trang chủ</a></li>
         <li><a href="/cake">Sản phẩm</a></li>
-        <li><a href="/receipt-servlet?action=order">Đặt hàng</a></li>
-        <li style="float: right"><span></span></li>
-        <li style="float: right"><a href="/bakery?action=login">Đăng xuất</a></li>
+        <li><a href="/employee?action=list">Nhân viên</a></li>
+        <li><a href="/detailreceipt?action=a">Hóa đơn</a></li>
+        <li style="float: right;"><a href="/bakery?action=logout"> Đăng xuất</a></li>
+        <li style="float:right;">${taikhoan}</li>
     </ul>
 </nav>
 </body>

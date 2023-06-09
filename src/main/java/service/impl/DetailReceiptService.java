@@ -33,8 +33,8 @@ public class DetailReceiptService implements IDetailReceiptService {
     }
 
     @Override
-    public void UpdateCondition(int id) {
-        iDetailReceiptRepository.UpdateCondition(id);
+    public boolean UpdateCondition(int id) {
+      return   iDetailReceiptRepository.UpdateCondition(id);
     }
 
 }

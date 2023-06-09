@@ -57,11 +57,11 @@
                 </td>
                 <td>
                     <c:out value="${cake.price}"/>
-                    <input name="price" value="${cake.price}">
+                    <input type="number" name="price" value="${cake.price}" min="0" required>
                 </td>
                 <td>
                     <c:out value="${cake.amount}"/>
-                    <input name="amount" value="${cake.amount}">
+                    <input type="number" name="amount" value="${cake.amount}" min="0">
                 </td>
                 <td>
                     <img src="${cake.picture}" width="100px" height="100px">

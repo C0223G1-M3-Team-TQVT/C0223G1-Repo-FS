@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="vu commit lan 10">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/hien_thi.html" afterDir="false" />
+    <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="vu commit lan 11">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/impl/ReceiptRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/impl/ReceiptRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/ReceiptServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/ReceiptServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReceiptServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ReceiptServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/hien_thi.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/order/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/order/order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +90,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\Desktop\codegym\sweetie-bakery\C0223G1-Repo-FS\src\main\webapp\img" />
       <recent name="C:\Users\Admin\codegym_module3\casestudy_module3_nhanh_khac\C0223G1-Repo-FS\src\main\webapp\img" />
       <recent name="C:\Users\Admin\codegym_module3\casestudy_module3_nhanh_khac\C0223G1-Repo-FS\src\main\webapp" />
     </key>
@@ -190,7 +193,9 @@
       <option name="presentableId" value="Default" />
       <updated>1686187680056</updated>
       <workItem from="1686187681986" duration="20623000" />
-      <workItem from="1686272582189" duration="5836000" />
+      <workItem from="1686272582189" duration="6430000" />
+      <workItem from="1686283953496" duration="2425000" />
+      <workItem from="1686292364586" duration="5802000" />
     </task>
     <task id="LOCAL-00001" summary="tai comit lan 1">
       <created>1686190061272</created>
@@ -255,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686275225788</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="vu commit lan 11">
+      <created>1686279201524</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686279201524</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +292,7 @@
     <MESSAGE value="tai comit lan 4" />
     <MESSAGE value="tai comit lan 5" />
     <MESSAGE value="vu commit lan 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="vu commit lan 10" />
+    <MESSAGE value="vu commit lan 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="vu commit lan 11" />
   </component>
 </project>

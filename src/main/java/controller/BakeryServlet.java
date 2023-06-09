@@ -26,6 +26,13 @@ public class BakeryServlet extends HttpServlet {
             case "login":
                 loginFormEmployee(request, response);
                 break;
+            case "logout":
+                HttpSession session= request.getSession();
+                session.removeAttribute("taikhoan");
+                String message="Đăng xuất thành công";
+                request.setAttribute("message",message);
+                request.getRequestDispatcher("/index.jsp").forward(request,response);
+                break;
             default:
                 listUser(request, response);
         }
@@ -68,7 +75,7 @@ public class BakeryServlet extends HttpServlet {
             request.setAttribute("message", "Thêm tài khoản thành công");
             request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
             iUserService.addUser(new User(taiKhoan, matKhau));
-            response.sendRedirect("/bakery");
+//            response.sendRedirect("/bakery");
         } else {
             request.setAttribute("message", "Tài khoản này đã có hoặc chưa đăng kí số điện thoại này");
             request.getRequestDispatcher("view/login/login.jsp").forward(request, response);
@@ -81,9 +88,20 @@ public class BakeryServlet extends HttpServlet {
         if (matKhau == null) {
             matKhau = "";
         }
+        String message="Đăng nhập thành công";
         boolean check = iUserService.findUser(new User(taiKhoan, matKhau));
         if (check) {
-            response.sendRedirect("index.jsp");
+            HttpSession session= request.getSession();
+            session.setAttribute("taikhoan",taiKhoan);
+            request.setAttribute("message",message);
+            try {
+
+
+                request.getRequestDispatcher("index-login.jsp").forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            }
+
         } else {
             request.setAttribute("message", "Tài khoản hoặc mật khẩu sai,vui lòng nhập lại");
             try {

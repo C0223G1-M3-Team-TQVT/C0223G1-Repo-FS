@@ -161,7 +161,17 @@
             color: #333;
             text-decoration: none;
         }
-
+         .toast {
+             background-color: #bb8496;
+             color: #fff;
+             padding: 15px;
+             border-radius: 20px;
+             position: fixed;
+             bottom:530px;
+             right: 30px;
+             z-index: 1;
+             display: none;
+         }
     </style>
 </head>
 <body>
@@ -173,9 +183,7 @@
         <header>Đăng nhập</header>
         <form action="/bakery?action=login" method="post">
             <c:if test='${message != null}'>
-                <center>
-                        <span style="background:#bb8496;color: white ">${message} </span>
-                </center>
+                <div id="toastMessage" class="toast"></div>
             </c:if>
             <input type="text" placeholder="Số điện thoại" name="taikhoan" pattern="[0-9]{1,}"
                    title="Vui lòng nhập đúng tài khoản"/>
@@ -198,6 +206,19 @@
             <input type="submit" value="Đăng kí"/>
         </form>
     </div>
+    <script>
+        function showToast(message) {
+            var toast = document.getElementById("toastMessage");
+            toast.style.display = "block";
+            toast.innerText = message;
+            setTimeout(function() {
+                toast.style.display = "none";
+            }, 3000);
+        }
+        window.addEventListener('load', function() {
+            showToast("${message}");
+        });
+    </script>
     <script>
         const wrapper = document.querySelector(".wrapper"),
             signupHeader = document.querySelector(".signup header"),

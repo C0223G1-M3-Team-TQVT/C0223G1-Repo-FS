@@ -1,5 +1,6 @@
 package controller;
 
+import com.mysql.cj.Session;
 import model.*;
 import service.IReceiptService;
 import service.impl.ReceiptService;
@@ -23,18 +24,21 @@ public class ReceiptServlet extends HttpServlet {
         }
         switch (action) {
             case "order":
+                request.setCharacterEncoding("UTF-8");
+                response.setContentType("text/html;charset=UTF-8");
                 List<Cake> list = receiptService.showListCakeOrder();
                 request.setAttribute("list", list);
                 RequestDispatcher rd = request.getRequestDispatcher("view/order/order.jsp");
                 rd.forward(request, response);
                 break;
             default:
-                break;
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -53,8 +57,11 @@ public class ReceiptServlet extends HttpServlet {
                 String phoneNumber = request.getParameter("phoneNumber");
                 String address = request.getParameter("address");
                 String describe = request.getParameter("describe");
-                Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(1), address, describe);
+                Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(2), address, describe);
                 receiptService.addReceipt(detailReceiptList, receipt);
+                request.setCharacterEncoding("UTF-8");
+                response.setContentType("text/html;charset=UTF-8");
+                 request.setAttribute("toast","t");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
         }

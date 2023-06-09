@@ -67,12 +67,12 @@
 <nav id="fixNav">
     <ul>
         <li><a href="/index.jsp">Trang chủ</a></li>
-        <li><a href="/cake">Sản phẩm</a></li>
+<%--        <li><a href="/cake">Sản phẩm</a></li>--%>
         <li><a href="/receipt-servlet?action=order">Đặt hàng</a></li>
-        <li><a href="/employee?action=list">Nhân viên</a></li>
-        <li><a href="/detailreceipt?action=a">Hóa đơn</a></li>
+<%--        <li><a href="/employee?action=list">Nhân viên</a></li>--%>
+<%--        <li><a href="/detailreceipt?action=a">Hóa đơn</a></li>--%>
         <li style="float: right"><a href="/bakery?action=login">Đăng nhập</a></li>
-
+<%--        <li style="float: right;"> ${taikhoan} <a href="/bakery?action=logout"> Đăng xuất</a></li>--%>
     </ul>
 </nav>
 </body>

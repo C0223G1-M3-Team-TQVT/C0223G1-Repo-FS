@@ -33,32 +33,37 @@ public class DetailReceiptServlet extends HttpServlet {
                 delivery(request, response);
                 break;
             case "delete":
-                int id = Integer.parseInt(request.getParameter("deleteReceipt"));
-                boolean check = receiptService.deleteRecript(id);
-                if (check) {
-                    request.setAttribute("message", "Xóa thành công");
-//                    request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
-
-
-                } else {
-                    request.setAttribute("message", "Xóa thất bại");
-//                    request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
-                }
-                showList(request, response);
+                deleteFormDetail(request, response);
                 break;
             default:
                 showList(request, response);
+                request.setCharacterEncoding("UTF-8");
                 break;
         }
+    }
+
+    private void deleteFormDetail(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("deleteReceipt"));
+        boolean check = receiptService.deleteRecript(id);
+        if (check) {
+            request.setAttribute("message", "Xóa thành công");
+        } else {
+            request.setAttribute("message", "Xóa thất bại");
+        }
+        showList(request, response);
     }
 
     private void delivery(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt((request.getParameter("id")));
         request.setAttribute("id", id);
-        request.getRequestDispatcher("view/recript/detail.jsp").forward(request, response);
-
+        boolean check=   iDetailReceiptService.UpdateCondition(id);
+        if (check){
+            request.setAttribute("message","Giao hàng thành công");
+        }else {
+            request.setAttribute("message","Đơn hàng này đã được giao");
+        }
+        showList(request,response);
     }
-
     private void detailForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<Integer, Integer> integerMap = iDetailReceiptService.getMoney();
         request.setAttribute("integerMap", integerMap);
@@ -92,10 +97,6 @@ public class DetailReceiptServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-
-            case "delivery":
-                deliveryPost(request, response);
-                break;
             case "search":
                 String tinhTrang = request.getParameter("tinhTrang");
                 Map<Integer, Integer> integerMap = iDetailReceiptService.getPriceAll();
@@ -104,16 +105,8 @@ public class DetailReceiptServlet extends HttpServlet {
                 request.setAttribute("receipts", detailReceipts);
                 request.getRequestDispatcher("view/recript/recript.jsp").forward(request, response);
                 break;
+
         }
     }
 
-    private void deliveryPost(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        iDetailReceiptService.UpdateCondition(id);
-        try {
-            response.sendRedirect("/detailreceipt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

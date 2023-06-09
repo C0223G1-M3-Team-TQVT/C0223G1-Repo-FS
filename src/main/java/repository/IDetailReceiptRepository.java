@@ -14,6 +14,6 @@ public interface IDetailReceiptRepository {
 
     List<DetailReceipt> getDetail(int id);
 
-    void UpdateCondition(int id);
+    boolean UpdateCondition(int id);
 
 }

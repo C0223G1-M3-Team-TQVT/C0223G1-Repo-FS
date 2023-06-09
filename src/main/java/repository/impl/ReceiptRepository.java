@@ -171,7 +171,6 @@ public class ReceiptRepository implements IReceiptRepository {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(ADD);
             int id = checkCustomer(receipt.getCustomer());
-            System.out.println(id);
             preparedStatement.setInt(1, id);
             preparedStatement.setInt(2, receipt.getEmployee().getId());
             preparedStatement.setString(3, time);

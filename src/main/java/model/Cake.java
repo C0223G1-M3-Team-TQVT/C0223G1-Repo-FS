@@ -13,7 +13,12 @@ public class Cake {
         this.name = name;
         this.price = price;
     }
-
+    public Cake(int id, String name, double price,String picture) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.picture=picture;
+    }
     public Cake(int id) {
         this.id = id;
     }

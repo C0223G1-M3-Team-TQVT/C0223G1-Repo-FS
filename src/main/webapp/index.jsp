@@ -133,13 +133,13 @@
             align-items: center;
         }
         .toast {
-            background-color: #333;
+            background-color: #bb8496;
             color: #fff;
             padding: 15px;
             border-radius: 5px;
             position: fixed;
-            top: 30px;
-            right: 30px;
+            top: 60px;
+            right: 5px;
             z-index: 1;
             display: none;
         }
@@ -228,16 +228,15 @@
         <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
     </ul>
 </section>
-
 <div id="toastMessage" class="toast"style="z-index: 100"></div>
 <script>
-<%--    <%--%>
-<%--    String t = (String)request.getAttribute("toast");--%>
-<%--    if(t==null){--%>
-<%--        t="";--%>
-<%--    }--%>
-<%--    if(t.equals("t")){--%>
-<%--        %>--%>
+    <%
+    String t = (String)request.getAttribute("toast");
+    if(t==null){
+        t="";
+    }
+    if(t.equals("t")){
+        %>
     // Function to show the toas
     function showToast(message) {
         var toast = document.getElementById("toastMessage");
@@ -250,10 +249,10 @@
 
     // Automatically show the toast message when the page is reloaded
     window.addEventListener('load', function () {
-        showToast("Page reloaded!");
+        showToast("Đặt hàng thành công");
     });
-<%--    <%}--%>
-<%--    %>--%>
+    <%}
+    %>
 
     const menuToggle = document.querySelector('.toggle');
     const showcase = document.querySelector('.showcase');
@@ -263,6 +262,7 @@
         showcase.classList.toggle('active');
     })
 </script>
+
 </body>
 </html>
 

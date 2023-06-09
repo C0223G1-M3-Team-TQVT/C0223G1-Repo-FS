@@ -1,5 +1,6 @@
 package controller;
 
+import com.mysql.cj.Session;
 import model.*;
 import service.IReceiptService;
 import service.impl.ReceiptService;
@@ -60,6 +61,7 @@ public class ReceiptServlet extends HttpServlet {
                 receiptService.addReceipt(detailReceiptList, receipt);
                 request.setCharacterEncoding("UTF-8");
                 response.setContentType("text/html;charset=UTF-8");
+                 request.setAttribute("toast","t");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
         }

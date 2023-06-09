@@ -24,7 +24,7 @@
 <form method="post" action="/receipt-servlet?action=order">
     <c:forEach items="${list}" var="cake">
 
-        <div class="card" style="width: 14rem; float: left; margin: 80px; border: none">
+        <div class="card col-4" style="float: left; padding: 80px; border: none">
             <p>${cake.name}</p>
             <img src="${cake.picture}" class="card-img-top" style="height: 220px; width: 220px">
             <div class="card-body">
@@ -114,7 +114,8 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                             style="background-color: #b97f9c">Quay lại
                     </button>
-                    <button type="submit" class="btn btn-primary" style="background-color: #b97f9c" onclick="clear()">Đặt
+                    <button onclick="clear()" type="submit" class="btn btn-primary" style="background-color: #b97f9c">
+                        Đặt
                     </button>
                 </div>
             </div>
@@ -123,6 +124,7 @@
 
 </form>
 <script>
+
     function clear() {
         sessionStorage.clear();
     }
@@ -130,6 +132,7 @@
     function cong1(i) {
         sessionStorage.setItem(i, sessionStorage.getItem(i) * 1 + 1);
         document.getElementById(i).value = sessionStorage.getItem(i);
+        gioHang();
     }
 
     function tru1(i) {
@@ -138,20 +141,6 @@
         }
         sessionStorage.setItem(i, sessionStorage.getItem(i) * 1 - 1);
         document.getElementById(i).value = sessionStorage.getItem(i);
-    }
-
-    function tru(i) {
-        let a = document.getElementById(i).value * 1;
-        if (a == 0) {
-            return;
-        }
-        document.getElementById(i).value = a - 1;
-        gioHang();
-    }
-
-    function cong(i) {
-        let a = document.getElementById(i).value * 1;
-        document.getElementById(i).value = a + 1;
         gioHang();
     }
 

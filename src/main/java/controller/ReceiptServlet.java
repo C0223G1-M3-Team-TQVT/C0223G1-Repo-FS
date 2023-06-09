@@ -56,7 +56,7 @@ public class ReceiptServlet extends HttpServlet {
                 String phoneNumber = request.getParameter("phoneNumber");
                 String address = request.getParameter("address");
                 String describe = request.getParameter("describe");
-                Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(1), address, describe);
+                Receipt receipt = new Receipt(new Customer(name, phoneNumber), new Employee(2), address, describe);
                 receiptService.addReceipt(detailReceiptList, receipt);
                 request.setCharacterEncoding("UTF-8");
                 response.setContentType("text/html;charset=UTF-8");

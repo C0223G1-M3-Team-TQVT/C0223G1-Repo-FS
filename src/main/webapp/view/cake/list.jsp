@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,33 +16,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
+    <style>
+
+        #success{
+            position: fixed;
+            right: 1em;
+        }
+        .son{
+            contain: layout ;
+            display: flex;
+            align-items: center;
+            background-color: wheat;
+            border-radius: 12px;
+            border-left: 16px #a0b4ff;
+            min-width: 10em;
+            max-width: 17em;
+            max-height: 5rem;
+            box-shadow: 0 5px 8px rgba(36, 245, 10, 0.08);
+            animation: slideInLeft ease 2s, fadeOut linear 1s 2s forwards;
+            transition: all linear 0.3s;
+        }
+        @keyframes slideInLeft {
+            from{
+                opacity: 0;
+                transform: translateX(calc(100% + 1em) );
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeOut {
+            to{
+                opacity: 0;
+            }
+        }
+
+        th{
+            color: rgba(21, 19, 19, 0.76);
+        }
+        td{
+            color: rgba(21, 19, 19, 0.76);
+        }
+    </style>
 </head>
-<body>
+<body style="background-color:#efbefd">
 <div class="container-fluid">
     <div class="row header bg-info">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <jsp:include page="/header.jsp"></jsp:include>
+                <jsp:include page="/header-login.jsp"></jsp:include>
             </div>
         </nav>
     </div>
 
-    <div class="row content" style="padding-top: 50px">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/cake" style="color: #bb8496"> <i class="fa-regular fa-user"></i>Cake</a>
+    <div class="row content" style="padding-top: 50px;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eeede7">
+            <div class="container-fluid" >
+                <a class="navbar-brand" href="/cake" style="color: rgba(21,19,19,0.76)"> <i class="fa-regular fa-user"></i>Cake</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex" method="get" action="/cake">
+                    <form class="d-flex" method="get" action="/cake" >
                         <input name="action" value="find" hidden>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                                name="name">
-                        <button class="btn" type="submit" style="color: #bb8496"><i class="fa-solid fa-magnifying-glass"
-                                                                                 style="color: #bb8496;"></i> Tìm
+                        <button class="btn" type="submit" style="color: rgba(21,19,19,0.76)"><i class="fa-solid fa-magnifying-glass"
+                                                                                                style="color: rgba(21,19,19,0.76);"></i> Tìm
                         </button>
                     </form>
                 </div>
@@ -50,14 +94,16 @@
     </div>
     <tr>
         <th colspan="8"><h4 style="text-align: center">QUẢN LÝ SẢN PHẨM </h4></th>
-        <span id="success">${result}</span>
+        <span id="success"
+              class="son"
+              style="float: left; background-color: #a0b4ff;font-size: 30px">${result}</span>
     </tr>
     <div class="row  addProduct">
         <div class="col-12 col-md-2 col-2 buttonAdd">
             <div class="btn-group" role="group" aria-label="Basic outlined example">
                 <form method="get" action="/cake?action">
                     <input name="action" value="create" hidden>
-                    <button type="submit" class="btn" style="background-color: #bb8496">Thêm mới</button>
+                    <button type="submit" class="btn btn-dark" style="background-color: #5670f5">Thêm mới</button>
                 </form>
             </div>
         </div>
@@ -65,8 +111,8 @@
         </div>
         <div class="col-0 col-md-2 col-2">
         </div>
-        <table class="table table-striped table-bordered" id="tableStudent" style="width:100%">
-            <thead>
+        <table class="table table-bordered" id="tableStudent" style="width:100%;background-color: #eeede7" >
+            <thead style="background-color: #eeede7">
             <tr>
                 <th>STT</th>
                 <th>Name</th>
@@ -93,7 +139,9 @@
                         <c:out value="${cake.typeOfCake}"/>
                     </td>
                     <td>
-                        <c:out value="${cake.price}"/>
+                        <c:set var="priceBalance" value="${cake.price*1000}"/>
+                        <fmt:formatNumber type="number" maxFractionDigits="3" value="${priceBalance}"/>
+                        <c:out value="VNĐ"/>
                     </td>
                     <td>
                         <c:out value="${cake.amount}"/>
@@ -102,12 +150,12 @@
                         <form method="get">
                             <input name="action" value="update" hidden>
                             <input name="id" value="${cake.id}" hidden>
-                            <button type="submit" class="btn" style="background-color: #bb8496">Sửa</button>
+                            <button type="submit" class="btn btn-dark" style="background-color: #f6c925">Sửa</button>
                         </form>
                     </td>
                     <td>
                         <form>
-                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"
                                     onclick="remove('${cake.id}','${cake.name}')"
                             >Xóa
@@ -121,7 +169,7 @@
     </div>
 </div>
 <%--modal--%>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color:#a8a59b ">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -131,7 +179,8 @@
             <div class="modal-body">
                 <p>
                     Bạn có chắc sẽ xóa sản phẩm này?
-                <h3 id="nameDelete"></h3>
+                <h3 id="nameDelete" style="color: red"></h3>
+                <p style="font-family: 'Abel', sans-serif"> CHỨC NĂNG NÀY KHÔNG THỂ HOÀN TÁC </p>
                 </p>
             </div>
             <div class="modal-footer">
@@ -158,7 +207,7 @@
 <script>
     $(document).ready(function () {
         $('#tableStudent').dataTable({
-            "dom": 'lrtip',
+            "dom": 'lrtp',
             "lengthChange": false,
             "pageLength": 5
         })
@@ -170,11 +219,10 @@
         document.getElementById("nameDelete").innerText = name;
     }
 </script>
-
 <script>
     setTimeout(function () {
         document.getElementById("success").style.display = "none";
-    },1000)
+    },3000)
 </script>
 </body>
 </html>

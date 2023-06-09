@@ -20,10 +20,14 @@ public class EmployeeRepository implements IEmployeeRepository {
 
     private static final String DELETE = "delete from nhan_vien where ma_nhan_vien = ?";
 
-    private static final String SELECTBYID = "select * from nhan_vien nv join chuc_vu cv on nv.ma_chuc_vu = cv.ma_chuc_vu where nv.ma_nhan_vien =?;";
+    private static final String SELECTBYID = "select * from nhan_vien nv join chuc_vu cv on nv.ma_chuc_vu = cv.ma_chuc_vu " +
+            "where nv.ma_nhan_vien =?;";
 
     private static final String UPDATE = "update nhan_vien set ten_nhan_vien =?, cccd=?, sdt=?, dia_chi=?,ma_chuc_vu=? " +
             "where ma_nhan_vien=?";
+
+    private static final String FINDBYNAME = "select*from nhan_vien nv join chuc_vu cv on nv.ma_chuc_vu = cv.ma_chuc_vu " +
+            "where ten_nhan_vien like '%?%'; ";
 
 
     @Override
@@ -119,7 +123,7 @@ public class EmployeeRepository implements IEmployeeRepository {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 connection.close();
             } catch (SQLException e) {
@@ -150,5 +154,38 @@ public class EmployeeRepository implements IEmployeeRepository {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public List<Employee> findByName(String name) {
+        Connection connection = BaseRepository.getConnection();
+        String findByName = "select*from nhan_vien nv join chuc_vu cv on nv.ma_chuc_vu = cv.ma_chuc_vu " +
+                "where ten_nhan_vien like '%" +name +"%'; ";
+        List<Employee> employeeList=  new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(findByName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("nv.ma_nhan_vien");
+                String name1 = resultSet.getString("ten_nhan_vien");
+                String citizenId = resultSet.getString("cccd");
+                String phoneNumber = resultSet.getString("sdt");
+                String address = resultSet.getString("dia_chi");
+                int positionId = resultSet.getInt("cv.ma_chuc_vu");
+                String positionName = resultSet.getString("cv.ten_chuc_vu");
+                Position position = new Position(positionId, positionName);
+                Employee employee = new Employee(id, name1, citizenId, phoneNumber, address, position);
+                employeeList.add(employee);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return employeeList;
     }
 }

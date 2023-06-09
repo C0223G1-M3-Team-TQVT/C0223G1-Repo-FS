@@ -16,11 +16,16 @@
 
 </head>
 <body style="background: white">
-<jsp:include page="/header.jsp"></jsp:include>
-<div class="container-fluid" style="background: white; padding-top: 50px" >
+<jsp:include page="/header-login.jsp"></jsp:include>
+<div class="container-fluid" style="background: white; padding-top: 50px">
     <a href="/employee?action=create">
         <button type="submit" class="btn" style="background-color: #bb8496">Thêm</button>
     </a>
+    <form method="get" action="/employee">
+        <input name="action" value="searchName" hidden>
+        <input type="text" name="name" placeholder="Tìm theo tên">
+        <button type="submit"  class="btn" style="background-color: #bb8496" >Tìm</button>
+    </form>
     <table id="tableEmployee" class="table table-striped table-bordered col-lg-12" style="width:100%">
         <thead>
         <tr>
@@ -105,7 +110,7 @@
 <script>
     $(document).ready(function () {
         $('#tableEmployee').dataTable({
-            "dom": 'lrtip',
+            "dom": 'lrtp',
             "lengthChange": false,
             "pageLength": 5
         });

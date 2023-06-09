@@ -29,6 +29,8 @@ dependencies {
 // https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api
     compileOnly group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.3'
 
+    compileJava.options.encoding = 'UTF-8'
+    tasks.withType(JavaCompile) {options.encoding = 'UTF-8'}
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

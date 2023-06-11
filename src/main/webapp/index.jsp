@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
     <meta charset="UTF-8">
     <title>Trang chủ</title>
     <style>
@@ -132,7 +135,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .toast {
             background-color: #bb8496;
             color: #fff;
@@ -204,6 +206,103 @@
                 font-size: 2em;
             }
         }
+
+        .content {
+            position: absolute;
+            margin-top: 370px;
+
+        }
+
+
+        .footer-dark {
+            padding: 50px 0;
+            color: rgba(21, 19, 19, 0.76);
+            background-color: #bdbdbe;
+        }
+
+        .footer-dark h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .footer-dark ul {
+            padding: 0;
+            list-style: none;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .footer-dark ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.6;
+        }
+
+        .footer-dark ul a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 767px) {
+            .footer-dark .item:not(.social) {
+                text-align: center;
+                padding-bottom: 20px;
+            }
+        }
+
+        .footer-dark .item.text {
+            margin-bottom: 36px;
+        }
+
+        @media (max-width: 767px) {
+            .footer-dark .item.text {
+                margin-bottom: 0;
+            }
+        }
+
+        .footer-dark .item.text p {
+            opacity: 0.6;
+            margin-bottom: 0;
+        }
+
+        .footer-dark .item.social {
+            text-align: center;
+        }
+
+        @media (max-width: 991px) {
+            .footer-dark .item.social {
+                text-align: center;
+                margin-top: 20px;
+            }
+        }
+
+        .footer-dark .item.social > a {
+            font-size: 20px;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px rgba(21, 19, 19, 0.76);
+            margin: 0 8px;
+            color: rgba(21, 19, 19, 0.76);
+            opacity: 0.75;
+        }
+
+        .footer-dark .item.social > a:hover {
+            opacity: 0.9;
+        }
+
+        .footer-dark .copyright {
+            text-align: center;
+            padding-top: 24px;
+            opacity: 0.3;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -211,7 +310,8 @@
 <jsp:include page="/header.jsp"></jsp:include>
 
 <body>
-
+<!-- Video Source -->
+<!-- https://www.pexels.com/video/aerial-view-of-beautiful-resort-2169880/ -->
 <section class="showcase">
     <video src="https://player.vimeo.com/external/479732217.sd.mp4?s=39562d1370d6cc9a5f5db52a302fc57e15361a3e&profile_id=164&oauth2_token_id=57447761"
            muted loop autoplay></video>
@@ -228,6 +328,88 @@
         <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
     </ul>
 </section>
+<div id="toastMessage" class="toast" style="z-index: 100"></div>
+<div style="width: 100%;height: 45em; border: none"></div>
+<%--<tr>--%>
+<%--    <div class="row content" style="text-align: center;float: left" >--%>
+<%--        <h2 class="content" >--%>
+<%--            SWEETIE BAKERY--%>
+<%--        </h2>--%>
+<%--        <p> aniodoiawdoiawoidnoanwiodaown nôiawd</p>--%>
+<%--    </div>--%>
+<%--</tr>--%>
+
+<div class="container">
+    <div class="row" style="padding-top: 50px">
+        <div class=" col-4 col-md-4">
+        </div>
+        <div class="col-4 col-md-4">
+            <h2 style="text-align: center;font-family:'Book Antiqua';color: #bb8496 ">SWEETIE BAKERY</h2>
+        </div>
+        <div class="col-4 col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Sweetie bakery , cái tên đã nói lên sự ngọt ngào trong từng sản phẩm của chúng tôi
+            . Với mong muốn đem lại 1 bữa ăn nhẹ với những chiếc bánh ngọt là điểm mạnh của quán chúng tôi, quý khách sẽ
+            được thưởng thức
+            những chiếc bánh với hương vị ngọt ngào , tinh tế và có một chút gì đó dễ thương . Hãy đến đây thưởng thức
+            và ủng hộ chúng tôi ,
+            cửa hàng sẽ luôn ghi nhận những đánh giá và và chấp nhận những sai xót ở thời kỳ đầu để cải thiện và ngày
+            càng phát triển hơn nữa.
+        </div>
+    </div>
+</div>
+<div class="row" style="padding-bottom: 50px">
+    <div class="col" style="text-align: center;font-family: 'Arial Black'">
+        <h4>XIN CHÂN THÀNH CẢM ƠN</h4>
+    </div>
+</div>
+<div class="row" style="background-color: #ffd5de">
+    <div class="col-12 col-md-8" style="text-align: center">
+        <img src="https://png.pngtree.com/png-vector/20190130/ourlarge/pngtree-mbe-style-cartoon-cute-chocolate-strawberry-fruit-cake-material-foodmbe-cakembe-png-image_645783.jpg"
+             style="width:100%;height:800px ">
+    </div>
+    <div class="col-12 col-md-4" style="text-align: center">
+        <img src="https://img.lovepik.com/free_png/32/53/15/77Y58PICGra58PICYNe24fe3t_PIC2018.png_860.png"
+             style="width:70%;height:800px ">
+    </div>
+</div>
+<div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Thành viên</h3>
+                    <ul style="color: #171515">
+                        <li><a href="#">Mai Phước Tài</a></li>
+                        <li><a href="#">Phan Thanh Thiện</a></li>
+                        <li><a href="#">Nguyễn Long Vũ</a></li>
+                        <li><a href="#">Nguyễn Hữu Quốc</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Thuộc về</h3>
+                    <ul style="color: #171515">
+                        <li><a href="#">SWEETIE BAKERY</a></li>
+                        <li><a href="#">Team 2</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3 style="color: #171515">SWEETIE BAKERY</h3>
+                    <p style="color: #171515">
+                        Cảm ơn vì đã tin tưởng và ủng hộ chúng tôi , chúng tôi sẽ cải thiện từng ngày để đem đến những
+                        điều ngọt ngào nhất dành cho bạn
+                    </p>
+                </div>
+            </div>
+            <p class="copyright" style="color: #171515">SWEETIE BAKERY © 2023</p>
+        </div>
+    </footer>
+</div>
+
+
 <div id="toastMessage" class="toast" style="z-index: 100"></div>
 <script>
     <%
@@ -261,7 +443,17 @@
         showcase.classList.toggle('active');
     })
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+<script src="jquery/jquery-3.5.1.min.js">
+</script>
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="datatables/js/jquery.dataTables.min.js"></script>
+<script src="datatables/js/dataTables.bootstrap5.min.js"></script>
 </body>
 </html>
 

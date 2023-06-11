@@ -11,35 +11,97 @@
 <head>
     <title>Danh sách nhân viên</title>
     <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
-<style>
-    .toast {
-        background-color: #bb8496;
-        color: #fff;
-        padding: 15px;
-        border-radius: 20px;
-        position: fixed;
-        bottom: 530px;
-        right: 30px;
-        z-index: 1;
-        display: none;
-    }
-</style>
+    <style>
+        th{
+            color: rgba(21, 19, 19, 0.76);
+        }
+        td{
+            color: rgba(21, 19, 19, 0.76);
+        }
+    </style>
 </head>
-<jsp:include page="/header-management.jsp"></jsp:include>
 <body style="background: white">
-<div class="container-fluid" style="background: white; padding-top: 50px">
-    <a href="/employee?action=create">
-        <button type="submit" class="btn" style="background-color: #bb8496">Thêm</button>
-    </a>
-    <form method="get" action="/employee">
-        <input name="action" value="searchName" hidden>
-        <input type="text" name="name" placeholder="Tìm theo tên">
-        <button type="submit" class="btn" style="background-color: #bb8496">Tìm</button>
-    </form>
-    <table id="tableEmployee" class="table table-striped table-bordered col-lg-12" style="width:100%">
-        <thead>
+<jsp:include page="/header-management.jsp"></jsp:include>
+<%--<div class="container-fluid" style="background: white; padding-top: 50px">--%>
+<%--    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left:70em;padding-top:20px">--%>
+<%--            <form method="get" action="/employee">--%>
+<%--                <input name="action" value="searchName" hidden>--%>
+<%--                <input type="text" name="name" placeholder="Tìm theo tên">--%>
+<%--                <button type="submit" class="btn" style="background-color: #bb8496">Tìm</button>--%>
+<%--            </form>--%>
+<%--        <form class="d-flex" method="get" action="/cake" >--%>
+<%--            <input name="action" value="searchName" hidden>--%>
+<%--            <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search"--%>
+<%--                   name="name">--%>
+<%--            <button class="btn" type="submit" style="color: rgba(21,19,19,0.76)"><i class="fa-solid fa-magnifying-glass"--%>
+<%--                                                                                    style="color: rgba(21,19,19,0.76);"></i> Tìm--%>
+<%--            </button>--%>
+<%--        </form>--%>
+<%--    </div>--%>
+<%--        <div class="container-fluid">--%>
+<%--            <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>--%>
+<%--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"--%>
+<%--                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--%>
+<%--                    aria-expanded="false" aria-label="Toggle navigation">--%>
+<%--                <span class="navbar-toggler-icon"></span>--%>
+<%--            </button>--%>
+<%--            <div >--%>
+<%--                <form method="get" action="/employee">--%>
+<%--                    <input name="action" value="searchName" hidden>--%>
+<%--                    <input type="text" name="name" placeholder="Tìm theo tên">--%>
+<%--                    <button type="submit" class="btn" style="background-color: #bb8496">Tìm</button>--%>
+<%--                </form>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+
+<div class="row content" style="padding-top: 70px;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #bb8496">
+        <div class="container-fluid" >
+<%--            <a class="navbar-brand" href="/cake" style="color: rgba(21,19,19,0.76)"> <i class="fa-regular fa-user"></i>Cake</a>--%>
+<%--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"--%>
+<%--                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--%>
+<%--                    aria-expanded="false" aria-label="Toggle navigation">--%>
+<%--                <span class="navbar-toggler-icon"></span>--%>
+<%--            </button>--%>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left:78em;padding-top:20px">
+                <form class="d-flex" method="get" action="/employee">
+                    <input name="action" value="searchName" hidden>
+                    <input type="text" name="name" placeholder="Tìm theo tên">
+                    <button class="btn" type="submit" style="color: rgba(21,19,19,0.76)"><i class="fa-solid fa-magnifying-glass"
+                                                                                            style="color: rgba(21,19,19,0.76);"></i> Tìm
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<%--    <a href="/employee?action=create">--%>
+<%--        <button type="submit" class="btn" style="background-color: #bb8496">Thêm</button>--%>
+<%--    </a>--%>
+<tr>
+    <th colspan="8"><h2 style="text-align: center">QUẢN LÝ NHÂN VIÊN </h2></th>
+    <%--        <span id="success"--%>
+    <%--              class="thien"--%>
+    <%--              style="float: left; background-color: #bb8496;font-size: 15px">${result}</span>--%>
+    <c:if test='${result != null}'>
+        <center>
+            <div id="toastMessage" class="toast"></div>
+        </center>
+    </c:if>
+</tr>
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <form method="get" action="/employee?">
+            <input name="action" value="create" hidden>
+            <button type="submit" class="btn btn-dark" style="background-color: #f8b3c7">Thêm mới</button>
+        </form>
+    </div>
+    <table class="table table-bordered" id="tableStudent" style="width:100%;background-color: #b0b0ad">
+        <thead style="background-color: #bb8496">
         <tr>
             <th>STT</th>
             <th>Tên</th>
@@ -74,7 +136,7 @@
                 </td>
                 <td>
                     <a href="/employee?action=update&id=${employee.id}">
-                        <button type="submit" class="btn" style="background-color: #bb8496">Sửa</button>
+                        <button type="submit" class="btn btn-outline-light" style="background-color: #f8b3c7">Sửa</button>
                     </a>
                 </td>
                 <td>
@@ -146,22 +208,8 @@
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
 <script>
-    function showToast(message) {
-        var toast = document.getElementById("toastMessage");
-        toast.style.display = "block";
-        toast.innerText = message;
-        setTimeout(function () {
-            toast.style.display = "none";
-        }, 3000);
-    }
-
-    window.addEventListener('load', function () {
-        showToast("${message}");
-    });
-</script>
-<script>
     $(document).ready(function () {
-        $('#tableEmployee').dataTable({
+        $('#tableStudent').dataTable({
             "dom": 'lrtp',
             "lengthChange": false,
             "pageLength": 5

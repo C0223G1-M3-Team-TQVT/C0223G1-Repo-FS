@@ -18,49 +18,59 @@
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
     <style>
 
-        #success {
+        /*#success{*/
+        /*    position: fixed;*/
+        /*    right: 1em;*/
+        /*}*/
+        /*.thien{*/
+        /*    contain: layout ;*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*    background-color: wheat;*/
+        /*    border-radius: 12px;*/
+        /*    border-left: 16px #a0b4ff;*/
+        /*    min-width: 10em;*/
+        /*    max-width: 17em;*/
+        /*    max-height: 5rem;*/
+        /*    box-shadow: 0 5px 8px rgba(36, 245, 10, 0.08);*/
+        /*    animation: slideInLeft ease 2s, fadeOut linear 1s 2s forwards;*/
+        /*    transition: all linear 0.3s;*/
+        /*}*/
+        /*@keyframes slideInLeft {*/
+        /*    from{*/
+        /*        opacity: 0;*/
+        /*        transform: translateX(calc(100% + 1em) );*/
+        /*    }*/
+        /*    to{*/
+        /*        opacity: 1;*/
+        /*        transform: translateX(0);*/
+        /*    }*/
+        /*}*/
+        /*@keyframes fadeOut {*/
+        /*    to{*/
+        /*        opacity: 0;*/
+        /*    }*/
+        /*}*/
+
+        th{
+            color: rgba(21, 19, 19, 0.76);
+        }
+        td{
+            color: rgba(21, 19, 19, 0.76);
+        }
+
+        .toast {
+            background-color: #bb8496;
+            color: #fff;
+            padding: 15px;
+            border-radius: 20px;
             position: fixed;
-            right: 1em;
-        }
-
-        .thien {
-            contain: layout;
-            display: flex;
-            align-items: center;
-            background-color: wheat;
-            border-radius: 12px;
-            border-left: 16px #a0b4ff;
-            min-width: 10em;
-            max-width: 17em;
-            max-height: 5rem;
-            box-shadow: 0 5px 8px rgba(36, 245, 10, 0.08);
-            animation: slideInLeft ease 2s, fadeOut linear 1s 2s forwards;
-            transition: all linear 0.3s;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(calc(100% + 1em));
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-            }
-        }
-
-        th {
-            color: rgba(21, 19, 19, 0.76);
-        }
-
-        td {
-            color: rgba(21, 19, 19, 0.76);
+            right: 30px;
+            z-index: 1;
+            display: none;
+            width: 20em;
+            height: 45px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -75,24 +85,21 @@
     </div>
 
     <div class="row content" style="padding-top: 50px;">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f8c7d3">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/cake" style="color: rgba(21,19,19,0.76)"> <i
-                        class="fa-regular fa-user"></i>Cake</a>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #bb8496">
+            <div class="container-fluid" >
+                <a class="navbar-brand" href="/cake" style="color: rgba(21,19,19,0.76)"> <i class="fa-regular fa-user"></i>Cake</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent"
-                     style="padding-left:70em;padding-top:20px">
-                    <form class="d-flex" method="get" action="/cake">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left:70em;padding-top:20px">
+                    <form class="d-flex" method="get" action="/cake" >
                         <input name="action" value="find" hidden>
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        <input class="form-control me-2" type="search" placeholder="Tìm Kiếm Theo Tên" aria-label="Search"
                                name="name">
-                        <button class="btn" type="submit" style="color: rgba(21,19,19,0.76)"><i
-                                class="fa-solid fa-magnifying-glass"
-                                style="color: rgba(21,19,19,0.76);"></i> Tìm
+                        <button class="btn" type="submit" style="color: rgba(21,19,19,0.76)"><i class="fa-solid fa-magnifying-glass"
+                                                                                                style="color: rgba(21,19,19,0.76);"></i> Tìm
                         </button>
                     </form>
                 </div>
@@ -100,10 +107,15 @@
         </nav>
     </div>
     <tr>
-        <th colspan="8"><h4 style="text-align: center">QUẢN LÝ SẢN PHẨM </h4></th>
-        <span id="success"
-              class="thien"
-              style="float: left; background-color: #bb8496;font-size: 30px">${result}</span>
+        <th colspan="8"><h2 style="text-align: center">QUẢN LÝ SẢN PHẨM </h2></th>
+<%--        <span id="success"--%>
+<%--              class="thien"--%>
+<%--              style="float: left; background-color: #bb8496;font-size: 15px">${result}</span>--%>
+        <c:if test='${result != null}'>
+            <center>
+                <div id="toastMessage" class="toast"></div>
+            </center>
+        </c:if>
     </tr>
     <div class="row  addProduct">
         <div class="col-12 col-md-2 col-2 buttonAdd">
@@ -118,7 +130,7 @@
         </div>
         <div class="col-0 col-md-2 col-2">
         </div>
-        <table class="table table-bordered" id="tableStudent" style="width:100%;background-color: #b0b0ad">
+        <table class="table table-bordered" id="tableStudent" style="width:100%;background-color: #b0b0ad" >
             <thead style="background-color: #bb8496">
             <tr>
                 <th>STT</th>
@@ -159,8 +171,7 @@
                         <form method="get">
                             <input name="action" value="update" hidden>
                             <input name="id" value="${cake.id}" hidden>
-                            <button type="submit" class="btn btn-outline-light" style="background-color: #f8b3c7">Sửa
-                            </button>
+                            <button type="submit" class="btn btn-outline-light" style="background-color: #f8b3c7">Sửa</button>
                         </form>
                     </td>
                     <td>
@@ -179,8 +190,7 @@
     </div>
 </div>
 <%--modal--%>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-     style="background-color:#a8a59b ">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color:#a8a59b ">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -230,10 +240,23 @@
         document.getElementById("nameDelete").innerText = name;
     }
 </script>
+<%--<script>--%>
+<%--    setTimeout(function () {--%>
+<%--        document.getElementById("success").style.display = "none";--%>
+<%--    },3000)--%>
+<%--</script>--%>
 <script>
-    setTimeout(function () {
-        document.getElementById("success").style.display = "none";
-    }, 3000)
+    function showToast(message) {
+        var toast = document.getElementById("toastMessage");
+        toast.style.display = "block";
+        toast.innerText = message;
+        setTimeout(function() {
+            toast.style.display = "none";
+        }, 3000);
+    }
+    window.addEventListener('load', function() {
+        showToast("${result}");
+    });
 </script>
 </body>
 </html>

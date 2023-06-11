@@ -4,91 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="tai comit lan 7">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/header-management.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/header-management.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index-login-management.jsp" afterDir="false" />
+    <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="thien commit lan 15">
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_3_2023_2_14_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_3_2023_2_14_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/BakeryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/BakeryServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/DetailReceiptServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/DetailReceiptServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Cake.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/Cake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/IDetailReceiptRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/IDetailReceiptRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/impl/DetailReceiptRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/impl/DetailReceiptRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/impl/PositionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/impl/PositionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/IDetailReceiptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/IDetailReceiptService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/impl/DetailReceiptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/impl/DetailReceiptService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/BakeryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/BakeryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DetailReceiptServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DetailReceiptServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EmployeeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ReceiptServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ReceiptServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/IDetailReceiptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/IDetailReceiptRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/CakeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/CakeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/DetailReceiptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/DetailReceiptRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/PositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/PositionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/IDetailReceiptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/IDetailReceiptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/DetailReceiptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/DetailReceiptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/ReceiptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/ReceiptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-grid.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-reboot.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-utilities.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap-utilities.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/css/bootstrap.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.esm.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.esm.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.esm.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.esm.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap520/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.bootstrap5.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.bootstrap5.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.bulma.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.bulma.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.dataTables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.dataTables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.foundation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.foundation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.jqueryui.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.jqueryui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.semanticui.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/dataTables.semanticui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/css/jquery.dataTables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/css/jquery.dataTables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.bootstrap4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.bootstrap5.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.bootstrap5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.bulma.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.bulma.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.foundation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.foundation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.jqueryui.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.jqueryui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.semanticui.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/dataTables.semanticui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datatables/js/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/datatables/js/jquery.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header-login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header-login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index-login-management.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index-login-management.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index-login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index-login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/cake/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/cake/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/cake/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/cake/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/employee/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/employee/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,23 +25,6 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="C0223G1-Repo-FS" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,22 +41,28 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="main" />
-      </list>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="052bf410-42ac-46b6-bb86-898861058985" />
+        <option name="url" value="https://github.com/C0223G1-M3-Team-TQVT/C0223G1-Repo-FS.git" />
+      </UrlAndAccount>
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/repository/impl/DetailReceiptRepository.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/controller/BakeryServlet.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/controller/DetailReceiptServlet.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/controller/ReceiptServlet.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/repository/impl/DetailReceiptRepository.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/view/login/login.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/controller/BakeryServlet.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -155,6 +70,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QtzU3qla4RuInliu3mjB7D0FMB" />
   <component name="ProjectLevelVcsManager">
@@ -165,16 +83,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/untitled4" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\codegym_module3\casestudy_module3_nhanh_khac\C0223G1-Repo-FS\src\main\webapp\img" />
@@ -263,17 +181,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686187680056</updated>
-      <workItem from="1686187681986" duration="26730000" />
-      <workItem from="1686222647079" duration="10627000" />
-      <workItem from="1686235730682" duration="4685000" />
-      <workItem from="1686272879205" duration="24479000" />
-      <workItem from="1686305504418" duration="216000" />
-      <workItem from="1686318308460" duration="130000" />
-      <workItem from="1686369516660" duration="1649000" />
-      <workItem from="1686398695672" duration="605000" />
-      <workItem from="1686399388286" duration="2907000" />
-      <workItem from="1686402338720" duration="6963000" />
-      <workItem from="1686444739773" duration="504000" />
+      <workItem from="1686187681986" duration="20623000" />
+      <workItem from="1686229954541" duration="11676000" />
+      <workItem from="1686295901435" duration="2350000" />
+      <workItem from="1686315034803" duration="6149000" />
+      <workItem from="1686367022832" duration="5565000" />
+      <workItem from="1686447724213" duration="6926000" />
+      <workItem from="1686476950262" duration="3337000" />
     </task>
     <task id="LOCAL-00001" summary="tai comit lan 1">
       <created>1686190061272</created>
@@ -324,98 +238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686199498491</updated>
     </task>
-    <task id="LOCAL-00008" summary="tai comit lan 6">
-      <created>1686210054664</created>
+    <task id="LOCAL-00008" summary="thien commit lan 15">
+      <created>1686477685719</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1686210054664</updated>
+      <updated>1686477685720</updated>
     </task>
-    <task id="LOCAL-00009" summary="tai comit lan 6">
-      <created>1686210814692</created>
+    <task id="LOCAL-00009" summary="thien commit lan 15">
+      <created>1686479052688</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1686210814692</updated>
+      <updated>1686479052688</updated>
     </task>
-    <task id="LOCAL-00010" summary="tai comit lan 6">
-      <created>1686273114631</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1686273114631</updated>
-    </task>
-    <task id="LOCAL-00011" summary="tai comit lan 6">
-      <created>1686274327452</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1686274327452</updated>
-    </task>
-    <task id="LOCAL-00012" summary="tai comit lan 6">
-      <created>1686284030146</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1686284030146</updated>
-    </task>
-    <task id="LOCAL-00013" summary="tai comit lan 6">
-      <created>1686284062871</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1686284062871</updated>
-    </task>
-    <task id="LOCAL-00014" summary="tai comit lan 6">
-      <created>1686284068804</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1686284068804</updated>
-    </task>
-    <task id="LOCAL-00015" summary="tai comit lan 6">
-      <created>1686296372124</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1686296372124</updated>
-    </task>
-    <task id="LOCAL-00016" summary="tai comit lan 7">
-      <created>1686296783387</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1686296783387</updated>
-    </task>
-    <task id="LOCAL-00017" summary="tai comit lan 7">
-      <created>1686298763555</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1686298763555</updated>
-    </task>
-    <task id="LOCAL-00018" summary="tai comit lan 7">
-      <created>1686298947312</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1686298947312</updated>
-    </task>
-    <task id="LOCAL-00019" summary="tai comit lan 7">
-      <created>1686299139978</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1686299139978</updated>
-    </task>
-    <task id="LOCAL-00020" summary="tai comit lan 7">
-      <created>1686303917673</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1686303917673</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,16 +268,15 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="tai comit lan 1" />
     <MESSAGE value="tai comit lan 2" />
     <MESSAGE value="tai comit lan 3" />
     <MESSAGE value="tai comit lan 4" />
     <MESSAGE value="tai comit lan 5" />
-    <MESSAGE value="tai comit lan 6" />
-    <MESSAGE value="tai comit lan 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="tai comit lan 7" />
+    <MESSAGE value="thien commit lan 15" />
+    <option name="LAST_COMMIT_MESSAGE" value="thien commit lan 15" />
   </component>
 </project>

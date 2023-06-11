@@ -149,14 +149,14 @@ To change this template use File | Settings | File Templates.
             <div class="modal-body" >
                 <p style="font-size: 50px;text-align: center"><i class="fa-solid fa-coins"></i></p>
                 <br>
-                <h5>Đơn hàng này đã được thanh khoản?</h5>
+                <h5>Đơn hàng này đã được hoàn thành?</h5>
             </div>
-            <div class="modal-footer">
-                <form action="/detailreceipt">
+            <div class="modal-footer"style="text-align: center">
+                <form action="/detailreceipt" >
                     <button type="submit" class="btn " style="background: #bb8496">
                         <input type="text" value="delivery" name="action" hidden>
                         <input type="text" value="${id}" name="id" hidden>
-                        <a style="color: white;background: #bb8496"><i class="fa-sharp fa-solid fa-truck"></i></a>
+                        <a style="color: white;background: #bb8496">Đã giao</a>
                     </button>
                 </form>
             </div>

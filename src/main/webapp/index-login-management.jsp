@@ -620,7 +620,6 @@
         <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
     </ul>
 </section>
-<div id="toastMessage" class="toast" style="z-index: 100"></div>
 <div style="width: 100%;height: 45em; border: none"></div>
 <%--<tr>--%>
 <%--    <div class="row content" style="text-align: center;float: left" >--%>
@@ -704,14 +703,6 @@
 
 <div id="toastMessage" class="toast" style="z-index: 100"></div>
 <script>
-    <%
-    String t = (String)request.getAttribute("toast");
-    if(t==null){
-        t="";
-    }
-    if(t.equals("t")){
-        %>
-
     function showToast(message) {
         var toast = document.getElementById("toastMessage");
         toast.style.display = "block";
@@ -722,18 +713,8 @@
     }
 
     window.addEventListener('load', function () {
-        showToast("Đặt hàng thành công");
+        showToast("${message}");
     });
-    <%}
-    %>
-
-    const menuToggle = document.querySelector('.toggle');
-    const showcase = document.querySelector('.showcase');
-
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        showcase.classList.toggle('active');
-    })
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

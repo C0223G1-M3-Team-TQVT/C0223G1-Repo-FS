@@ -19,7 +19,7 @@
             position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
             top: 0; /*Nằm trên cùng*/
             left: 0; /*Nằm sát bên trái*/
-            z-index: 100000; /*Hiển thị lớp trên cùng*/
+            z-index: 1000; /*Hiển thị lớp trên cùng*/
         }
 
         #fixNav ul {

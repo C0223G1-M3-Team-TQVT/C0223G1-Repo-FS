@@ -250,7 +250,7 @@
 
     // Automatically show the toast message when the page is reloaded
     window.addEventListener('load', function () {
-        showToast("Page reloaded!");
+        showToast("Đặt hàng thành công");
     });
     <%}
     %>

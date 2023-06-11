@@ -200,7 +200,7 @@
 
                 <div class="mb-2">
                     <label for="citizenId" class="form-label">Chứng minh nhân dân</label>
-                    <input type="text" class="form-control" id="citizenId" name="citizenId" pattern="^[0-9]{9}$" required>
+                    <input type="text" class="form-control" id="citizenId" name="citizenId" pattern="^[0-9]{12}$" required>
                 </div>
                 <div class="mb-2">
                     <label for="phoneNumber" class="form-label">Số điện thoại</label>

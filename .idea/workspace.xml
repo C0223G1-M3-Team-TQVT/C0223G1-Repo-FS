@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="vu commit lan 13">
+    <list default="true" id="b6f929e8-339d-4fc7-a681-55f7f215b602" name="Changes" comment="tai comit lan 9">
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/impl/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/impl/EmployeeRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/C0223G1-Repo-FS-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/cake/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/cake/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/cake/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/cake/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/employee/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/employee/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +31,27 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="C0223G1-Repo-FS" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -47,14 +71,14 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/controller/BakeryServlet.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/repository/impl/DetailReceiptRepository.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/controller/DetailReceiptServlet.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/view/recript/recript.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/repository/impl/ReceiptRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/controller/ReceiptServlet.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/view/login/login.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/view/recript/detail.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/controller/BakeryServlet.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -64,16 +88,17 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="2QtzU3qla4RuInliu3mjB7D0FMB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -83,13 +108,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dell\Desktop\codegym\sweetie-bakery\C0223G1-Repo-FS\src\main\webapp\img" />
+      <recent name="C:\Users\Admin\codegym_module3\casestudy_module3_nhanh_khac\C0223G1-Repo-FS\src\main\webapp\view\cake" />
       <recent name="C:\Users\Admin\codegym_module3\casestudy_module3_nhanh_khac\C0223G1-Repo-FS\src\main\webapp\img" />
       <recent name="C:\Users\Admin\codegym_module3\casestudy_module3_nhanh_khac\C0223G1-Repo-FS\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.75" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.751" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.751" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : com.example : C0223G1-Repo-FS-1.0-SNAPSHOT.war">
@@ -99,7 +124,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="c747d61c-52ce-4403-aee9-667e397db4e3" />
+        <option name="BASE_DIRECTORY_NAME" value="b5ef9aea-0ffd-42e7-a2d4-09aee527e89a" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -107,7 +132,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="60572" />
+        <option name="DEBUG_PORT" value="57165" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -125,21 +150,6 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -185,16 +195,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686187680056</updated>
-      <workItem from="1686187681986" duration="20623000" />
-      <workItem from="1686272582189" duration="6430000" />
-      <workItem from="1686283953496" duration="2425000" />
-      <workItem from="1686292364586" duration="7370000" />
-      <workItem from="1686303974152" duration="623000" />
-      <workItem from="1686363377858" duration="33000" />
-      <workItem from="1686363533478" duration="10770000" />
-      <workItem from="1686387464207" duration="1349000" />
-      <workItem from="1686413526043" duration="652000" />
-      <workItem from="1686477310956" duration="3356000" />
+      <workItem from="1686187681986" duration="26730000" />
+      <workItem from="1686222647079" duration="10627000" />
+      <workItem from="1686235730682" duration="4685000" />
+      <workItem from="1686272879205" duration="24479000" />
+      <workItem from="1686305504418" duration="216000" />
+      <workItem from="1686318308460" duration="130000" />
+      <workItem from="1686369516660" duration="1649000" />
+      <workItem from="1686398695672" duration="605000" />
+      <workItem from="1686399388286" duration="2907000" />
+      <workItem from="1686402338720" duration="6963000" />
+      <workItem from="1686444739773" duration="504000" />
+      <workItem from="1686477456388" duration="7352000" />
     </task>
     <task id="LOCAL-00001" summary="tai comit lan 1">
       <created>1686190061272</created>
@@ -245,84 +257,126 @@
       <option name="project" value="LOCAL" />
       <updated>1686199498491</updated>
     </task>
-    <task id="LOCAL-00008" summary="vu commit lan 10">
-      <created>1686275219885</created>
+    <task id="LOCAL-00008" summary="tai comit lan 6">
+      <created>1686210054664</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1686275219885</updated>
+      <updated>1686210054664</updated>
     </task>
-    <task id="LOCAL-00009" summary="vu commit lan 10">
-      <created>1686275225788</created>
+    <task id="LOCAL-00009" summary="tai comit lan 6">
+      <created>1686210814692</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1686275225788</updated>
+      <updated>1686210814692</updated>
     </task>
-    <task id="LOCAL-00010" summary="vu commit lan 11">
-      <created>1686279201524</created>
+    <task id="LOCAL-00010" summary="tai comit lan 6">
+      <created>1686273114631</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1686279201524</updated>
+      <updated>1686273114631</updated>
     </task>
-    <task id="LOCAL-00011" summary="vu commit lan 11">
-      <created>1686298530278</created>
+    <task id="LOCAL-00011" summary="tai comit lan 6">
+      <created>1686274327452</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1686298530278</updated>
+      <updated>1686274327452</updated>
     </task>
-    <task id="LOCAL-00012" summary="vu commit lan 11">
-      <created>1686298655423</created>
+    <task id="LOCAL-00012" summary="tai comit lan 6">
+      <created>1686284030146</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1686298655423</updated>
+      <updated>1686284030146</updated>
     </task>
-    <task id="LOCAL-00013" summary="vu commit lan 11">
-      <created>1686298862004</created>
+    <task id="LOCAL-00013" summary="tai comit lan 6">
+      <created>1686284062871</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1686298862004</updated>
+      <updated>1686284062871</updated>
     </task>
-    <task id="LOCAL-00014" summary="vu commit lan 11">
-      <created>1686299018219</created>
+    <task id="LOCAL-00014" summary="tai comit lan 6">
+      <created>1686284068804</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1686299018219</updated>
+      <updated>1686284068804</updated>
     </task>
-    <task id="LOCAL-00015" summary="vu commit lan 11">
-      <created>1686299169274</created>
+    <task id="LOCAL-00015" summary="tai comit lan 6">
+      <created>1686296372124</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1686299169274</updated>
+      <updated>1686296372124</updated>
     </task>
-    <task id="LOCAL-00016" summary="vu commit lan 12">
-      <created>1686303986611</created>
+    <task id="LOCAL-00016" summary="tai comit lan 7">
+      <created>1686296783387</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1686303986611</updated>
+      <updated>1686296783387</updated>
     </task>
-    <task id="LOCAL-00017" summary="vu commit lan 12">
-      <created>1686304078179</created>
+    <task id="LOCAL-00017" summary="tai comit lan 7">
+      <created>1686298763555</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1686304078179</updated>
+      <updated>1686298763555</updated>
     </task>
-    <task id="LOCAL-00018" summary="vu commit lan 13">
-      <created>1686482783488</created>
+    <task id="LOCAL-00018" summary="tai comit lan 7">
+      <created>1686298947312</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1686482783488</updated>
+      <updated>1686298947312</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="tai comit lan 7">
+      <created>1686299139978</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686299139978</updated>
+    </task>
+    <task id="LOCAL-00020" summary="tai comit lan 7">
+      <created>1686303917673</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686303917673</updated>
+    </task>
+    <task id="LOCAL-00021" summary="tai comit lan 8">
+      <created>1686477621484</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1686477621484</updated>
+    </task>
+    <task id="LOCAL-00022" summary="tai comit lan 8">
+      <created>1686480379109</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1686480379109</updated>
+    </task>
+    <task id="LOCAL-00023" summary="tai comit lan 9">
+      <created>1686482490955</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1686482490955</updated>
+    </task>
+    <task id="LOCAL-00024" summary="tai comit lan 9">
+      <created>1686483201809</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1686483201809</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,10 +400,10 @@
     <MESSAGE value="tai comit lan 3" />
     <MESSAGE value="tai comit lan 4" />
     <MESSAGE value="tai comit lan 5" />
-    <MESSAGE value="vu commit lan 10" />
-    <MESSAGE value="vu commit lan 11" />
-    <MESSAGE value="vu commit lan 12" />
-    <MESSAGE value="vu commit lan 13" />
-    <option name="LAST_COMMIT_MESSAGE" value="vu commit lan 13" />
+    <MESSAGE value="tai comit lan 6" />
+    <MESSAGE value="tai comit lan 7" />
+    <MESSAGE value="tai comit lan 8" />
+    <MESSAGE value="tai comit lan 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="tai comit lan 9" />
   </component>
 </project>

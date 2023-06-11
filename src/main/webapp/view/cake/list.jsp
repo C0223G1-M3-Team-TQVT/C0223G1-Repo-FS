@@ -113,7 +113,7 @@
 <%--              style="float: left; background-color: #bb8496;font-size: 15px">${result}</span>--%>
         <c:if test='${result != null}'>
             <center>
-                <div id="toastMessage" class="toast"></div>
+                <div id="toastMessage" class="toast" style="background:#bb8496;color: white "></div>
             </center>
         </c:if>
     </tr>
@@ -143,10 +143,10 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${cakeList}" var="cake">
+            <c:forEach items="${cakeList}" var="cake" varStatus="loop">
                 <tr>
                     <td>
-                        <c:out value="${cake.id}"/>
+                        <c:out value="${loop.count}"/>
                     </td>
                     <td>
                         <p>
@@ -157,6 +157,7 @@
                         </p>
                     </td>
                     <td>
+
                         <c:out value="${cake.typeOfCake}"/>
                     </td>
                     <td>
@@ -190,7 +191,7 @@
     </div>
 </div>
 <%--modal--%>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color:#a8a59b ">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

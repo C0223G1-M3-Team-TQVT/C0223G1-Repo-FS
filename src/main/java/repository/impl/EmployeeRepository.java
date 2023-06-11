@@ -12,8 +12,7 @@ import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
 
-    private static final String SELECT = "select*from nhan_vien nv join chuc_vu cv on nv.ma_chuc_vu = cv.ma_chuc_vu " +
-            "order by nv.ma_nhan_vien";
+    private static final String SELECT = "select*from nhan_vien nv join chuc_vu cv on nv.ma_chuc_vu = cv.ma_chuc_vu where nv.ma_nhan_vien > 2;";
 
     private static final String INSERT = "INSERT INTO nhan_vien ( ten_nhan_vien, " +
             "cccd, sdt, dia_chi, ma_chuc_vu) VALUES ( ?, ?, ?, ?, ?);";

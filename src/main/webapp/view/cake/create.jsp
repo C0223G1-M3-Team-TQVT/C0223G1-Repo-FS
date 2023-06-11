@@ -204,7 +204,7 @@
                     <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-4 form-group">
-                    <label for="typeOfCake" class="form-label">Mã loại bánh</label>
+                    <label for="typeOfCake" class="form-label">Loại bánh</label>
                     <select class="form-select" aria-label="Default select example" id="typeOfCake" name="typeOfCake"
                             required>
                         <option selected></option>
@@ -222,9 +222,9 @@
                     <input type="number" class="form-control" id="amount" name="amount" min="0" required>
                 </div>
                 <div class="mb-2 form-group" >
-<%--                                        <label for="picture" class="form-label">Ảnh minh họa</label>--%>
+                                        <label for="picture" class="form-label">Ảnh minh họa</label>
                     <%--                    <input type="file" class="form-control" id="picture" name="picture">--%>
-                    <input id="file" type="text"  value="picture" name="picture"/> <br/>
+                    <input id="file" type="text"  placeholder="Picture" name="picture" id="picture"/> <br/>
 <%--                    <img id="img" src="" height="200" alt="Image preview..."><br>--%>
                 </div>
                 <button class="log-in" type="submit">Thêm mới</button>

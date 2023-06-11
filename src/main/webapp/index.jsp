@@ -328,7 +328,7 @@
         <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
     </ul>
 </section>
-<div id="toastMessage" class="toast" style="z-index: 100"></div>
+<div id="toastMessage" class="toast" style="z-index: 100;background: #b97f9c;color: white"></div>
 <div style="width: 100%;height: 45em; border: none"></div>
 <%--<tr>--%>
 <%--    <div class="row content" style="text-align: center;float: left" >--%>
@@ -366,14 +366,14 @@
         <h4>XIN CHÂN THÀNH CẢM ƠN</h4>
     </div>
 </div>
-<div class="row" style="background-color: #ffd5de">
-    <div class="col-12 col-md-8" style="text-align: center">
-        <img src="https://png.pngtree.com/png-vector/20190130/ourlarge/pngtree-mbe-style-cartoon-cute-chocolate-strawberry-fruit-cake-material-foodmbe-cakembe-png-image_645783.jpg"
+<div class="row" >
+    <div class="col-12 col-md-7" style="text-align: center">
+        <img src="https://i.pinimg.com/originals/b0/b7/c8/b0b7c83a0fc3bc2c8985439569cab943.png"
              style="width:100%;height:800px ">
     </div>
-    <div class="col-12 col-md-4" style="text-align: center">
-        <img src="https://img.lovepik.com/free_png/32/53/15/77Y58PICGra58PICYNe24fe3t_PIC2018.png_860.png"
-             style="width:70%;height:800px ">
+    <div class="col-12 col-md-5" style="text-align: center">
+        <img src="https://image-us.eva.vn/upload/4-2018/images/2018-10-10/nhung-mau-banh-ngot-gay-thuong-nho-cho-quy-co-sanh-dieu-banh-ngot--4--1539135833-761-width660height820.jpg"
+             style="width:100%;height:800px ">
     </div>
 </div>
 <div class="footer-dark">

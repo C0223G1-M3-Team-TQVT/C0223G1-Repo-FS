@@ -47,7 +47,7 @@ To change this template use File | Settings | File Templates.
         <c:if test='${message != null}'>
 
             <center>
-                <div id="toastMessage" class="toast"></div>
+                <div style="background: #b97f9c;color: white" id="toastMessage" class="toast"></div>
             </center>
         </c:if>
 
@@ -151,7 +151,7 @@ To change this template use File | Settings | File Templates.
                     <span><i class="fa-solid fa-user-tie"></i></span>Tên khách hàng : <span style="color: #b02a37"
                                                                                             id="name"></span> <br></div>
                 <div style="margin-top: 20px">
-                    <span><i class="fa-solid fa-mobile"></i></span><span> Số điện thoại : <span id="sdt"></span></span>
+                    <span><i class="fa-solid fa-mobile"></i></span><span> Số điện thoại : 0<span id="sdt"></span></span>
                 </div>
             </div>
             <div class="modal-footer">
@@ -196,7 +196,7 @@ To change this template use File | Settings | File Templates.
     function deleteReceipt(id, name, sdt) {
         document.getElementById("deleteReceipt").value = id;
         document.getElementById("name").innerText = name;
-        document.getElementById("sdt").innerText = sdt;
+        document.getElementById("sdt").innerHTML = sdt;
     }
 
     function remove(id, name) {

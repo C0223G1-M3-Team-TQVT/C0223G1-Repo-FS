@@ -20,15 +20,17 @@ public class CakeRepository implements ICakeRepository {
         Connection connection = BaseRepository.getConnection();
         List<Cake> cakeList = new ArrayList<>();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from banh;");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from banh b join loai_banh lb on b.ma_loai_banh=lb.ma_loai_banh;");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int id = resultSet.getInt("ma_banh");
-                String name = resultSet.getString("ten_banh");
-                int typeOfCake = resultSet.getInt("ma_loai_banh");
-                double price = resultSet.getDouble("gia");
-                int amount = resultSet.getInt("so_luong_hien_co");
-                String picture = resultSet.getString("anh_banh");
+                int id = resultSet.getInt("b.ma_banh");
+                String name = resultSet.getString("b.ten_banh");
+                int typeOfCake = resultSet.getInt("lb.ma_loai_banh");
+                String nameTypeOfCake=resultSet.getString("lb.ten_loai_banh");
+                double price = resultSet.getDouble("b.gia");
+                int amount = resultSet.getInt("b.so_luong_hien_co");
+                String picture = resultSet.getString("b.anh_banh");
+                TypeOfCake
                 Cake cake = new Cake(id, name, typeOfCake, price, amount, picture);
                 cakeList.add(cake);
             }

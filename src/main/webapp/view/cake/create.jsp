@@ -183,7 +183,7 @@
     </style>
 </head>
 <body>
-<jsp:include page="/header.jsp"></jsp:include>
+
 <div id="out">
     <a href="/cake" style="color: rgba(21,19,19,0.76)">
         Quay lại

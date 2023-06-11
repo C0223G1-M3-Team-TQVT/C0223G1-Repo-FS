@@ -1,9 +1,9 @@
 <%@ page import="model.Receipt" %>
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 6/4/2023
-  Time: 12:28 PM
-  To change this template use File | Settings | File Templates.
+Created by IntelliJ IDEA.
+User: Admin
+Date: 6/4/2023
+Time: 12:28 PM
+To change this template use File | Settings | File Templates.
 --%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -13,29 +13,31 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Hóa đơn</title>
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-<style>
-    .toast {
-        background-color: #bb8496;
-        color: #fff;
-        padding: 15px;
-        border-radius: 20px;
-        position: fixed;
-        bottom:530px;
-        right: 30px;
-        z-index: 1;
-        display: none;
-    }
-</style>
+    <style>
+        .toast {
+            background-color: #bb8496;
+            color: #fff;
+            padding: 15px;
+            border-radius: 20px;
+            position: fixed;
+            bottom: 530px;
+            right: 30px;
+            z-index: 1;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <div>
     <div class="row header bg-info">
-        <nav    >
+        <nav>
             <div class="container-fluid">
                 <jsp:include page="/header-login.jsp"></jsp:include>
             </div>
@@ -43,11 +45,13 @@
     </div>
     <div class="row content" style="padding-top: 50px">
         <c:if test='${message != null}'>
+
             <center>
                 <div id="toastMessage" class="toast"></div>
             </center>
         </c:if>
-        <nav class="navbar navbar-expand-lg navbar-light"  style="background: #bb8496">
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: #bb8496">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -55,14 +59,15 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div >
+                <div>
                     <form action="/detailreceipt?action=search" name="tinhTrang" method="post">
                         <select style="border-radius: 30px" name="tinhTrang" id="tinhTrang">
                             <option value="">Tìm kiếm</option>
                             <option value="1">Đã giao</option>
                             <option value="0">Chưa giao</option>
                         </select>
-                        <button style="border-radius: 50%" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #2bac1b;"></i>
+                        <button style="border-radius: 50%" type="submit"><i class="fa-solid fa-magnifying-glass"
+                                                                            style="color: #2bac1b;"></i>
                         </button>
                     </form>
                 </div>
@@ -76,10 +81,11 @@
         </div>
         <div><h2 style="text-align: center">QUẢN LÝ HÓA ĐƠN </h2></div>
         <div class="col-lg-12">
-            <table class="table table-striped table-bordered col-lg-12" id="tableStudent" style="width:100%;background-color: #b0b0ad">
+            <table class="table table-striped table-bordered col-lg-12" id="tableStudent"
+                   style="width:100%;background-color: #b0b0ad">
                 <thead style="background-color: #bb8496">
-                <tr >
-                    <th >STT</th>
+                <tr>
+                    <th>STT</th>
                     <th>Tên khách hàng</th>
                     <th>Số điện thoại</th>
                     <th>Ngày đặt hàng</th>
@@ -91,41 +97,41 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${receipts}" var="receipts" varStatus="loop">
-                    <tr >
-                        <td><c:out value="${loop.count}"/></td>
-                        <td><c:out value="${receipts.customer.name}"/></td>
-                        <td><c:out value="${receipts.customer.phoneNumber}"/></td>
-                        <td>
+                <tr>
+                    <td><c:out value="${loop.count}"/></td>
+                    <td><c:out value="${receipts.customer.name}"/></td>
+                    <td><c:out value="${receipts.customer.phoneNumber}"/></td>
+                    <td>
 
-                            <c:out value="${receipts.date.getDayOfMonth()}"/>/<c:out
-                                value="${receipts.date.getMonthValue()}"/>/<c:out value="${receipts.date.getYear()}"/>
-                            <c:out value="${receipts.date.toLocalTime()}"/>
-                        </td>
-                        <td><c:if test="${receipts.status=='false'}"><c:out value="Chưa giao"/></c:if>
-                            <c:if test="${receipts.status=='true'}"><c:out value="Đã giao"/></c:if>
-                        </td>
-                        <td>
-                                <c:set var="accountBalance" value="${integerMap.get(receipts.id)*1000}"/>
-                                <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
-                                <c:out value="VNĐ"/>
-                        <td>
-                            <center>
-                                <button class="btn " type="submit" style="background: #bb8496;color: white">
-                                    <a style="color: #ffffff" href="/detailreceipt?action=detail&id=${receipts.id}">
-                                        <i class="fa-solid fa-circle-info"></i></a>
-                                </button>
-                            </center>
-                        </td>
-                        <td>
-                            <center>
-                                <button onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})"
-                                        type="button" class="btn " data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal1" style="background: #bb8496;color: white">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </center>
-                        </td>
-                    </tr>
+                        <c:out value="${receipts.date.getDayOfMonth()}"/>/<c:out
+                            value="${receipts.date.getMonthValue()}"/>/<c:out value="${receipts.date.getYear()}"/>
+                        <c:out value="${receipts.date.toLocalTime()}"/>
+                    </td>
+                    <td><c:if test="${receipts.status=='false'}"><p style="color: red">Chưa giao</p></c:if>
+                        <c:if test="${receipts.status=='true'}"><p style="color: #03b003">Đã giao</p></c:if>
+                    </td>
+                    <td>
+                            <c:set var="accountBalance" value="${integerMap.get(receipts.id)*1000}"/>
+                            <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/>
+                            <c:out value="VNĐ"/>
+                    <td>
+                        <center>
+                            <button class="btn " type="submit" style="background: #bb8496;color: white">
+                                <a style="color: #ffffff" href="/detailreceipt?action=detail&id=${receipts.id}">
+                                    <i class="fa-solid fa-circle-info"></i></a>
+                            </button>
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            <button  onclick="deleteReceipt(${receipts.id},'${receipts.customer.name}',${receipts.customer.phoneNumber})"
+                                    type="button" class="btn " data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1" style="background: #bb8496;color: white">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </center>
+                    </td>
+                </tr>
                 </c:forEach>
             </table>
         </div>
@@ -133,21 +139,26 @@
 </div>
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
     <div class="modal-dialog " style="padding-top: 220px">
-        <div class="modal-content" >
+        <div class="modal-content">
             <center>
-            <div class="modal-header" style="background: #bb8496">
-                <h5 class="modal-title" id="exampleModalLabel1">Xóa đơn hàng</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+                <div class="modal-header" style="background: #bb8496">
+                    <h5 class="modal-title" id="exampleModalLabel1">Xóa đơn hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
             </center>
             <div class="modal-body">
-             Tên khách hàng : <h6 style="color: #b02a37" id="name"></h6>  Số điện thoại : <span><h6 id="sdt"></h6></span>
+                <div style="margin-bottom: 20px">
+                    <span><i class="fa-solid fa-user-tie"></i></span>Tên khách hàng : <span style="color: #b02a37"
+                                                                                            id="name"></span> <br></div>
+                <div style="margin-top: 20px">
+                    <span><i class="fa-solid fa-mobile"></i></span><span> Số điện thoại : <span id="sdt"></span></span>
+                </div>
             </div>
             <div class="modal-footer">
                 <form action="/detailreceipt" method="get">
                     <input name="action" value="delete" hidden>
                     <input type="text" name="deleteReceipt" id="deleteReceipt" hidden>
-                    <button type="submit" class="btn " style="background:#bb8496 "><i class="fa-solid fa-trash" ></i>
+                    <button type="submit" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i>
                     </button>
                 </form>
             </div>
@@ -159,11 +170,12 @@
         var toast = document.getElementById("toastMessage");
         toast.style.display = "block";
         toast.innerText = message;
-        setTimeout(function() {
+        setTimeout(function () {
             toast.style.display = "none";
         }, 3000);
     }
-    window.addEventListener('load', function() {
+
+    window.addEventListener('load', function () {
         showToast("${message}");
     })
     ;
@@ -184,7 +196,7 @@
     function deleteReceipt(id, name, sdt) {
         document.getElementById("deleteReceipt").value = id;
         document.getElementById("name").innerText = name;
-       document.getElementById("sdt").innerText = sdt;
+        document.getElementById("sdt").innerText = sdt;
     }
 
     function remove(id, name) {
@@ -203,7 +215,6 @@
 </script>
 </body>
 </html>
-
 
 
 

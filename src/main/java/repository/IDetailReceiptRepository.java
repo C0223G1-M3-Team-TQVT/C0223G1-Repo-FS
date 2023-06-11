@@ -15,5 +15,5 @@ public interface IDetailReceiptRepository {
     List<DetailReceipt> getDetail(int id);
 
     boolean UpdateCondition(int id);
-
+    boolean findPosition(String sdt);
 }

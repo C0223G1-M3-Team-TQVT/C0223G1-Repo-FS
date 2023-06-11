@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Danh sách bánh</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -18,12 +18,13 @@
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
     <style>
 
-        #success{
+        #success {
             position: fixed;
             right: 1em;
         }
-        .thien{
-            contain: layout ;
+
+        .thien {
+            contain: layout;
             display: flex;
             align-items: center;
             background-color: wheat;
@@ -36,26 +37,29 @@
             animation: slideInLeft ease 2s, fadeOut linear 1s 2s forwards;
             transition: all linear 0.3s;
         }
+
         @keyframes slideInLeft {
-            from{
+            from {
                 opacity: 0;
-                transform: translateX(calc(100% + 1em) );
+                transform: translateX(calc(100% + 1em));
             }
-            to{
+            to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
+
         @keyframes fadeOut {
-            to{
+            to {
                 opacity: 0;
             }
         }
 
-        th{
+        th {
             color: rgba(21, 19, 19, 0.76);
         }
-        td{
+
+        td {
             color: rgba(21, 19, 19, 0.76);
         }
     </style>
@@ -72,20 +76,23 @@
 
     <div class="row content" style="padding-top: 50px;">
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f8c7d3">
-            <div class="container-fluid" >
-                <a class="navbar-brand" href="/cake" style="color: rgba(21,19,19,0.76)"> <i class="fa-regular fa-user"></i>Cake</a>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/cake" style="color: rgba(21,19,19,0.76)"> <i
+                        class="fa-regular fa-user"></i>Cake</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left:70em;padding-top:20px">
-                    <form class="d-flex" method="get" action="/cake" >
+                <div class="collapse navbar-collapse" id="navbarSupportedContent"
+                     style="padding-left:70em;padding-top:20px">
+                    <form class="d-flex" method="get" action="/cake">
                         <input name="action" value="find" hidden>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                                name="name">
-                        <button class="btn" type="submit" style="color: rgba(21,19,19,0.76)"><i class="fa-solid fa-magnifying-glass"
-                                                                                                style="color: rgba(21,19,19,0.76);"></i> Tìm
+                        <button class="btn" type="submit" style="color: rgba(21,19,19,0.76)"><i
+                                class="fa-solid fa-magnifying-glass"
+                                style="color: rgba(21,19,19,0.76);"></i> Tìm
                         </button>
                     </form>
                 </div>
@@ -111,7 +118,7 @@
         </div>
         <div class="col-0 col-md-2 col-2">
         </div>
-        <table class="table table-bordered" id="tableStudent" style="width:100%;background-color: #b0b0ad" >
+        <table class="table table-bordered" id="tableStudent" style="width:100%;background-color: #b0b0ad">
             <thead style="background-color: #bb8496">
             <tr>
                 <th>STT</th>
@@ -130,12 +137,12 @@
                         <c:out value="${cake.id}"/>
                     </td>
                     <td>
-                            <p>
-                                <img src="${cake.picture}" width="100px" height="100px">
-                                    <%--                            <img id="img" src="" height="200" alt="Image preview...">--%>
+                        <p>
+                            <img src="${cake.picture}" width="100px" height="100px">
+                                <%--                            <img id="img" src="" height="200" alt="Image preview...">--%>
 
-                                <c:out value="${cake.name}"/>
-                            </p>
+                            <c:out value="${cake.name}"/>
+                        </p>
                     </td>
                     <td>
                         <c:out value="${cake.typeOfCake}"/>
@@ -152,7 +159,8 @@
                         <form method="get">
                             <input name="action" value="update" hidden>
                             <input name="id" value="${cake.id}" hidden>
-                            <button type="submit" class="btn btn-outline-light" style="background-color: #f8b3c7">Sửa</button>
+                            <button type="submit" class="btn btn-outline-light" style="background-color: #f8b3c7">Sửa
+                            </button>
                         </form>
                     </td>
                     <td>
@@ -171,7 +179,8 @@
     </div>
 </div>
 <%--modal--%>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color:#a8a59b ">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+     style="background-color:#a8a59b ">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -224,7 +233,7 @@
 <script>
     setTimeout(function () {
         document.getElementById("success").style.display = "none";
-    },3000)
+    }, 3000)
 </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Trang chủ</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
@@ -132,6 +132,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .toast {
             background-color: #bb8496;
             color: #fff;
@@ -210,8 +211,7 @@
 <jsp:include page="/header.jsp"></jsp:include>
 
 <body>
-<!-- Video Source -->
-<!-- https://www.pexels.com/video/aerial-view-of-beautiful-resort-2169880/ -->
+
 <section class="showcase">
     <video src="https://player.vimeo.com/external/479732217.sd.mp4?s=39562d1370d6cc9a5f5db52a302fc57e15361a3e&profile_id=164&oauth2_token_id=57447761"
            muted loop autoplay></video>
@@ -228,7 +228,7 @@
         <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
     </ul>
 </section>
-<div id="toastMessage" class="toast"style="z-index: 100"></div>
+<div id="toastMessage" class="toast" style="z-index: 100"></div>
 <script>
     <%
     String t = (String)request.getAttribute("toast");
@@ -237,17 +237,16 @@
     }
     if(t.equals("t")){
         %>
-    // Function to show the toas
+
     function showToast(message) {
         var toast = document.getElementById("toastMessage");
         toast.style.display = "block";
         toast.innerText = message;
         setTimeout(function () {
             toast.style.display = "none";
-        }, 3000); // Hide the toast message after 3 seconds
+        }, 3000);
     }
 
-    // Automatically show the toast message when the page is reloaded
     window.addEventListener('load', function () {
         showToast("Đặt hàng thành công");
     });

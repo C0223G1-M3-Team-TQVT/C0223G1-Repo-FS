@@ -46,8 +46,6 @@ public class CakeServlet extends HttpServlet {
                 break;
             default:
                 List<Cake> cakeList = cakeService.display();
-                String result = "Chào bạn";
-                request.setAttribute("result", result);
                 showListCake(request, response, cakeList);
                 break;
         }

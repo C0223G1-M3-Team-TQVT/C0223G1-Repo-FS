@@ -190,8 +190,8 @@
     </a>
 </div>
 <div class="overlay">
-    <form action="/cake?action=create" method="post" id="form-1">
-        <%--        enctype="multipart/form-data"--%>
+    <form action="/cake?action=create" method="post" id="form-1" >
+<%--        enctype="multipart/form-data"--%>
         <div class="con">
             <header class="head-form">
                 <h2>Thêm Mới</h2>
@@ -221,12 +221,11 @@
                     <label for="amount" class="form-label">Số lượng bánh hiện tại</label>
                     <input type="number" class="form-control" id="amount" name="amount" min="0" required>
                 </div>
-                <div class="mb-2 form-group">
-                    <%--                                        <label for="picture" class="form-label">Ảnh minh họa</label>--%>
+                <div class="mb-2 form-group" >
+<%--                                        <label for="picture" class="form-label">Ảnh minh họa</label>--%>
                     <%--                    <input type="file" class="form-control" id="picture" name="picture">--%>
-                    <input id="file" type="file" onchange="previewFile()" value="picture" name="picture"/> <br/>
-                    <img id="img" src="" height="200" alt="Image preview..."><br>
-                    <%--                    <input type="submit" value="Thực hiện"/>--%>
+                    <input id="file" type="text"  value="picture" name="picture"/> <br/>
+<%--                    <img id="img" src="" height="200" alt="Image preview..."><br>--%>
                 </div>
                 <button class="log-in" type="submit">Thêm mới</button>
             </div>
@@ -250,20 +249,20 @@
         document.getElementById("success").style.display = "none";
     }, 1000)
 </script>
-<script>
-    function previewFile() {
-        var preview = document.getElementById("img");
-        var file = document.getElementById("file").files[0];
-        var reader = new FileReader();
-        reader.onloadend = function () {
-            preview.src = reader.result;
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-        } else {
-            preview.src = "";
-        }
-    }
-</script>
+<%--<script>--%>
+<%--    function previewFile() {--%>
+<%--        var preview = document.getElementById("img");--%>
+<%--        var file   =  document.getElementById("file").files[0];--%>
+<%--        var reader  = new FileReader();--%>
+<%--        reader.onloadend = function () {--%>
+<%--            preview.src = reader.result;--%>
+<%--        }--%>
+<%--        if (file) {--%>
+<%--            reader.readAsDataURL(file);--%>
+<%--        } else {--%>
+<%--            preview.src = "";--%>
+<%--        }--%>
+<%--    }--%>
+<%--</script>--%>
 </body>
 </html>

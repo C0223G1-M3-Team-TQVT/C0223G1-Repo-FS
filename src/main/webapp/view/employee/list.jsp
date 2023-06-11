@@ -26,7 +26,7 @@
     </style>
 </head>
 <body style="background: white">
-<jsp:include page="/header-login.jsp"></jsp:include>
+<jsp:include page="/header-management.jsp"></jsp:include>
 <%--<div class="container-fluid" style="background: white; padding-top: 50px">--%>
 <%--    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left:70em;padding-top:20px">--%>
 <%--            <form method="get" action="/employee">--%>

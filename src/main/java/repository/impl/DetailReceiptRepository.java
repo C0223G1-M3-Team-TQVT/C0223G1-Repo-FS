@@ -45,7 +45,6 @@ public class DetailReceiptRepository implements IDetailReceiptRepository {
             "on lb.ma_loai_banh=b.ma_loai_banh\n" +
             "join khach_hang kh\n" +
             "on kh.ma_khach_hang=hd.ma_khach_hang group by b.anh_banh,hd.ma_hoa_don,kh.ten_khach_hang,b.ten_banh,hdct.so_luong,b.ma_banh,b.gia,hdct.ma_hoa_don;";
-
     public boolean checkStatus(int id) {
         Connection connection = BaseRepository.getConnection();
         try {
@@ -81,6 +80,28 @@ public class DetailReceiptRepository implements IDetailReceiptRepository {
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean findPosition(String sdt) {
+        String checkPosition=null;
+        Connection connection=BaseRepository.getConnection();
+        try {
+            Statement statement=connection.createStatement();
+            ResultSet resultSet=statement.executeQuery(("select * from nhan_vien nv join chuc_vu cv on nv.ma_chuc_vu=cv.ma_chuc_vu where nv.sdt= "+sdt ));
+         while (resultSet.next()){
+          checkPosition = resultSet.getString("cv.ten_chuc_vu");
+         }
+         if (checkPosition==null){
+             checkPosition="";
+         }
+       if (checkPosition.equals("Quản lí")){
+           return true;
+       }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 

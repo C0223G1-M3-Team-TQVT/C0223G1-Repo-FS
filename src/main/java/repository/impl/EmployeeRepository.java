@@ -160,12 +160,12 @@ public class EmployeeRepository implements IEmployeeRepository {
     public List<Employee> findByName(String name) {
         Connection connection = BaseRepository.getConnection();
         String findByName = "select*from nhan_vien nv join chuc_vu cv on nv.ma_chuc_vu = cv.ma_chuc_vu " +
-                "where ten_nhan_vien like '%" +name +"%'; ";
-        List<Employee> employeeList=  new ArrayList<>();
+                "where ten_nhan_vien like '%" + name + "%'; ";
+        List<Employee> employeeList = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(findByName);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int id = resultSet.getInt("nv.ma_nhan_vien");
                 String name1 = resultSet.getString("ten_nhan_vien");
                 String citizenId = resultSet.getString("cccd");
@@ -179,7 +179,7 @@ public class EmployeeRepository implements IEmployeeRepository {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 connection.close();
             } catch (SQLException e) {

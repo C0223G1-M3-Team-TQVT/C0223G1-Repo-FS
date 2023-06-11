@@ -10,8 +10,9 @@ To change this template use File | Settings | File Templates.
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
+    <title>Chi tiết hóa đơn</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <title>Title</title>
+
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -45,7 +46,7 @@ To change this template use File | Settings | File Templates.
         </nav>
     </div>
     <div class="row content" style="padding-top: 50px">
-        <nav class="navbar navbar-expand-lg navbar-light "style="background: #bb8496" >
+        <nav class="navbar navbar-expand-lg navbar-light " style="background: #bb8496">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fa-regular fa-user"></i> Quản lý</a>
             </div>
@@ -57,25 +58,28 @@ To change this template use File | Settings | File Templates.
         <div class="col-0 col-md-2 col-2">
         </div>
         <div><h2 style="text-align: center">CHI TIẾT HÓA ĐƠN</h2></div>
-        <table class="table table-striped table-bordered" id="tableStudent" style="width:100%;background-color: #b0b0ad">
+        <table class="table table-striped table-bordered" id="tableStudent"
+               style="width:100%;background-color: #b0b0ad">
             <thead style="background-color: #bb8496">
             <tr style="text-align: center">
                 <th>Tên khách hàng</th>
                 <th>Tên loại bánh</th>
                 <th>Số lượng</th>
-                <th >Tổng giá sản phẩm</th>
+                <th>Tổng giá sản phẩm</th>
             </tr>
             </thead>
-            <tbody >
+            <tbody>
             <c:forEach items="${receiptList}" var="detailReceipts" varStatus="loop">
             <c:if test="${id==detailReceipts.receipt.id}">
-            <tr >
-                <td ><c:out value="${detailReceipts.receipt.customer.name}"/></td>
-                <td><img src="${detailReceipts.cake.picture}" alt="" style="width:80px;border-radius: 20px "> <c:out value="${detailReceipts.cake.name}"/></td>
-                <td ><c:out value="${detailReceipts.amount}"/></td>
+            <tr>
+                <td><c:out value="${detailReceipts.receipt.customer.name}"/></td>
+                <td><img src="${detailReceipts.cake.picture}" alt="" style="width:80px;border-radius: 20px "> <c:out
+                        value="${detailReceipts.cake.name}"/></td>
+                <td><c:out value="${detailReceipts.amount}"/></td>
                 <td>
                     <c:set var="accountBalance" value="${integerMap.get(detailReceipts.cake.id)*1000}"/>
-                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/> <c:out value="VNĐ"/>
+                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${accountBalance}"/> <c:out
+                        value="VNĐ"/>
                 </td>
             </tr>
             </c:if>
@@ -85,7 +89,8 @@ To change this template use File | Settings | File Templates.
 </div>
 <center>
     <div>
-        <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" style="background: #bb8496;color: white">
+        <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="background: #bb8496;color: white">
             Giao Hàng
         </button>
     </div>
@@ -95,11 +100,12 @@ To change this template use File | Settings | File Templates.
         var toast = document.getElementById("toastMessage");
         toast.style.display = "block";
         toast.innerText = message;
-        setTimeout(function() {
+        setTimeout(function () {
             toast.style.display = "none";
         }, 3000);
     }
-    window.addEventListener('load', function() {
+
+    window.addEventListener('load', function () {
         showToast("${message}");
     });
 </script>
@@ -135,13 +141,15 @@ To change this template use File | Settings | File Templates.
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="padding-top: 220px">
-        <div class="modal-content" >
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Bảng xác nhận</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <h5>Bạn có muốn giao đơn hàng này không?</h5>
+            <div class="modal-body" >
+                <p style="font-size: 50px;text-align: center"><i class="fa-solid fa-coins"></i></p>
+                <br>
+                <h5>Đơn hàng này đã được thanh khoản?</h5>
             </div>
             <div class="modal-footer">
                 <form action="/detailreceipt">

@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Danh sách bánh</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -74,7 +74,7 @@
         }
     </style>
 </head>
-<body style="background-color:#ffffff">
+<body style="background-color:#f8f8f8">
 <div class="container-fluid">
     <div class="row header bg-info">
         <nav class="navbar bg-body-tertiary">
@@ -149,12 +149,12 @@
                         <c:out value="${cake.id}"/>
                     </td>
                     <td>
-                            <p>
-                                <img src="${cake.picture}" width="100px" height="100px">
-                                    <%--                            <img id="img" src="" height="200" alt="Image preview...">--%>
+                        <p>
+                            <img src="${cake.picture}" width="100px" height="100px">
+                                <%--                            <img id="img" src="" height="200" alt="Image preview...">--%>
 
-                                <c:out value="${cake.name}"/>
-                            </p>
+                            <c:out value="${cake.name}"/>
+                        </p>
                     </td>
                     <td>
                         <c:out value="${cake.typeOfCake}"/>

@@ -17,7 +17,6 @@ public class PositionRepository implements IPositionRepository {
     private static final String SELECT = "select * from chuc_vu";
 
 
-
     @Override
     public List<Position> displayList() {
         Connection connection = BaseRepository.getConnection();

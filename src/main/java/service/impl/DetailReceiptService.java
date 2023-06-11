@@ -34,7 +34,12 @@ public class DetailReceiptService implements IDetailReceiptService {
 
     @Override
     public boolean UpdateCondition(int id) {
-      return   iDetailReceiptRepository.UpdateCondition(id);
+        return iDetailReceiptRepository.UpdateCondition(id);
+    }
+
+    @Override
+    public boolean findPosition(String sdt) {
+        return iDetailReceiptRepository.findPosition(sdt);
     }
 
 }

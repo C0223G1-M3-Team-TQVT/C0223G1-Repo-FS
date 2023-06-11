@@ -161,21 +161,23 @@
             color: #333;
             text-decoration: none;
         }
-         .toast {
-             background-color: #bb8496;
-             color: #fff;
-             padding: 15px;
-             border-radius: 20px;
-             position: fixed;
-             bottom:530px;
-             right: 30px;
-             z-index: 1;
-             display: none;
-         }
+
+        .toast {
+            background-color: #bb8496;
+            color: #fff;
+            padding: 15px;
+            border-radius: 20px;
+            position: fixed;
+            bottom: 530px;
+            right: 30px;
+            z-index: 1;
+            display: none;
+        }
+
     </style>
 </head>
 <body>
-<div >
+<div>
 
 </div>
 <section class="wrapper" style="box-shadow: 6px 6px 6px 6px #171515;position: absolute">
@@ -185,37 +187,58 @@
             <c:if test='${message != null}'>
                 <div id="toastMessage" class="toast"></div>
             </c:if>
-            <input type="text" placeholder="Số điện thoại" name="taikhoan" pattern="[0-9]{1,}"
-                   title="Vui lòng nhập đúng tài khoản"/>
-            <input type="password" placeholder="Mật khẩu" name="matkhau" pattern="[a-zA-Z0-9]{6,}[a-zA-Z]{1,}"
-                   title="Mật khẩu cần nhiều hơn 6 kí tự và phải có chữ ở cuối"/>
+            <input id="dangnhaptaikhoan" type="text" placeholder="Số điện thoại" name="taikhoan" pattern="[0-9]{1,}" required
+                   />
+            <input id="dangnhapmatkhau" type="password" placeholder="Mật khẩu" name="matkhau" pattern="[a-zA-Z0-9]{6,}[a-zA-Z]{1,}" required
+                  />
             <div class="checkbox">
                 <input type="checkbox" id="signupCheck"/>
                 <label for="signupCheck">Lưu mật khẩu</label>
             </div>
-                        <input type="submit" value="Login" />
+            <input type="submit" value="Login"/>
         </form>
     </div>
     <div class="form login">
         <header>Đăng kí</header>
         <form action="/bakery?action=register" method="post">
-            <input type="text" placeholder="Số điện thoại" name="taikhoan1" pattern="[0-9]{1,}"
-                   title="Bạn cần phải nhập đúng định dạng tài khoản"/>
-            <input type="password" placeholder="Mật khẩu" name="matkhau1" pattern="[a-zA-Z0-9]{6,}[a-zA-Z]{1,}"
-                   title="Mật khẩu cần nhiều hơn 6 kí tự và phải có chữ ở cuối"/>
+            <input id="dangkitaikhoan" type="text" placeholder="Số điện thoại" name="taikhoan1" pattern="[0-9]{1,}" required
+                   />
+            <input id="dangkimatkhau" type="password" placeholder="Mật khẩu" name="matkhau1" pattern="[a-zA-Z0-9]{6,}[a-zA-Z]{1,}" required
+                  />
             <input type="submit" value="Đăng kí"/>
         </form>
     </div>
+    <script>
+        var inputtaikhoan=document.getElementById("dangnhaptaikhoan");
+        input.oninvalid = function(event) {
+            event.target.setCustomValidity('Vui lòng nhập đúng định dạng số điện thoại');
+        }
+        var inputmatkhau=document.getElementById("dangnhapmatkhau");
+        inputregister.oninvalid = function(event) {
+            event.target.setCustomValidity('Mật khẩu phải hơn 6 kí tự và phải có chữ ở cuối')
+        };
+    </script>
+    <script>
+        var input=document.getElementById("dangkitaikhoan");
+        input.oninvalid = function(event) {
+            event.target.setCustomValidity('Vui lòng nhập đúng định dạng số điện thoại');
+        }
+        var inputregister=document.getElementById("dangkimatkhau");
+        inputregister.oninvalid = function(event) {
+            event.target.setCustomValidity('Mật khẩu phải hơn 6 kí tự và phải có chữ ở cuối')
+        };
+    </script>
     <script>
         function showToast(message) {
             var toast = document.getElementById("toastMessage");
             toast.style.display = "block";
             toast.innerText = message;
-            setTimeout(function() {
+            setTimeout(function () {
                 toast.style.display = "none";
             }, 3000);
         }
-        window.addEventListener('load', function() {
+
+        window.addEventListener('load', function () {
             showToast("${message}");
         });
     </script>

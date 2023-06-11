@@ -6,13 +6,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <meta charset="UTF-8">
-    <title>Quản lý sản phẩm</title>
+    <title>Title</title>
     <style>
         @import url('https://th.bing.com/th?id=OIP.faUG1lf2gcBIH2F3soOTdgHaIR&w=236&h=264&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
 
@@ -195,14 +190,14 @@
 </head>
 <body>
 
-<jsp:include page="/header-login.jsp"></jsp:include>
-<c:if test='${message != null}'>
-    <center>
-        <div id="toastMessage" class="toast"></div>
-    </center>
-</c:if>
-<section>
+<jsp:include page="/header-management.jsp"></jsp:include>
 
+<section>
+    <c:if test='${message != null}'>
+        <center>
+            <div id="toastMessage" class="toast"></div>
+        </center>
+    </c:if>
     <div class="circle"></div>
     <div class="content">
         <div class="textBox">

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Trang chủ</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
@@ -135,15 +135,14 @@
             justify-content: center;
             align-items: center;
         }
-
         .toast {
-            background-color: #333;
+            background-color: #bb8496;
             color: #fff;
             padding: 15px;
             border-radius: 5px;
             position: fixed;
-            top: 30px;
-            right: 30px;
+            top: 60px;
+            right: 5px;
             z-index: 1;
             display: none;
         }
@@ -329,6 +328,7 @@
         <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
     </ul>
 </section>
+<div id="toastMessage" class="toast" style="z-index: 100"></div>
 <div style="width: 100%;height: 45em; border: none"></div>
 <%--<tr>--%>
 <%--    <div class="row content" style="text-align: center;float: left" >--%>
@@ -412,29 +412,28 @@
 
 <div id="toastMessage" class="toast" style="z-index: 100"></div>
 <script>
-    <%--    <%--%>
-    <%--    String t = (String)request.getAttribute("toast");--%>
-    <%--    if(t==null){--%>
-    <%--        t="";--%>
-    <%--    }--%>
-    <%--    if(t.equals("t")){--%>
-    <%--        %>--%>
-    // Function to show the toas
+    <%
+    String t = (String)request.getAttribute("toast");
+    if(t==null){
+        t="";
+    }
+    if(t.equals("t")){
+        %>
+
     function showToast(message) {
         var toast = document.getElementById("toastMessage");
         toast.style.display = "block";
         toast.innerText = message;
         setTimeout(function () {
             toast.style.display = "none";
-        }, 3000); // Hide the toast message after 3 seconds
+        }, 3000);
     }
 
-    // Automatically show the toast message when the page is reloaded
     window.addEventListener('load', function () {
-        showToast("Page reloaded!");
+        showToast("Đặt hàng thành công");
     });
-    <%--    <%}--%>
-    <%--    %>--%>
+    <%}
+    %>
 
     const menuToggle = document.querySelector('.toggle');
     const showcase = document.querySelector('.showcase');

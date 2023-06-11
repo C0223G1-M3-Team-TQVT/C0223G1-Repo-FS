@@ -195,26 +195,27 @@
                 <div class="mb-2">
                     <label for="name" class="form-label">Tên nhân viên</label>
                     <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp"
-                           pattern="^([\p{Lu}][\p{Ll}]{1,8})(\s([\p{Lu}]|[\p{Lu}][\p{Ll}]{1,10})){0,5}$">
+                           pattern="^([\p{Lu}][\p{Ll}]{1,8})(\s([\p{Lu}]|[\p{Lu}][\p{Ll}]{1,10})){0,5}$" required>
                 </div>
 
                 <div class="mb-2">
                     <label for="citizenId" class="form-label">Chứng minh nhân dân</label>
-                    <input type="text" class="form-control" id="citizenId" name="citizenId" pattern="^[0-9]{9}$">
+                    <input type="text" class="form-control" id="citizenId" name="citizenId" pattern="^[0-9]{9}$" required>
                 </div>
                 <div class="mb-2">
                     <label for="phoneNumber" class="form-label">Số điện thoại</label>
                     <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
-                           pattern="^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$">
+                           pattern="^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$" required>
                 </div>
                 <div class="mb-2">
                     <label for="address" class="form-label">Địa chỉ</label>
                     <input type="text" class="form-control" id="address" name="address"
-                           pattern="^([\p{Lu}][\p{Ll}]{1,8})(\s([\p{Lu}]|[\p{Lu}][\p{Ll}]{1,10})){0,5}$">
+                           pattern="^([\p{Lu}][\p{Ll}]{1,8})(\s([\p{Lu}]|[\p{Lu}][\p{Ll}]{1,10})){0,5}$" required>
                 </div>
                 <div class="mb-4">
-                    <select class="form-select" aria-label="Default select example" name="idPosition">
-                        <option selected>--Chọn chưc vụ--</option>
+                    <label for="idPosition" class="form-label">Mã chức vụ </label>
+                    <select class="form-select" aria-label="Default select example" name="idPosition"  id="idPosition" required>
+                        <option selected></option>
                         <c:forEach items="${positionList}" var="position">
                             <option value="${position.id}">${position.name}</option>
                         </c:forEach>

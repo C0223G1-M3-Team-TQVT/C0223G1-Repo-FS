@@ -68,7 +68,7 @@ public class ReceiptRepository implements IReceiptRepository {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-        }else {
+        } else {
             try {
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery("select * from hoa_don hd " +

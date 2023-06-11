@@ -1,7 +1,9 @@
 package controller;
 
 import model.User;
+import service.IDetailReceiptService;
 import service.IUserService;
+import service.impl.DetailReceiptService;
 import service.impl.UserService;
 
 import javax.servlet.*;
@@ -13,7 +15,7 @@ import java.util.List;
 @WebServlet(name = "BakeryServlet", value = "/bakery")
 public class BakeryServlet extends HttpServlet {
     private IUserService iUserService = new UserService();
-
+   private IDetailReceiptService iDetailReceiptService=new DetailReceiptService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -27,11 +29,11 @@ public class BakeryServlet extends HttpServlet {
                 loginFormEmployee(request, response);
                 break;
             case "logout":
-                HttpSession session= request.getSession();
+                HttpSession session = request.getSession();
                 session.removeAttribute("taikhoan");
-                String message="Đăng xuất thành công";
-                request.setAttribute("message",message);
-                request.getRequestDispatcher("/index.jsp").forward(request,response);
+                String message = "Đăng xuất thành công";
+                request.setAttribute("message", message);
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
                 break;
             default:
                 listUser(request, response);
@@ -88,20 +90,28 @@ public class BakeryServlet extends HttpServlet {
         if (matKhau == null) {
             matKhau = "";
         }
-        String message="Đăng nhập thành công";
+        String message = "Đăng nhập nhân viên";
         boolean check = iUserService.findUser(new User(taiKhoan, matKhau));
+        boolean checkPosition=iDetailReceiptService.findPosition(taiKhoan);
+
         if (check) {
-            HttpSession session= request.getSession();
-            session.setAttribute("taikhoan",taiKhoan);
-            request.setAttribute("message",message);
-            try {
-
-
-                request.getRequestDispatcher("index-login.jsp").forward(request,response);
-            } catch (ServletException e) {
-                e.printStackTrace();
+            HttpSession session = request.getSession();
+            session.setAttribute("taikhoan", taiKhoan);
+            request.setAttribute("message", message);
+            if (checkPosition){
+                try {
+                    request.setAttribute("message","Đăng nhập quản lý");
+                    request.getRequestDispatcher("index-login-management.jsp").forward(request, response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }
+            }else {
+                try {
+                    request.getRequestDispatcher("index-login.jsp").forward(request, response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }
             }
-
         } else {
             request.setAttribute("message", "Tài khoản hoặc mật khẩu sai,vui lòng nhập lại");
             try {

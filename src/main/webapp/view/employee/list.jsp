@@ -9,14 +9,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Danh sách nhân viên</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
-
+<style>
+    .toast {
+        background-color: #bb8496;
+        color: #fff;
+        padding: 15px;
+        border-radius: 20px;
+        position: fixed;
+        bottom: 530px;
+        right: 30px;
+        z-index: 1;
+        display: none;
+    }
+</style>
 </head>
+<jsp:include page="/header-management.jsp"></jsp:include>
 <body style="background: white">
-<jsp:include page="/header-login.jsp"></jsp:include>
 <div class="container-fluid" style="background: white; padding-top: 50px">
     <a href="/employee?action=create">
         <button type="submit" class="btn" style="background-color: #bb8496">Thêm</button>
@@ -133,6 +145,20 @@
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    function showToast(message) {
+        var toast = document.getElementById("toastMessage");
+        toast.style.display = "block";
+        toast.innerText = message;
+        setTimeout(function () {
+            toast.style.display = "none";
+        }, 3000);
+    }
+
+    window.addEventListener('load', function () {
+        showToast("${message}");
+    });
+</script>
 <script>
     $(document).ready(function () {
         $('#tableEmployee').dataTable({

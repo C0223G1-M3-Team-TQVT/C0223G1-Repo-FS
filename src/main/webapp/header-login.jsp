@@ -9,17 +9,22 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <style>
         #fixNav {
             width: 100%;
             height: 35px;
             background-color: #bb8496;
             display: block;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); /*Đổ bóng cho menu*/
-            position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
-            top: 0; /*Nằm trên cùng*/
-            left: 0; /*Nằm sát bên trái*/
-            z-index: 100000; /*Hiển thị lớp trên cùng*/
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100000;
         }
 
         #fixNav ul {
@@ -31,7 +36,7 @@
             list-style: none inside;
             width: auto;
             float: left;
-            line-height: 35px; /*Cho text canh giữa menu*/
+            line-height: 35px;
             color: #fff;
             padding: 0;
             margin-right: 10px;
@@ -40,7 +45,7 @@
 
         #fixNav ul li a {
             text-transform: uppercase;
-            white-space: nowrap; /*Cho chữ trong menu không bị wrap*/
+            white-space: nowrap;
             padding: 0 10px;
             color: #fff;
             display: block;
@@ -48,17 +53,14 @@
             text-decoration: none;
         }
 
-        /*CSS Style cho Submenu*/
 
-
-        /* Hover cho submenu */
         #fixNav ul li:hover {
-            /* Hover thì li sẽ đổi màu*/
+
             background-color: deeppink;
         }
 
         #fixNav ul li:hover ul {
-            /*Display ra submenu*/
+
             display: block;
         }
     </style>
@@ -67,8 +69,8 @@
 <nav id="fixNav">
     <ul>
         <li><a href="/cake">Sản phẩm</a></li>
-        <li><a href="/employee?action=list">Nhân viên</a></li>
         <li><a href="/detailreceipt?action=a">Hóa đơn</a></li>
+        <li style="float: right"><span><i class="fa-solid fa-right-from-bracket"></i></span></li>
         <li style="float: right;"><a href="/bakery?action=logout"> Đăng xuất</a></li>
         <li style="float:right;">${taikhoan}</li>
     </ul>

@@ -56,14 +56,15 @@ public class DetailReceiptServlet extends HttpServlet {
     private void delivery(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt((request.getParameter("id")));
         request.setAttribute("id", id);
-        boolean check=   iDetailReceiptService.UpdateCondition(id);
-        if (check){
-            request.setAttribute("message","Giao hàng thành công");
-        }else {
-            request.setAttribute("message","Đơn hàng này đã được giao");
+        boolean check = iDetailReceiptService.UpdateCondition(id);
+        if (check) {
+            request.setAttribute("message", "Giao hàng thành công");
+        } else {
+            request.setAttribute("message", "Đơn hàng này đã được giao");
         }
-        showList(request,response);
+        showList(request, response);
     }
+
     private void detailForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<Integer, Integer> integerMap = iDetailReceiptService.getMoney();
         request.setAttribute("integerMap", integerMap);

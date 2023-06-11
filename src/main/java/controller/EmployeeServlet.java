@@ -43,9 +43,9 @@ public class EmployeeServlet extends HttpServlet {
     private void showSearchName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         List<Employee> employeeList = employeeService.findByName(name);
-        request.setAttribute("employeeList",employeeList);
+        request.setAttribute("employeeList", employeeList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/employee/list.jsp");
-        requestDispatcher.forward(request,response);
+        requestDispatcher.forward(request, response);
     }
 
     private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
